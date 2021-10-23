@@ -3,7 +3,7 @@ baseURL = "http://locallytrivial.com/"
 defaultContentLanguage = "en"
 # language code
 languageCode = "en"
-title = "Locally Trivial"
+title = "Jim W. Kennington"
 disqusShortname = 'locally-trivial'
 
 # Change the default theme to be use when building the site with Hugo
@@ -16,32 +16,36 @@ theme = "LoveIt"
 
 [menu]
   [[menu.main]]
-    identifier = "posts"
+    identifier = "about"
     # you can add extra information before the name (HTML format is supported), such as icons
     pre = ""
     # you can add extra information after the name (HTML format is supported), such as icons
     post = ""
-    name = "Posts"
-    url = "/posts/"
+    name = "About"
+    url = "/about/"
     # title will be shown when you hover on this menu link
     title = ""
     weight = 1
   [[menu.main]]
-    identifier = "tags"
+    identifier = "resources"
     pre = ""
     post = ""
-    name = "Tags"
-    url = "/tags/"
+    name = "Resources"
+    url = "/resources/"
     title = ""
     weight = 2
   [[menu.main]]
-    identifier = "categories"
-    pre = ""
-    post = ""
-    name = "Categories"
-    url = "/categories/"
-    title = ""
-    weight = 3
+    parent = "resources"
+    name = "Physics Texts"
+    identifier = "text-physics"
+    url = "texts-physics"
+    weight = 1
+  [[menu.main]]
+    parent = "resources"
+    name = "Math Texts"
+    identifier = "text-math"
+    url = "texts-math"
+    weight = 2
 
 # Markup related configuration in Hugo
 [markup]
@@ -83,7 +87,7 @@ theme = "LoveIt"
       # LoveIt CHANGED | 0.2.7 title shown in home page (HTML format is supported)
       title = ""
       # subtitle shown in home page
-      subtitle = "Time is, time was, but time shall be no more. -James Joyce"
+      subtitle = "Physics, Mathematics, and Code"
       # whether to use typeit animation for subtitle
       typeit = true
       # whether to show social links
@@ -95,7 +99,6 @@ theme = "LoveIt"
       enable = true
       # special amount of posts in each home posts page
       paginate = 6
-      # LoveIt DELETED | 0.2.0 replaced with hiddenFromHomePage in params.page
       # default behavior when you don't set "hiddenFromHomePage" in front matter
       defaultHiddenFromHomePage = false
   # Social config about the author
