@@ -172,7 +172,7 @@ theme = "LoveIt"
 [author]
   name = "Jim Kennington"
   email = ""
-  link = ""
+  link = "about"
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
