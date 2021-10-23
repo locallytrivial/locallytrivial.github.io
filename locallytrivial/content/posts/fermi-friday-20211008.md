@@ -26,9 +26,10 @@ for short. For today's post, we'll pretend the "S" stands for *spaghetti*.
 
 To keep things simple, we take the case of a non-spinning blackhole, which is described by the Schwarzschild solution to
 the Einstein equations. The radius of the spaghetti orbit in this case would be $3$ times the blackhole radius $R_S$,
-which is also called the *Schwarzschild* radius. [@misnerGravitation2017]
+which is also called the *Schwarzschild* radius. [^1]
 
 $$R_{\mathrm{ISCO}} = 6 \frac{G M}{c^2} = 3 R_{S}$$
+
 In the above, $G$ represents Newton's gravitational constant, $c$ represents the speed of light, and $M$ represents the
 mass of the blackhole around which our spaghetti tether has been formed.
 
@@ -42,6 +43,7 @@ We can estimate the cross-sectional area of the spaghetti strands $\sigma$ by us
 as $\sigma = \pi r_s^2$. Similarly, we can estimate the density of spaghetti in terms of a familiar spaghetti box!
 
 $$\rho = \frac{m_{\mathrm{box}}}{V_{\mathrm{box}}} = \frac{m_{\mathrm{box}}}{\ell_{\mathrm{box}} h_{\mathrm{box}} w_{\mathrm{box}}}$$
+
 Where $\ell_{\mathrm{box}}, h_{\mathrm{box}}, w_{\mathrm{box}}$ are the length, height, and width of a spaghetti box, respectively.
 
 
@@ -49,7 +51,8 @@ Where $\ell_{\mathrm{box}}, h_{\mathrm{box}}, w_{\mathrm{box}}$ are the length, 
 
 Putting the above expressions together, we arrive at the innermost spaghetti circular orbit mass:
 
-$$\begin{split}m &= \ell \rho \sigma = \left(2 \pi \frac{6 GM}{c^2}\right) \left( \frac{m_{\mathrm{box}}}{\ell_{\mathrm{box}} h_{\mathrm{box}} w_{\mathrm{box}}} \right) \left(\pi r_s^2\right)\\ & \\ &= \frac{12 \pi^2 r_s^2 G M m_{\mathrm{box}}}{c^2 \ell_{\mathrm{box}} h_{\mathrm{box}} w_{\mathrm{box}}}\end{split}$$
+$$\begin{aligned}m &= \ell \rho \sigma = \left(2 \pi \frac{6 GM}{c^2}\right) \left( \frac{m_{\mathrm{box}}}{\ell_{\mathrm{box}} h_{\mathrm{box}} w_{\mathrm{box}}} \right) \left(\pi r_s^2\right)\\\\ &= \frac{12 \pi^2 r_s^2 G M m_{\mathrm{box}}}{c^2 \ell_{\mathrm{box}} h_{\mathrm{box}} w_{\mathrm{box}}}\\ \end{aligned}$$
+
 Plugging in some numbers:
 
 - Mass of a (galactic center) blackhole: $M \approx 4e6 M_{\odot} = 8 \times 10^{36}$ kg
@@ -60,7 +63,7 @@ Plugging in some numbers:
 - Speed of light: $c \approx 3 \times 10^8\ \mathrm{ms^{-1}}$
 
 
-<br>
+
 The estimate is hidden below. Press the button below to see solution!
 
 <button class="solution-button" onclick="getElementById('fermi-estimate').style.visibility='visible';"><b>Show
@@ -70,4 +73,5 @@ Estimate</b></button>
 
 
 What a large amount of pasta! To put this number in context, This amount of spaghetti could feed every human on Earth approximately $3$ times. 
-    
+
+[^1]: C. W. Misner, K. S. Thorne, J. A. Wheeler, and D. Kaiser, Gravitation (Princeton University Press, Princeton, N.J, 2017).
