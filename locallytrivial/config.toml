@@ -1,9 +1,9 @@
-baseURL = "http://example.org/"
+baseURL = "http://locallytrivial.com/"
 # [en, zh-cn, fr, ...] determines default content language
 defaultContentLanguage = "en"
 # language code
 languageCode = "en"
-title = "My New Hugo Site"
+title = "Locally Trivial"
 
 # Change the default theme to be use when building the site with Hugo
 theme = "LoveIt"
