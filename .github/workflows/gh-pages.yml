@@ -7,7 +7,7 @@ on:
   pull_request:
 
 jobs:
-  setup:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -20,10 +20,6 @@ jobs:
         with:
           hugo-version: '0.88.1'
           extended: true
-  test:
-    runs-on: ubuntu-latest
-    needs: [setup]
-    steps:
       - name: Build
         run: hugo --minify
   deploy:
