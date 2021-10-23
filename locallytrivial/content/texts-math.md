@@ -4,6 +4,8 @@ date: 2021-10-23T01:55:50-04:00
 draft: false
 comment:
   enable: false
+toc:
+  enable: true
 ---
 Here I've listed and described my favorite maths texts by topic. See [here](/texts-physics) for my favorite physics texts.
 For each of the books listed below, I either own it or have
