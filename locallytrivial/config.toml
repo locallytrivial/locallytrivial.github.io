@@ -79,11 +79,11 @@ theme = "LoveIt"
       # Gravatar Email for preferred avatar in home page
       gravatarEmail = ""
       # URL of avatar shown in home page
-      avatarURL = "/images/avatar.png"
+      avatarURL = "/images/jwk-2021-small.png"
       # LoveIt CHANGED | 0.2.7 title shown in home page (HTML format is supported)
       title = ""
       # subtitle shown in home page
-      subtitle = "This is My New Hugo Site"
+      subtitle = "Time is, time was, but time shall be no more. -James Joyce"
       # whether to use typeit animation for subtitle
       typeit = true
       # whether to show social links
@@ -100,15 +100,30 @@ theme = "LoveIt"
       defaultHiddenFromHomePage = false
   # Social config about the author
   [params.social]
-    Patreon = "https://www.patreon.com/locallytrivial"
-    Twitter = "https://twitter.com/LocallyTrivial"
-    Instagram = "https://www.instagram.com/locallytrivial/"
-    Youtubechannel = "https://www.youtube.com/channel/UCCWTz7qwUnlH57Nab1UsYwg"
-    GitHub = "https://github.com/JWKennington"
-    Researchgate = "https://www.researchgate.net/profile/James-Kennington"
-    Linkedin = "https://www.linkedin.com/in/jameskennington/"
-    Email = "locallytrivial@gmail.com"
-    RSS = true # LoveIt NEW | 0.2.0
+    [params.social.Patreon]
+      weight = 1
+      id = "locallytrivial"
+    [params.social.Twitter]
+      weight = 2
+      id = "LocallyTrivial"
+    [params.social.Instagram]
+      weight = 3
+      id = "https://www.instagram.com/locallytrivial/"
+    [params.social.Youtubechannel]
+      weight = 4
+      id = "UCCWTz7qwUnlH57Nab1UsYwg"
+    [params.social.GitHub]
+      weight = 5
+      id = "JWKennington"
+    [params.social.Researchgate]
+      weight = 6
+      id = "James-Kennington"
+    [params.social.LinkedIn]
+      weight = 7
+      id = "jameskennington"
+    [params.social.RSS]
+      weight = 0
+      # RSS = true # LoveIt NEW | 0.2.0
 
 # LoveIt CHANGED | 0.2.0 Page config
 [params.page]
@@ -139,6 +154,19 @@ theme = "LoveIt"
       id = "G-M7DMHENCW1"
       # whether to anonymize IP
       anonymizeIP = true
+  # Footer config
+  [params.footer]
+    enable = true
+    # LoveIt NEW | 0.2.0 Custom content (HTML format is supported)
+    # custom = ''
+    # LoveIt NEW | 0.2.0 whether to show Hugo and theme info
+    hugo = false
+    # LoveIt NEW | 0.2.0 whether to show copyright info
+    copyright = true
+    # LoveIt NEW | 0.2.0 whether to show the author
+    author = true
+    # Site creation time
+    since = 2021
 
 # Author config
 [author]
