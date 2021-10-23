@@ -20,6 +20,8 @@ jobs:
         with:
           hugo-version: '0.88.1'
           extended: true
+      - name: Change
+        run: cd locallytrivial
       - name: Build
         run: hugo --minify
   deploy:
