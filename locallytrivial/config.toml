@@ -4,13 +4,15 @@ defaultContentLanguage = "en"
 # language code
 languageCode = "en"
 title = "Locally Trivial"
+disqusShortname = 'locally-trivial'
 
 # Change the default theme to be use when building the site with Hugo
 theme = "LoveIt"
 
-[params]
-  # LoveIt theme version
-  version = "0.2.X"
+[taxonomies]
+  category = 'categories'
+  series = 'series'
+  tag = 'tags'
 
 [menu]
   [[menu.main]]
@@ -47,3 +49,102 @@ theme = "LoveIt"
   [markup.highlight]
     # false is a necessary configuration (https://github.com/dillonzq/LoveIt/issues/158)
     noClasses = false
+
+# LoveIt Theme Configuration
+[params]
+  # LoveIt theme version
+  version = "0.2.X"
+  # LoveIt NEW | 0.2.0 Search config
+  [params.search]
+    enable = true
+    # type of search engine ("lunr", "algolia")
+    type = "lunr"
+    # placeholder of the search bar
+    placeholder = ""
+    # LoveIt NEW | 0.2.1 max number of results length
+    maxResultLength = 10
+    # LoveIt NEW | 0.2.3 snippet length of the result
+    snippetLength = 30
+    # LoveIt NEW | 0.2.1 HTML tag name of the highlight part in results
+    highlightTag = "em"
+    # LoveIt NEW | 0.2.4 whether to use the absolute URL based on the baseURL in search index
+    absoluteURL = false
+  # Home page config
+  [params.home]
+    # LoveIt NEW | 0.2.0 amount of RSS pages
+    rss = 10
+    # Home page profile
+    [params.home.profile]
+      enable = true
+      # Gravatar Email for preferred avatar in home page
+      gravatarEmail = ""
+      # URL of avatar shown in home page
+      avatarURL = "/images/avatar.png"
+      # LoveIt CHANGED | 0.2.7 title shown in home page (HTML format is supported)
+      title = ""
+      # subtitle shown in home page
+      subtitle = "This is My New Hugo Site"
+      # whether to use typeit animation for subtitle
+      typeit = true
+      # whether to show social links
+      social = true
+      # LoveIt NEW | 0.2.0 disclaimer (HTML format is supported)
+      disclaimer = ""
+    # Home page posts
+    [params.home.posts]
+      enable = true
+      # special amount of posts in each home posts page
+      paginate = 6
+      # LoveIt DELETED | 0.2.0 replaced with hiddenFromHomePage in params.page
+      # default behavior when you don't set "hiddenFromHomePage" in front matter
+      defaultHiddenFromHomePage = false
+  # Social config about the author
+  [params.social]
+    Patreon = "https://www.patreon.com/locallytrivial"
+    Twitter = "https://twitter.com/LocallyTrivial"
+    Instagram = "https://www.instagram.com/locallytrivial/"
+    Youtubechannel = "https://www.youtube.com/channel/UCCWTz7qwUnlH57Nab1UsYwg"
+    GitHub = "https://github.com/JWKennington"
+    Researchgate = "https://www.researchgate.net/profile/James-Kennington"
+    Linkedin = "https://www.linkedin.com/in/jameskennington/"
+    Email = "locallytrivial@gmail.com"
+    RSS = true # LoveIt NEW | 0.2.0
+
+# LoveIt CHANGED | 0.2.0 Page config
+[params.page]
+  # LoveIt CHANGED | 0.2.0 KaTeX mathematical formulas
+  [params.page.math]
+    enable = true
+    # KaTeX extension copy_tex
+    copyTex = true
+  [params.page.share]
+    enable = true
+    Twitter = true
+    HackerNews = true
+    Reddit = true
+  # LoveIt CHANGED | 0.2.0 Comment config
+  [params.page.comment]
+    enable = true
+    # Disqus comment config
+    [params.page.comment.disqus]
+      # LoveIt NEW | 0.1.1
+      enable = true
+      # Disqus shortname to use Disqus in posts
+      shortname = "locally-trivial"
+  # LoveIt NEW | 0.2.0 Analytics config
+  [params.analytics]
+    enable = true
+    # Google Analytics
+    [params.analytics.google]
+      id = "G-M7DMHENCW1"
+      # whether to anonymize IP
+      anonymizeIP = true
+
+# Author config
+[author]
+  name = "Jim Kennington"
+  email = ""
+  link = ""
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
