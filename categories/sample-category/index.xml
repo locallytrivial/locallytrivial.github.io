@@ -1,6 +1,0 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Sample Category - Category - Locally Trivial</title><link>http://locallytrivial.com/categories/sample-category/</link><description>Sample Category - Category - Locally Trivial</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 23 Oct 2021 01:55:50 -0400</lastBuildDate><atom:link href="http://locallytrivial.com/categories/sample-category/" rel="self" type="application/rss+xml"/><item><title>My First Post</title><link>http://locallytrivial.com/posts/my-first-post/</link><pubDate>Sat, 23 Oct 2021 01:55:50 -0400</pubDate><author>Author</author><guid>http://locallytrivial.com/posts/my-first-post/</guid><description>Some content for the post
-Sample Header abc testing
-Subheader second header
-print(&amp;#39;sample code&amp;#39;) Subheader 2 Sample math $n=4$
-And display style
-$$\int_M d\omega = \int_{\partial M} d\omega$$</description></item></channel></rss>

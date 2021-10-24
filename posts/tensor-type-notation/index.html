@@ -1,0 +1,241 @@
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="noodp">
+<meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
+<title>Tensor Type Notation - Jim W. Kennington</title><meta name=Description content><meta property="og:title" content="Tensor Type Notation">
+<meta property="og:description" content="What does type (r, s) mean? I&rsquo;d like to discuss the notation of the tensor type, commonly denoted $(r, s)$ as it relates to the tensor product. Specifically, the ordering of the vector spaces and dual vector spaces involved in the product. The order matters since tensors are typically categorized by the number of vectors and dual vectors they require as arguments. To avoid ambiguity, for a given tensor $T$, I will denote the number of vector arguments as $n_v$ and the number of dual vector arguments as $n_d$.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://locallytrivial.com/posts/tensor-type-notation/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2019-04-23T00:00:00+00:00">
+<meta property="article:modified_time" content="2019-04-23T00:00:00+00:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Tensor Type Notation">
+<meta name=twitter:description content="What does type (r, s) mean? I&rsquo;d like to discuss the notation of the tensor type, commonly denoted $(r, s)$ as it relates to the tensor product. Specifically, the ordering of the vector spaces and dual vector spaces involved in the product. The order matters since tensors are typically categorized by the number of vectors and dual vectors they require as arguments. To avoid ambiguity, for a given tensor $T$, I will denote the number of vector arguments as $n_v$ and the number of dual vector arguments as $n_d$.">
+<meta name=application-name content="Jim W. Kennington">
+<meta name=apple-mobile-web-app-title content="Jim W. Kennington"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=canonical href=http://locallytrivial.com/posts/tensor-type-notation/><link rel=prev href=http://locallytrivial.com/posts/tensor-product-programmer/><link rel=next href=http://locallytrivial.com/posts/chalkboard-erasing/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Tensor Type Notation","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http:\/\/locallytrivial.com\/posts\/tensor-type-notation\/"},"genre":"posts","keywords":"Math, Algebra, Tensors","wordcount":1025,"url":"http:\/\/locallytrivial.com\/posts\/tensor-type-notation\/","datePublished":"2019-04-23T00:00:00+00:00","dateModified":"2019-04-23T00:00:00+00:00","publisher":{"@type":"Organization","name":"Jim Kennington"},"author":{"@type":"Person","name":"Jim Kennington"},"description":""}</script></head>
+<body header-desktop header-mobile><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':''==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:''==='dark')&&document.body.setAttribute('theme','dark')</script>
+<div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title="Jim W. Kennington">Jim W. Kennington</a>
+</div>
+<div class=menu>
+<div class=menu-inner><a class=menu-item href=/about/> About </a><a class=menu-item href=/resources/> Resources </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<input type=text placeholder="Search titles or contents..." id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-desktop>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw"></i>
+</a>
+</div>
+</div>
+</div>
+</header><header class=mobile id=header-mobile>
+<div class=header-container>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title="Jim W. Kennington">Jim W. Kennington</a>
+</div>
+<div class=menu-toggle id=menu-toggle-mobile>
+<span></span><span></span><span></span>
+</div>
+</div>
+<div class=menu id=menu-mobile><div class=search-wrapper>
+<div class="search mobile" id=search-mobile>
+<input type=text placeholder="Search titles or contents..." id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-mobile>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</div>
+<a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>
+Cancel
+</a>
+</div><a class=menu-item href=/about/ title>About</a><a class=menu-item href=/resources/ title>Resources</a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw"></i>
+</a></div>
+</div>
+</header>
+<div class="search-dropdown desktop">
+<div id=search-dropdown-desktop></div>
+</div>
+<div class="search-dropdown mobile">
+<div id=search-dropdown-mobile></div>
+</div>
+<main class=main>
+<div class=container><div class=toc id=toc-auto>
+<h2 class=toc-title>Contents</h2>
+<div class=toc-content id=toc-content-auto></div>
+</div><article class="page single"><h1 class="single-title animated flipInX">Tensor Type Notation</h1><div class=post-meta>
+<div class=post-meta-line><span class=post-author><a href=about title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>Jim Kennington</a></span>&nbsp;<span class=post-category>included in <a href=/categories/math/><i class="far fa-folder fa-fw"></i>Math</a></span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2019-04-23>2019-04-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1025 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
+</div><div class="details toc" id=toc-static kept>
+<div class="details-summary toc-title">
+<span>Contents</span>
+<span><i class="details-icon fas fa-angle-right"></i></span>
+</div>
+<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
+<ul>
+<li><a href=#what-does-type-r-s-mean>What does type (r, s) mean?</a>
+<ul>
+<li><a href=#preliminaries>Preliminaries</a></li>
+<li><a href=#conventions>Conventions</a></li>
+<li><a href=#usage-of-conventions>Usage of Conventions</a></li>
+</ul>
+</li>
+<li><a href=#cartesian-vs-tensor-product-notations>Cartesian vs. Tensor Product Notations</a></li>
+<li><a href=#why-is-df-convention-preferred>Why is <em>DF</em> convention preferred?</a>
+<ul>
+<li><a href=#parting-note-on-terminology>Parting note on terminology</a></li>
+</ul>
+</li>
+</ul>
+</nav></div>
+</div><div class=content id=content><h2 id=what-does-type-r-s-mean>What does type (r, s) mean?</h2>
+<p>I&rsquo;d like to discuss the notation of the tensor type, commonly denoted $(r, s)$ as it relates to the tensor product. Specifically,
+the ordering of the vector spaces and dual vector spaces involved in the product. The order matters since tensors are typically
+categorized by the number of vectors and dual vectors they require as arguments. To avoid ambiguity, for a given tensor $T$, I will
+denote the number of vector arguments as $n_v$ and the number of dual vector arguments as $n_d$.</p>
+<h3 id=preliminaries>Preliminaries</h3>
+<p>Before we begin, recall that the dual vector space $V^*$ is defined as the set of linear functionals from $V\rightarrow C$,
+where $C$ is the field over which $V$ is a vector space. Note, the dual space $V^*$ is defined in terms of the vector space $V$.
+For similar reasons, the topic of dual spaces is introduced after the topic of vector spaces - in other words, <strong>epistemologically,
+the dual space follows the vector space</strong>. I only draw attention to this ordering between the vector space and the dual because
+it informs the aesthetic nature of the notation, as we&rsquo;ll see.</p>
+<h3 id=conventions>Conventions</h3>
+<p>The tensor type $(r, s)$ is used to categories tensors based on the number of vectors and dual vectors they consume. Problem is,
+there is a choice to made between the $r=n_v$ or $r=n_d$ conventions - and this choice isn&rsquo;t made consistently. As I mentioned above,
+the epistemological ordering of vectors and dual vectors is unambiguous; dual vectors follow vectors. It therefore seems natural to
+make the first number $r$ equal the number of vector arguments $n_v$. I&rsquo;ll call this convention the <em>vector first</em> convention, or
+&ldquo;VF&rdquo; for short. Similarly, I&rsquo;ll call the opposite convention, of using the number of dual vectors $n_d$ as the first number $r$,
+the <em>dual first</em> convention, or &ldquo;DF&rdquo; for short.</p>
+<h3 id=usage-of-conventions>Usage of Conventions</h3>
+<p>Some sources use the <em>VF</em> convention. <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup> <sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup> More sources use the <em>DF</em> convention.<sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup> <sup id=fnref:4><a href=#fn:4 class=footnote-ref role=doc-noteref>4</a></sup> <sup id=fnref:5><a href=#fn:5 class=footnote-ref role=doc-noteref>5</a></sup> <sup id=fnref:6><a href=#fn:6 class=footnote-ref role=doc-noteref>6</a></sup> <sup id=fnref:7><a href=#fn:7 class=footnote-ref role=doc-noteref>7</a></sup> <sup id=fnref:8><a href=#fn:8 class=footnote-ref role=doc-noteref>8</a></sup> <sup id=fnref:9><a href=#fn:9 class=footnote-ref role=doc-noteref>9</a></sup> <sup id=fnref:10><a href=#fn:10 class=footnote-ref role=doc-noteref>10</a></sup> <sup id=fnref:11><a href=#fn:11 class=footnote-ref role=doc-noteref>11</a></sup> <sup id=fnref:12><a href=#fn:12 class=footnote-ref role=doc-noteref>12</a></sup>
+To explicitly make clear the above conventions, the <em>VF</em> convention
+would define a type $(r, s)$ tensor $T$ as</p>
+<p>$$T: V_1\times \cdot\cdot\cdot \times V_r \times V^*_1 \times \cdot\cdot\cdot \times V^*_s\rightarrow C$$</p>
+<p>where $V_{i}=V$ and $V^*_{i}=V^*$ for all $i$. On the other hand, the *DF* convention would define a type $(r, s)$ tensor $T$ as</p>
+<p>$$T: V^*_1\times \cdot\cdot\cdot \times V^*_r \times V_1 \times \cdot\cdot\cdot \times V_s\rightarrow C$$</p>
+<p>where again $V_{I}=V$ and $V^*_{i}=V^*$ for all $i$.</p>
+<h2 id=cartesian-vs-tensor-product-notations>Cartesian vs. Tensor Product Notations</h2>
+<p>The usage of Cartesian products to define the domain of $T$ is typically used before introducing the tensor product,
+as it is more familiar. In the Cartesian product notation, the <em>VF</em> convention places the vector spaces before the dual
+spaces, and in some sense is &ldquo;aligned&rdquo; with the way in which the subject is taught. When using the tensor product notation,
+however, this is no longer the case!</p>
+<p>Recall the tensor product of two vector spaces $V$ and $W$ is denoted $V\otimes W$ and is the set of all multilinear functions
+from $V^* \times W^* \rightarrow C$. Notice how the usage of the tensor product $\otimes$ essentially replaces vector spaces
+with their duals in the Cartesian notation. This &ldquo;replacement&rdquo; effect combined with only using the spaces $V$ and $V^*$ amounts
+to reversing the order of the input spaces the domain. For example, the <em>VF</em> convention would define a type $(r, s)$ tensor $T$
+using the tensor product notation as $$T: V^*_1\otimes \cdot\cdot\cdot \otimes V^*_r \otimes V_1 \otimes \cdot\cdot\cdot \otimes
+V_s\rightarrow C$$ For good measure, I will also note that the <em>DF</em> convention would define a type $(r, s)$ tensor $T$ using the
+tensor product notation as $$T: V_1\otimes \cdot\cdot\cdot \otimes V_r \otimes V^*_1 \otimes \cdot\cdot\cdot \otimes
+V^*_s\rightarrow C$$ Notice that these definitions are equivalent to the previous definitions using Cartesian product
+notation, but that now the vector spaces are written first in what we called the <em>dual first</em> convention, not the <em>vector first</em>
+convention!</p>
+<h2 id=why-is-df-convention-preferred>Why is <em>DF</em> convention preferred?</h2>
+<p>It seems that the $DF$ convention has wider usage and appeal; naturally I wonder why. Since it feels natural to align the
+notation with the epistemological order, in other words, to write $V$ before $V^*$, then I am forced to conclude that the
+mathematical community, with malice of forethought, prefers to base the definition of a type $(r, s)$ tensor on the tensor
+product notation, rather than the Cartesian notation, since the former requires that $V$ be written before $V^*$. I personally
+have no objection to the choice, as it seems sensible.</p>
+<h3 id=parting-note-on-terminology>Parting note on terminology</h3>
+<p>In the <em>DF</em> convention, the number $r$ is often referred to as the <em>covariant</em> number and the number $s$ is called the
+<em>contravariant</em> number. These terms refer to the number of dual vectors and vectors respectively, since vectors are typically
+considered contravariant. Similar terms refer to <em>lower</em> and <em>upper</em> indices respectively.</p>
+<p>I should note that my exploration of these conventions is limited to differential geometry, relativity, and linear algebra texts.</p>
+<section class=footnotes role=doc-endnotes>
+<hr>
+<ol>
+<li id=fn:1 role=doc-endnote>
+<p>N. Jeevanjee, An Introduction to Tensors and Group Theory for Physicists (Springer Science+Business Media, New York, NY, 2015).&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:2 role=doc-endnote>
+<p>S. Lang, Linear Algebra, 3rd ed (Springer-Verlag, New York, 1987).&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:3 role=doc-endnote>
+<p>L. W. Tu, Differential Geometry: Connections, Curvature, and Characteristic Classes (Springer Science+Business Media, New York, NY, 2017).&#160;<a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:4 role=doc-endnote>
+<p>C. W. Misner, K. S. Thorne, J. A. Wheeler, and D. Kaiser, Gravitation (Princeton University Press, Princeton, N.J, 2017).&#160;<a href=#fnref:4 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:5 role=doc-endnote>
+<p>B. C. Hall, Lie Groups, Lie Algebras, and Representations: An Elementary Introduction, Second edition (Springer, Cham ; New York, 2015).&#160;<a href=#fnref:5 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:6 role=doc-endnote>
+<p>P. Renteln, Manifolds, Tensors, and Forms: An Introduction for Mathematicians and Physicists (Cambridge University Press, Cambridge, UK ; New York, 2014).&#160;<a href=#fnref:6 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:7 role=doc-endnote>
+<p>J. M. Lee, Introduction to Smooth Manifolds, 2nd ed (Springer, New York ; London, 2013).&#160;<a href=#fnref:7 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:8 role=doc-endnote>
+<p>S. Carroll, Spacetime and Geometry: An Introduction to General Relativity, 3rd ed. (Pearson Education, 2013).&#160;<a href=#fnref:8 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:9 role=doc-endnote>
+<p>S. Roman, Advanced Linear Algebra, 3rd ed (Springer, New York, 2007).&#160;<a href=#fnref:9 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:10 role=doc-endnote>
+<p>A. Das, Tensors: The Mathematics of Relativity Theory and Continuum Mechanics (Springer, New York, 2007).&#160;<a href=#fnref:10 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:11 role=doc-endnote>
+<p>E. Poisson, A Relativist’s Toolkit: The Mathematics of Black-Hole Mechanics (Cambridge University Press, Cambridge, UK ; New York, 2004).&#160;<a href=#fnref:11 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:12 role=doc-endnote>
+<p>M. Spivak, A Comprehensive Introduction to Differential Geometry, 3rd ed (Publish or Perish, Inc, Houston, Tex, 1999).&#160;<a href=#fnref:12 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+</div><div class=post-footer id=post-footer>
+<div class=post-info>
+<div class=post-info-line>
+<div class=post-info-mod>
+<span>Updated on 2019-04-23</span>
+</div>
+<div class=post-info-license></div>
+</div>
+<div class=post-info-line>
+<div class=post-info-md></div>
+<div class=post-info-share>
+<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=http://locallytrivial.com/posts/tensor-type-notation/ data-title="Tensor Type Notation" data-via="map[id:LocallyTrivial weight:2]" data-hashtags=Math,Algebra,Tensors><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Hacker News" data-sharer=hackernews data-url=http://locallytrivial.com/posts/tensor-type-notation/ data-title="Tensor Type Notation"><i class="fab fa-hacker-news fa-fw"></i></a><a href=javascript:void(0); title="Share on Reddit" data-sharer=reddit data-url=http://locallytrivial.com/posts/tensor-type-notation/><i class="fab fa-reddit fa-fw"></i></a></span>
+</div>
+</div>
+</div>
+<div class=post-info-more>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/math/>Math</a>,&nbsp;<a href=/tags/algebra/>Algebra</a>,&nbsp;<a href=/tags/tensors/>Tensors</a></section>
+<section>
+<span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span>
+</section>
+</div>
+<div class=post-nav><a href=/posts/tensor-product-programmer/ class=prev rel=prev title="Tensor Product for Programmers"><i class="fas fa-angle-left fa-fw"></i>Tensor Product for Programmers</a>
+<a href=/posts/chalkboard-erasing/ class=next rel=next title="Erasing Efficiently">Erasing Efficiently<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id=comments><div id=disqus_thread class=comment></div><noscript>
+Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.
+</noscript></div></article></div>
+</main><footer class=footer>
+<div class=footer-container><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=about target=_blank>Jim Kennington</a></span></div>
+</div>
+</footer></div>
+<div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top">
+<i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title="View Comments">
+<i class="fas fa-comment fa-fw"></i>
+</a>
+</div><link rel=stylesheet href=/lib/katex/katex.min.css><link rel=stylesheet href=/lib/katex/copy-tex.min.css><script type=text/javascript src=https://locally-trivial.disqus.com/embed.js defer></script><script type=text/javascript src=/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=/lib/lunr/lunr.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=/lib/sharer/sharer.min.js></script><script type=text/javascript src=/lib/katex/katex.min.js></script><script type=text/javascript src=/lib/katex/auto-render.min.js></script><script type=text/javascript src=/lib/katex/copy-tex.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:10},comment:{},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script type=text/javascript src=/js/theme.min.js></script><script type=text/javascript>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-M7DMHENCW1',{anonymize_ip:!0})</script><script type=text/javascript src="https://www.googletagmanager.com/gtag/js?id=G-M7DMHENCW1" async></script></body>
+</html>

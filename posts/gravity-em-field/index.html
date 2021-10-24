@@ -1,0 +1,179 @@
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="noodp">
+<meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
+<title>Gravity of a Photon - Jim W. Kennington</title><meta name=Description content><meta property="og:title" content="Gravity of a Photon">
+<meta property="og:description" content="A friend, who focuses primarily on experimental particle physics, recently asked me an interesting question about gravity. Specifically, he asked how the presence of electromagnetic fields impacts the gravitational field. Applying some modern-physics reasoning, he proposed that electromagnetic fields should exert gravitational influence because photons have momentum that can be viewed as mass in special relativity, and should interact gravitationally. I found this idea interesting, if a bit interpretive, and answered with the precise formulation of the impact of the electromagnetic field on the curvature tensor.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://locallytrivial.com/posts/gravity-em-field/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2019-06-15T00:00:00+00:00">
+<meta property="article:modified_time" content="2019-06-15T00:00:00+00:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Gravity of a Photon">
+<meta name=twitter:description content="A friend, who focuses primarily on experimental particle physics, recently asked me an interesting question about gravity. Specifically, he asked how the presence of electromagnetic fields impacts the gravitational field. Applying some modern-physics reasoning, he proposed that electromagnetic fields should exert gravitational influence because photons have momentum that can be viewed as mass in special relativity, and should interact gravitationally. I found this idea interesting, if a bit interpretive, and answered with the precise formulation of the impact of the electromagnetic field on the curvature tensor.">
+<meta name=application-name content="Jim W. Kennington">
+<meta name=apple-mobile-web-app-title content="Jim W. Kennington"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=canonical href=http://locallytrivial.com/posts/gravity-em-field/><link rel=prev href=http://locallytrivial.com/posts/chalkboard-erasing/><link rel=next href=http://locallytrivial.com/posts/book-jeevanjee/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Gravity of a Photon","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http:\/\/locallytrivial.com\/posts\/gravity-em-field\/"},"genre":"posts","keywords":"Gravity","wordcount":482,"url":"http:\/\/locallytrivial.com\/posts\/gravity-em-field\/","datePublished":"2019-06-15T00:00:00+00:00","dateModified":"2019-06-15T00:00:00+00:00","publisher":{"@type":"Organization","name":"Jim Kennington"},"author":{"@type":"Person","name":"Jim Kennington"},"description":""}</script></head>
+<body header-desktop header-mobile><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':''==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:''==='dark')&&document.body.setAttribute('theme','dark')</script>
+<div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title="Jim W. Kennington">Jim W. Kennington</a>
+</div>
+<div class=menu>
+<div class=menu-inner><a class=menu-item href=/about/> About </a><a class=menu-item href=/resources/> Resources </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<input type=text placeholder="Search titles or contents..." id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-desktop>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw"></i>
+</a>
+</div>
+</div>
+</div>
+</header><header class=mobile id=header-mobile>
+<div class=header-container>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title="Jim W. Kennington">Jim W. Kennington</a>
+</div>
+<div class=menu-toggle id=menu-toggle-mobile>
+<span></span><span></span><span></span>
+</div>
+</div>
+<div class=menu id=menu-mobile><div class=search-wrapper>
+<div class="search mobile" id=search-mobile>
+<input type=text placeholder="Search titles or contents..." id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-mobile>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</div>
+<a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>
+Cancel
+</a>
+</div><a class=menu-item href=/about/ title>About</a><a class=menu-item href=/resources/ title>Resources</a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw"></i>
+</a></div>
+</div>
+</header>
+<div class="search-dropdown desktop">
+<div id=search-dropdown-desktop></div>
+</div>
+<div class="search-dropdown mobile">
+<div id=search-dropdown-mobile></div>
+</div>
+<main class=main>
+<div class=container><div class=toc id=toc-auto>
+<h2 class=toc-title>Contents</h2>
+<div class=toc-content id=toc-content-auto></div>
+</div><article class="page single"><h1 class="single-title animated flipInX">Gravity of a Photon</h1><div class=post-meta>
+<div class=post-meta-line><span class=post-author><a href=about title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>Jim Kennington</a></span>&nbsp;<span class=post-category>included in <a href=/categories/physics/><i class="far fa-folder fa-fw"></i>Physics</a></span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2019-06-15>2019-06-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;482 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
+</div><div class="details toc" id=toc-static kept>
+<div class="details-summary toc-title">
+<span>Contents</span>
+<span><i class="details-icon fas fa-angle-right"></i></span>
+</div>
+<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents></nav></div>
+</div><div class=content id=content><p>A friend, who focuses primarily on experimental particle physics, recently asked me an interesting question about gravity.
+Specifically, he asked how the presence of electromagnetic fields impacts the gravitational field. Applying some modern-physics
+reasoning, he proposed that electromagnetic fields should exert gravitational influence because photons have momentum that
+can be viewed as mass in special relativity, and should interact gravitationally. I found this idea interesting, if a bit
+interpretive, and answered with the precise formulation of the impact of the electromagnetic field on the curvature tensor.
+He suggested I post this response in case anyone else finds it interesting; to colleagues working in classical or quantum gravity
+this might appear a bit pedestrian.</p>
+<p>The Einstein field equation (below) is arguably the most famous equation in gravity theory, second perhaps to Newton&rsquo;s inverse-square
+law, and despite its seemingly-complex tensorial notation, expresses a beautifully elegant and simple concept. For those less
+familiar, Einstein&rsquo;s general relativity reformulates gravitational interaction as a manifestation of the curvature of spacetime.
+Specifically, Einstein&rsquo;s formulation makes concrete the relationship between the curvature of spacetime and the mass-energy content
+of spacetime <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>.</p>
+<p>$$R_{\mu\nu} - \frac{1}{2}Rg_{\mu\nu} + \Lambda g_{\mu\nu} = \frac{8\pi G}{c^4}T_{\mu\nu} \quad\quad\quad(1)$$</p>
+<p>In the above equation (Einstein equation), the left-hand side contains terms related to curvature of spacetime, like the Ricci
+tensor $R_{\mu\nu}$ and the metric $g_{\mu\nu}$. The right-hand side contains terms related to energy and matter content,
+specifically $T_{\mu\nu}$. This latter term, called the _stress-energy_ tensor, is where the connection to the electromagnetic
+field appears.</p>
+<p>Various forms of matter contribute differently to the stress-energy tensor, and electromagnetic energy is no exception. The
+equation below outlines the way in which the electromagnetic field contributes to the stress energy density of a particular
+area of spacetime.</p>
+<p>$$T^{\mu\nu} = \frac{1}{\mu_0}\left[F^{\mu\alpha}F^{\nu}{}<em>{\alpha} - \frac{1}{4} g^{\mu\nu}F</em>{\alpha\beta}F^{\alpha\beta} \right] \quad\quad\quad(2)$$</p>
+<p>Where $F_{\mu\nu}$ is the electromagnetic field tensor, also called the *Faraday* tensor, where $\mathbf{E} = E^i e_i$ and
+$\mathbf{B} = B^i e_i$ are the familiar electric and magnetic vector fields. Note that in the below, I adopt the $c=1$
+convention for convenience <sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>.</p>
+<p>$$F^{\mu\nu} =
+\begin{bmatrix}
+0 & -E^x & -E^y & -E^z \<br>
+E^x & 0 & -B^z & B^y \<br>
+E^y & B^z & 0 & -B^x \<br>
+E^z & -B^y & B^x & 0 \<br>
+\end{bmatrix} \quad\quad\quad(3)$$</p>
+<p>Thus, equation (2) tells us how the electromagnetic fields we are familiar with, namely $\mathbf{E}$ and $\mathbf{B}$,
+contribute to the energy density of a region of spacetime. Then equation (1) builds on that result to relate the
+electromagnetic fields to the curvature of spacetime, which as Einstein revealed, manifests as the gravitational field. So
+yes, the conventional electromagnetic fields, and the photons that constitute them, impact the gravitational field despite
+having no rest mass!</p>
+<section class=footnotes role=doc-endnotes>
+<hr>
+<ol>
+<li id=fn:1 role=doc-endnote>
+<p>C. W. Misner, K. S. Thorne, J. A. Wheeler, and D. Kaiser, Gravitation (Princeton University Press, Princeton, N.J, 2017).&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:2 role=doc-endnote>
+<p>S. Carroll, Spacetime and Geometry: An Introduction to General Relativity, 3rd ed. (Pearson Education, 2013).&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+</div><div class=post-footer id=post-footer>
+<div class=post-info>
+<div class=post-info-line>
+<div class=post-info-mod>
+<span>Updated on 2019-06-15</span>
+</div>
+<div class=post-info-license></div>
+</div>
+<div class=post-info-line>
+<div class=post-info-md></div>
+<div class=post-info-share>
+<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=http://locallytrivial.com/posts/gravity-em-field/ data-title="Gravity of a Photon" data-via="map[id:LocallyTrivial weight:2]" data-hashtags=Gravity><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Hacker News" data-sharer=hackernews data-url=http://locallytrivial.com/posts/gravity-em-field/ data-title="Gravity of a Photon"><i class="fab fa-hacker-news fa-fw"></i></a><a href=javascript:void(0); title="Share on Reddit" data-sharer=reddit data-url=http://locallytrivial.com/posts/gravity-em-field/><i class="fab fa-reddit fa-fw"></i></a></span>
+</div>
+</div>
+</div>
+<div class=post-info-more>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/gravity/>Gravity</a></section>
+<section>
+<span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span>
+</section>
+</div>
+<div class=post-nav><a href=/posts/chalkboard-erasing/ class=prev rel=prev title="Erasing Efficiently"><i class="fas fa-angle-left fa-fw"></i>Erasing Efficiently</a>
+<a href=/posts/book-jeevanjee/ class=next rel=next title="Book Review: Tensors and Group Theory for Physicists (Jeevanjee)">Book Review: Tensors and Group Theory for Physicists (Jeevanjee)<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id=comments><div id=disqus_thread class=comment></div><noscript>
+Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.
+</noscript></div></article></div>
+</main><footer class=footer>
+<div class=footer-container><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=about target=_blank>Jim Kennington</a></span></div>
+</div>
+</footer></div>
+<div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top">
+<i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title="View Comments">
+<i class="fas fa-comment fa-fw"></i>
+</a>
+</div><link rel=stylesheet href=/lib/katex/katex.min.css><link rel=stylesheet href=/lib/katex/copy-tex.min.css><script type=text/javascript src=https://locally-trivial.disqus.com/embed.js defer></script><script type=text/javascript src=/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=/lib/lunr/lunr.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=/lib/sharer/sharer.min.js></script><script type=text/javascript src=/lib/katex/katex.min.js></script><script type=text/javascript src=/lib/katex/auto-render.min.js></script><script type=text/javascript src=/lib/katex/copy-tex.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:10},comment:{},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script type=text/javascript src=/js/theme.min.js></script><script type=text/javascript>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-M7DMHENCW1',{anonymize_ip:!0})</script><script type=text/javascript src="https://www.googletagmanager.com/gtag/js?id=G-M7DMHENCW1" async></script></body>
+</html>

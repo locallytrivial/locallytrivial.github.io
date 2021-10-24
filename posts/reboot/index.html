@@ -1,0 +1,151 @@
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="noodp">
+<meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
+<title>Blog Reboot - Jim W. Kennington</title><meta name=Description content><meta property="og:title" content="Blog Reboot">
+<meta property="og:description" content="After completing the first year of graduate school (post on the industry $\to$ grad school transition forthcoming), I&rsquo;ve finally got time to reboot the blog, with more focus. I&rsquo;ll be posting on a $\sim$weekly basis about the interesting topics I come across in the course of research, class, and general academic meandering. Renewed areas of focus will include various mathematical, physical, or programming topics, such as:
+ Unravelling bundles (as in fibre bundles) Wormhole solutions in GR and energy conditions Managing environments in Python and developer workflows   Fermi Figures - playful posts about solving various back-of-the-envelope questions Enthralling Theorem - spotlight of an interesting theorem / mathematical fact Found this week - weekly interesting discoveries, clearly and heavily inspired by the famous &ldquo;This week&rsquo;s finds&rdquo; - an asymptote I only hope to approach over time.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://locallytrivial.com/posts/reboot/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-09-12T00:00:00+00:00">
+<meta property="article:modified_time" content="2021-09-12T00:00:00+00:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Blog Reboot">
+<meta name=twitter:description content="After completing the first year of graduate school (post on the industry $\to$ grad school transition forthcoming), I&rsquo;ve finally got time to reboot the blog, with more focus. I&rsquo;ll be posting on a $\sim$weekly basis about the interesting topics I come across in the course of research, class, and general academic meandering. Renewed areas of focus will include various mathematical, physical, or programming topics, such as:
+ Unravelling bundles (as in fibre bundles) Wormhole solutions in GR and energy conditions Managing environments in Python and developer workflows   Fermi Figures - playful posts about solving various back-of-the-envelope questions Enthralling Theorem - spotlight of an interesting theorem / mathematical fact Found this week - weekly interesting discoveries, clearly and heavily inspired by the famous &ldquo;This week&rsquo;s finds&rdquo; - an asymptote I only hope to approach over time.">
+<meta name=application-name content="Jim W. Kennington">
+<meta name=apple-mobile-web-app-title content="Jim W. Kennington"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=canonical href=http://locallytrivial.com/posts/reboot/><link rel=prev href=http://locallytrivial.com/posts/algebra-ladder/><link rel=next href=http://locallytrivial.com/posts/fermi-friday-20210917/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Blog Reboot","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http:\/\/locallytrivial.com\/posts\/reboot\/"},"genre":"posts","keywords":"General","wordcount":150,"url":"http:\/\/locallytrivial.com\/posts\/reboot\/","datePublished":"2021-09-12T00:00:00+00:00","dateModified":"2021-09-12T00:00:00+00:00","publisher":{"@type":"Organization","name":"Jim Kennington"},"author":{"@type":"Person","name":"Jim Kennington"},"description":""}</script></head>
+<body header-desktop header-mobile><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':''==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:''==='dark')&&document.body.setAttribute('theme','dark')</script>
+<div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title="Jim W. Kennington">Jim W. Kennington</a>
+</div>
+<div class=menu>
+<div class=menu-inner><a class=menu-item href=/about/> About </a><a class=menu-item href=/resources/> Resources </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<input type=text placeholder="Search titles or contents..." id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-desktop>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw"></i>
+</a>
+</div>
+</div>
+</div>
+</header><header class=mobile id=header-mobile>
+<div class=header-container>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title="Jim W. Kennington">Jim W. Kennington</a>
+</div>
+<div class=menu-toggle id=menu-toggle-mobile>
+<span></span><span></span><span></span>
+</div>
+</div>
+<div class=menu id=menu-mobile><div class=search-wrapper>
+<div class="search mobile" id=search-mobile>
+<input type=text placeholder="Search titles or contents..." id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-mobile>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</div>
+<a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>
+Cancel
+</a>
+</div><a class=menu-item href=/about/ title>About</a><a class=menu-item href=/resources/ title>Resources</a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw"></i>
+</a></div>
+</div>
+</header>
+<div class="search-dropdown desktop">
+<div id=search-dropdown-desktop></div>
+</div>
+<div class="search-dropdown mobile">
+<div id=search-dropdown-mobile></div>
+</div>
+<main class=main>
+<div class=container><div class=toc id=toc-auto>
+<h2 class=toc-title>Contents</h2>
+<div class=toc-content id=toc-content-auto></div>
+</div><article class="page single"><h1 class="single-title animated flipInX">Blog Reboot</h1><div class=post-meta>
+<div class=post-meta-line><span class=post-author><a href=about title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>Jim Kennington</a></span>&nbsp;<span class=post-category>included in <a href=/categories/misc/><i class="far fa-folder fa-fw"></i>Misc</a></span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-09-12>2021-09-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;150 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
+</div><div class="details toc" id=toc-static kept>
+<div class="details-summary toc-title">
+<span>Contents</span>
+<span><i class="details-icon fas fa-angle-right"></i></span>
+</div>
+<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents></nav></div>
+</div><div class=content id=content><p>After completing the first year of graduate school (post on the industry $\to$ grad school transition forthcoming), I&rsquo;ve
+finally got time to reboot the blog, with more focus. I&rsquo;ll be posting on a $\sim$weekly basis about the interesting topics I come across in the course of research, class, and
+general academic meandering. Renewed areas of focus will include various mathematical, physical, or programming topics,
+such as:</p>
+<ul>
+<li>Unravelling bundles (as in fibre bundles)</li>
+<li>Wormhole solutions in GR and energy conditions</li>
+<li>Managing environments in Python and developer workflows</li>
+</ul>
+<ul>
+<li><em>Fermi Figures</em> - playful posts about solving various back-of-the-envelope questions</li>
+<li><em>Enthralling Theorem</em> - spotlight of an interesting theorem / mathematical fact</li>
+<li><em>Found this week</em> - weekly interesting discoveries, clearly and heavily inspired by the famous
+<a href=https://math.ucr.edu/home/baez/TWF.html target=_blank rel="noopener noreffer">&ldquo;This week&rsquo;s finds&rdquo;</a> - an asymptote I only hope to approach over time.</li>
+</ul>
+<p>Also, the recommended <a href=/texts-physics rel>physics</a> and <a href=/texts-math rel>maths</a> references pages have been
+thoroughly updated (they were quite stale).</p>
+</div><div class=post-footer id=post-footer>
+<div class=post-info>
+<div class=post-info-line>
+<div class=post-info-mod>
+<span>Updated on 2021-09-12</span>
+</div>
+<div class=post-info-license></div>
+</div>
+<div class=post-info-line>
+<div class=post-info-md></div>
+<div class=post-info-share>
+<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=http://locallytrivial.com/posts/reboot/ data-title="Blog Reboot" data-via="map[id:LocallyTrivial weight:2]" data-hashtags=General><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Hacker News" data-sharer=hackernews data-url=http://locallytrivial.com/posts/reboot/ data-title="Blog Reboot"><i class="fab fa-hacker-news fa-fw"></i></a><a href=javascript:void(0); title="Share on Reddit" data-sharer=reddit data-url=http://locallytrivial.com/posts/reboot/><i class="fab fa-reddit fa-fw"></i></a></span>
+</div>
+</div>
+</div>
+<div class=post-info-more>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/general/>General</a></section>
+<section>
+<span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span>
+</section>
+</div>
+<div class=post-nav><a href=/posts/algebra-ladder/ class=prev rel=prev title="Algebra Ladder"><i class="fas fa-angle-left fa-fw"></i>Algebra Ladder</a>
+<a href=/posts/fermi-friday-20210917/ class=next rel=next title="Fermi Friday: A Different Manhattan Project">Fermi Friday: A Different Manhattan Project<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id=comments><div id=disqus_thread class=comment></div><noscript>
+Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.
+</noscript></div></article></div>
+</main><footer class=footer>
+<div class=footer-container><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=about target=_blank>Jim Kennington</a></span></div>
+</div>
+</footer></div>
+<div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top">
+<i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title="View Comments">
+<i class="fas fa-comment fa-fw"></i>
+</a>
+</div><link rel=stylesheet href=/lib/katex/katex.min.css><link rel=stylesheet href=/lib/katex/copy-tex.min.css><script type=text/javascript src=https://locally-trivial.disqus.com/embed.js defer></script><script type=text/javascript src=/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=/lib/lunr/lunr.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=/lib/sharer/sharer.min.js></script><script type=text/javascript src=/lib/katex/katex.min.js></script><script type=text/javascript src=/lib/katex/auto-render.min.js></script><script type=text/javascript src=/lib/katex/copy-tex.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:10},comment:{},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script type=text/javascript src=/js/theme.min.js></script><script type=text/javascript>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-M7DMHENCW1',{anonymize_ip:!0})</script><script type=text/javascript src="https://www.googletagmanager.com/gtag/js?id=G-M7DMHENCW1" async></script></body>
+</html>
