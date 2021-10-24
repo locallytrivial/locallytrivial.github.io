@@ -17,10 +17,6 @@ theme = "LoveIt"
 [menu]
   [[menu.main]]
     identifier = "about"
-    # you can add extra information before the name (HTML format is supported), such as icons
-    pre = ""
-    # you can add extra information after the name (HTML format is supported), such as icons
-    post = ""
     name = "About"
     url = "/about/"
     # title will be shown when you hover on this menu link
