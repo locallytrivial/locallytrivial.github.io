@@ -183,7 +183,7 @@ making this part of the process easy.
 
 ### Sample PR for this Post
 
-As an explicit example, [here]() is the Pull Request for this blog post. If this isn't an exercise in meta-programming
+As an explicit example, [here](https://github.com/locallytrivial/locallytrivial.github.io/pull/7) is the Pull Request for this blog post. If this isn't an exercise in meta-programming
 it certainly borders on it.
 
 
