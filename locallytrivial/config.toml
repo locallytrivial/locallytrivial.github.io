@@ -43,32 +43,57 @@ theme = "FeelIt"
     url = "texts-math"
     weight = 2
 
-# Markup related configuration in Hugo
+# Markup related config in Hugo
 [markup]
-  # Syntax Highlighting (https://gohugo.io/content-management/syntax-highlighting)
+  # Syntax Highlighting
   [markup.highlight]
-    # false is a necessary configuration (https://github.com/dillonzq/LoveIt/issues/158)
+    codeFences = true
+    guessSyntax = true
+    lineNos = true
+    lineNumbersInTable = true
+    # false is a necessary configuration
+    # (https://github.com/khusika/FeelIt/issues/158)
     noClasses = false
+  # Goldmark is from Hugo 0.60 the default library used for Markdown
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      linkify = true
+      strikethrough = true
+      table = true
+      taskList = true
+      typographer = true
+    [markup.goldmark.renderer]
+      # whether to use HTML tags directly in the document
+      unsafe = true
+  # Table Of Contents settings
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 6
 
-# LoveIt Theme Configuration
 [params]
-  # LoveIt theme version
+  # FeelIt theme version
   version = "1.0.X"
-  # LoveIt NEW | 0.2.0 Search config
+  
+  # Search config
   [params.search]
     enable = true
     # type of search engine ("lunr", "algolia")
     type = "lunr"
+    # max index length of the chunked content
+    contentLength = 4000
     # placeholder of the search bar
     placeholder = ""
-    # LoveIt NEW | 0.2.1 max number of results length
+    # max number of results length
     maxResultLength = 10
-    # LoveIt NEW | 0.2.3 snippet length of the result
+    # snippet length of the result
     snippetLength = 30
-    # LoveIt NEW | 0.2.1 HTML tag name of the highlight part in results
+    # HTML tag name of the highlight part in results
     highlightTag = "em"
-    # LoveIt NEW | 0.2.4 whether to use the absolute URL based on the baseURL in search index
+    # whether to use the absolute URL based on the baseURL in search index
     absoluteURL = false
+    
   # Home page config
   [params.home]
     # LoveIt NEW | 0.2.0 amount of RSS pages
@@ -80,56 +105,65 @@ theme = "FeelIt"
       gravatarEmail = ""
       # URL of avatar shown in home page
       avatarURL = "/images/jwk-2021-small.png"
-      # LoveIt CHANGED | 0.2.7 title shown in home page (HTML format is supported)
+      # title shown in home page (HTML format is supported)
       title = ""
       # subtitle shown in home page
-      subtitle = "Physics, Mathematics, and Code"
+      subtitle = "Physics, mathematics, and code."
       # whether to use typeit animation for subtitle
       typeit = true
       # whether to show social links
       social = true
-      # LoveIt NEW | 0.2.0 disclaimer (HTML format is supported)
+      # disclaimer (HTML format is supported)
       disclaimer = ""
     # Home page posts
     [params.home.posts]
       enable = true
       # special amount of posts in each home posts page
       paginate = 6
+      # display image-preview
+      imagePreview = false
+      # replaced with hiddenFromHomePage in params.page
       # default behavior when you don't set "hiddenFromHomePage" in front matter
       defaultHiddenFromHomePage = false
+
   # Social config about the author
   [params.social]
-    [params.social.Patreon]
-      weight = 1
-      id = "locallytrivial"
-    [params.social.Instagram]
-      weight = 3
-      id = "https://www.instagram.com/locallytrivial/"
-    [params.social.Youtubechannel]
-      weight = 4
-      id = "UCCWTz7qwUnlH57Nab1UsYwg"
-    [params.social.GitHub]
-      weight = 5
-      id = "JWKennington"
-    [params.social.Researchgate]
-      weight = 6
-      id = "James-Kennington"
-    [params.social.LinkedIn]
-      weight = 7
-      id = "jameskennington"
-    [params.social.RSS]
-      weight = 0
-      # RSS = true # LoveIt NEW | 0.2.0
-
-[params.math]
-  enable = true
-  copyTex = true
+    Hackernews = "JWKennington"
+    Patreon = "locallytrivial"
+    GitHub = "JWKennington"
+    Researchgate = "James-Kennington"
+    LinkedIn = "jameskennington"
+    Email = "jameswkennington@gmail.com"
+    Reddit = "JWKennington"
+    RSS = true
 
 [params.page]
+
+  # KaTeX mathematical formulas
+  [params.page.math]
+    enable = true
+    # default block delimiter is $$ ... $$ and \\[ ... \\]
+    blockLeftDelimiter = "$$"
+    blockRightDelimiter = "$$"
+    # default inline delimiter is $ ... $ and \\( ... \\)
+    inlineLeftDelimiter = "$"
+    inlineRightDelimiter = "$"
+    # KaTeX extension copy_tex
+    copyTex = true
+
+  # Code config
+  [params.page.code]
+    # whether to show the copy button of the code block
+    copy = true
+    # the maximum number of lines of displayed code by default
+    maxShownLines = 10
+
   [params.page.share]
     enable = true
     HackerNews = true
     Reddit = true
+    Twitter = true
+  
   [params.page.comment]
     enable = true
     # Disqus comment config
@@ -138,6 +172,7 @@ theme = "FeelIt"
       enable = true
       # Disqus shortname to use Disqus in posts
       shortname = "locally-trivial"
+  
   [params.analytics]
     enable = true
     # Google Analytics
@@ -145,6 +180,7 @@ theme = "FeelIt"
       id = "G-M7DMHENCW1"
       # whether to anonymize IP
       anonymizeIP = true
+  
   # Footer config
   [params.footer]
     enable = true
@@ -162,7 +198,7 @@ theme = "FeelIt"
 # Author config
 [author]
   name = "Jim Kennington"
-  email = ""
+  email = "jameswkennington@psu.edu"
   link = "about"
 
 [outputs]
