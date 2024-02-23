@@ -3,49 +3,47 @@
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=robots content="noodp">
-<title>Gravity of a Photon - Jim W. Kennington</title><meta name=Description content="This is my cool site"><meta property="og:title" content="Gravity of a Photon">
+<title>Gravity of a Photon - Jim W. Kennington</title><meta name=description content><meta property="og:title" content="Gravity of a Photon">
 <meta property="og:description" content="A friend, who focuses primarily on experimental particle physics, recently asked me an interesting question about gravity. Specifically, he asked how the presence of electromagnetic fields impacts the gravitational field. Applying some modern-physics reasoning, he proposed that electromagnetic fields should exert gravitational influence because photons have momentum that can be viewed as mass in special relativity, and should interact gravitationally. I found this idea interesting, if a bit interpretive, and answered with the precise formulation of the impact of the electromagnetic field on the curvature tensor.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="http://locallytrivial.com/posts/gravity-em-field/"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2019-06-15T00:00:00+00:00">
-<meta property="article:modified_time" content="2019-06-15T00:00:00+00:00"><meta property="og:site_name" content="My cool site">
+<meta property="article:modified_time" content="2019-06-15T00:00:00+00:00">
 <meta name=twitter:card content="summary">
 <meta name=twitter:title content="Gravity of a Photon">
 <meta name=twitter:description content="A friend, who focuses primarily on experimental particle physics, recently asked me an interesting question about gravity. Specifically, he asked how the presence of electromagnetic fields impacts the gravitational field. Applying some modern-physics reasoning, he proposed that electromagnetic fields should exert gravitational influence because photons have momentum that can be viewed as mass in special relativity, and should interact gravitationally. I found this idea interesting, if a bit interpretive, and answered with the precise formulation of the impact of the electromagnetic field on the curvature tensor.">
-<meta name=application-name content="My cool site">
-<meta name=apple-mobile-web-app-title content="My cool site"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
+<meta name=application-name content="Jim W. Kennington">
+<meta name=apple-mobile-web-app-title content="Jim W. Kennington"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=http://locallytrivial.com/posts/gravity-em-field/><link rel=prev href=http://locallytrivial.com/posts/chalkboard-erasing/><link rel=next href=http://locallytrivial.com/posts/book-jeevanjee/><link rel=stylesheet href=/css/style.min.css><link rel=preload href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css as=style onload="this.onload=null,this.rel='stylesheet'">
-<noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css></noscript><link rel=preload href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css as=style onload="this.onload=null,this.rel='stylesheet'">
-<noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Gravity of a Photon","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http:\/\/locallytrivial.com\/posts\/gravity-em-field\/"},"genre":"posts","keywords":"Gravity","wordcount":482,"url":"http:\/\/locallytrivial.com\/posts\/gravity-em-field\/","datePublished":"2019-06-15T00:00:00+00:00","dateModified":"2019-06-15T00:00:00+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Jim Kennington"},"description":""}</script></head>
-<body data-header-desktop=fixed data-header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=canonical href=http://locallytrivial.com/posts/gravity-em-field/><link rel=prev href=http://locallytrivial.com/posts/chalkboard-erasing/><link rel=next href=http://locallytrivial.com/posts/book-jeevanjee/><link rel=stylesheet href=/css/page.min.css><link rel=stylesheet href=/css/home.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Gravity of a Photon","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http:\/\/locallytrivial.com\/posts\/gravity-em-field\/"},"genre":"posts","keywords":"Gravity","wordcount":478,"url":"http:\/\/locallytrivial.com\/posts\/gravity-em-field\/","datePublished":"2019-06-15T00:00:00+00:00","dateModified":"2019-06-15T00:00:00+00:00","publisher":{"@type":"Organization","name":"Jim Kennington"},"author":{"@type":"Person","name":"Jim Kennington"},"description":""}</script></head><body data-header-desktop data-header-mobile><script>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':''==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:''==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
 <div class=header-title>
-<a href=/ title="Jim W. Kennington">My cool site</a>
+<a href=/ title="Jim W. Kennington">Jim W. Kennington</a>
 </div>
 <div class=menu>
 <div class=menu-inner><a class=menu-item href=/about/> About </a><a class=menu-item href=/resources/> Resources </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
 <input type=text placeholder="Search titles or contents..." id=search-input-desktop>
-<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search>
-<i class="fas fa-search fa-fw" aria-hidden=true></i>
+<a href=# class="search-button search-toggle" id=search-toggle-desktop title=Search>
+<i class="fa-solid fa-search fa-fw"></i>
 </a>
-<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear>
-<i class="fas fa-times-circle fa-fw" aria-hidden=true></i>
+<a href=# class="search-button search-clear" id=search-clear-desktop title=Clear>
+<i class="fa-solid fa-times-circle fa-fw"></i>
 </a>
 <span class="search-button search-loading" id=search-loading-desktop>
-<i class="fas fa-spinner fa-fw fa-spin" aria-hidden=true></i>
+<i class="fa-solid fa-spinner fa-fw fa-spin"></i>
 </span>
-</span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
-<i class="fas fa-adjust fa-fw" aria-hidden=true></i>
-</a></div>
+</span><a href=# onclick=return!1 class="menu-item theme-switch" title="Switch Theme">
+<i class="fa-solid fa-adjust fa-fw"></i>
+</a>
+</div>
 </div>
 </div>
 </header><header class=mobile id=header-mobile>
 <div class=header-container>
 <div class=header-wrapper>
 <div class=header-title>
-<a href=/ title="Jim W. Kennington">My cool site</a>
+<a href=/ title="Jim W. Kennington">Jim W. Kennington</a>
 </div>
 <div class=menu-toggle id=menu-toggle-mobile>
 <span></span><span></span><span></span>
@@ -54,22 +52,23 @@
 <div class=menu id=menu-mobile><div class=search-wrapper>
 <div class="search mobile" id=search-mobile>
 <input type=text placeholder="Search titles or contents..." id=search-input-mobile>
-<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search>
-<i class="fas fa-search fa-fw" aria-hidden=true></i>
+<a href=# class="search-button search-toggle" id=search-toggle-mobile title=Search>
+<i class="fa-solid fa-search fa-fw"></i>
 </a>
-<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear>
-<i class="fas fa-times-circle fa-fw" aria-hidden=true></i>
+<a href=# class="search-button search-clear" id=search-clear-mobile title=Clear>
+<i class="fa-solid fa-times-circle fa-fw"></i>
 </a>
 <span class="search-button search-loading" id=search-loading-mobile>
-<i class="fas fa-spinner fa-fw fa-spin" aria-hidden=true></i>
+<i class="fa-solid fa-spinner fa-fw fa-spin"></i>
 </span>
 </div>
-<a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>
+<a href=# class=search-cancel id=search-cancel-mobile>
 Cancel
 </a>
-</div><a class=menu-item href=/about/ title>About</a><a class=menu-item href=/resources/ title>Resources</a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
-<i class="fas fa-adjust fa-fw" aria-hidden=true></i>
-</a></div>
+</div><a class=menu-item href=/about/ title>About</a><a class=menu-item href=/resources/ title>Resources</a><div class=menu-item><a href=# onclick=return!1 class=theme-switch title="Switch Theme">
+<i class="fa-solid fa-adjust fa-fw"></i>
+</a>
+</div></div>
 </div>
 </header><div class="search-dropdown desktop">
 <div id=search-dropdown-desktop></div>
@@ -80,14 +79,15 @@ Cancel
 <div class=container><div class=toc id=toc-auto>
 <h2 class=toc-title>Contents</h2>
 <div class=toc-content id=toc-content-auto></div>
-</div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Gravity of a Photon</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=about title=Author rel=author class=author><i class="fas fa-user-circle fa-fw" aria-hidden=true></i>Jim Kennington</a></span>&nbsp;<span class=post-category>included in <a href=/categories/physics/><i class="far fa-folder fa-fw" aria-hidden=true></i>Physics</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw" aria-hidden=true></i>&nbsp;<time datetime=2019-06-15>2019-06-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden=true></i>&nbsp;482 words&nbsp;
-<i class="far fa-clock fa-fw" aria-hidden=true></i>&nbsp;3 minutes&nbsp;</div>
-</div><div class="details toc" id=toc-static data-kept>
+</div><article class="page single" data-toc=disable><div class=single-card><h2 class="single-title animated flipInX">Gravity of a Photon</h2><div class=post-meta>
+<div class=post-meta-line><span class=post-author><a href=about title=Author rel=" author" class=author><i class="fa-solid fa-user-circle fa-fw"></i>Jim Kennington</a></span>&nbsp;<span class=post-category>published in <a href=/categories/physics/><i class="fa-regular fa-folder fa-fw"></i>Physics</a></span></div>
+<div class=post-meta-line><span><i class="fa-regular fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2019-06-15>2019-06-15</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw"></i>&nbsp;478 words</span>&nbsp;
+<span><i class="fa-regular fa-clock fa-fw"></i>&nbsp;3 minutes</span>&nbsp;</div>
+</div>
+<hr><div class="details toc" id=toc-static data-kept>
 <div class="details-summary toc-title">
 <span>Contents</span>
-<span><i class="details-icon fas fa-angle-right" aria-hidden=true></i></span>
+<span><i class="details-icon fa-solid fa-angle-right"></i></span>
 </div>
 <div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents></nav></div>
 </div><div class=content id=content><p>A friend, who focuses primarily on experimental particle physics, recently asked me an interesting question about gravity.
@@ -102,7 +102,7 @@ law, and despite its seemingly-complex tensorial notation, expresses a beautiful
 familiar, Einstein&rsquo;s general relativity reformulates gravitational interaction as a manifestation of the curvature of spacetime.
 Specifically, Einstein&rsquo;s formulation makes concrete the relationship between the curvature of spacetime and the mass-energy content
 of spacetime <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>.</p>
-<p>$$R_{\mu\nu} - \frac{1}{2}Rg_{\mu\nu} + \Lambda g_{\mu\nu} = \frac{8\pi G}{c^4}T_{\mu\nu} \quad\quad\quad(1)$$</p>
+<p>$$ R_{\mu\nu} - \frac{1}{2}Rg_{\mu\nu} + \Lambda g_{\mu\nu} = \frac{8\pi G}{c^4}T_{\mu\nu} \quad\quad\quad(1) $$</p>
 <p>In the above equation (Einstein equation), the left-hand side contains terms related to curvature of spacetime, like the Ricci
 tensor $R_{\mu\nu}$ and the metric $g_{\mu\nu}$. The right-hand side contains terms related to energy and matter content,
 specifically $T_{\mu\nu}$. This latter term, called the _stress-energy_ tensor, is where the connection to the electromagnetic
@@ -110,23 +110,22 @@ field appears.</p>
 <p>Various forms of matter contribute differently to the stress-energy tensor, and electromagnetic energy is no exception. The
 equation below outlines the way in which the electromagnetic field contributes to the stress energy density of a particular
 area of spacetime.</p>
-<p>$$T^{\mu\nu} = \frac{1}{\mu_0}\left[F^{\mu\alpha}F^{\nu}{}<em>{\alpha} - \frac{1}{4} g^{\mu\nu}F</em>{\alpha\beta}F^{\alpha\beta} \right] \quad\quad\quad(2)$$</p>
+<p>$$T^{\mu\nu}=\frac{1}{\mu_0}[F^{\mu\alpha}F^{\nu}{}_{\alpha}-\frac{1}{4}g^{\mu\nu} F_{\alpha\beta}F^{\alpha\beta}]\quad\quad\quad(2)$$</p>
 <p>Where $F_{\mu\nu}$ is the electromagnetic field tensor, also called the *Faraday* tensor, where $\mathbf{E} = E^i e_i$ and
 $\mathbf{B} = B^i e_i$ are the familiar electric and magnetic vector fields. Note that in the below, I adopt the $c=1$
 convention for convenience <sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>.</p>
-<p>$$F^{\mu\nu} =
-\begin{bmatrix}
-0 & -E^x & -E^y & -E^z \<br>
-E^x & 0 & -B^z & B^y \<br>
-E^y & B^z & 0 & -B^x \<br>
-E^z & -B^y & B^x & 0 \<br>
+<p>$$F^{\mu\nu} = \begin{bmatrix}
+0 & -E^x & -E^y & -E^z \\<br>
+E^x & 0 & -B^z & B^y \\<br>
+E^y & B^z & 0 & -B^x \\<br>
+E^z & -B^y & B^x & 0 \\<br>
 \end{bmatrix} \quad\quad\quad(3)$$</p>
 <p>Thus, equation (2) tells us how the electromagnetic fields we are familiar with, namely $\mathbf{E}$ and $\mathbf{B}$,
 contribute to the energy density of a region of spacetime. Then equation (1) builds on that result to relate the
 electromagnetic fields to the curvature of spacetime, which as Einstein revealed, manifests as the gravitational field. So
 yes, the conventional electromagnetic fields, and the photons that constitute them, impact the gravitational field despite
 having no rest mass!</p>
-<section class=footnotes role=doc-endnotes>
+<div class=footnotes role=doc-endnotes>
 <hr>
 <ol>
 <li id=fn:1 role=doc-endnote>
@@ -136,40 +135,26 @@ having no rest mass!</p>
 <p>S. Carroll, Spacetime and Geometry: An Introduction to General Relativity, 3rd ed. (Pearson Education, 2013).&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>
+</div>
 </div><div class=post-footer id=post-footer>
-<div class=post-info>
-<div class=post-info-line>
-<div class=post-info-mod>
+<div class=post-info><div class=post-info-tag><span><a href=/tags/gravity/>Gravity</a>
+</span></div><div class=post-info-line><div class=post-info-mod>
 <span>Updated on 2019-06-15</span>
-</div></div>
-<div class=post-info-line>
-<div class=post-info-md></div>
-<div class=post-info-share>
-<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=http://locallytrivial.com/posts/gravity-em-field/ data-title="Gravity of a Photon" data-via="map[id:LocallyTrivial weight:2]" data-hashtags=Gravity><i class="fab fa-twitter fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=http://locallytrivial.com/posts/gravity-em-field/ data-hashtag=Gravity><i class="fab fa-facebook-square fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="Share on Hacker News" data-sharer=hackernews data-url=http://locallytrivial.com/posts/gravity-em-field/ data-title="Gravity of a Photon"><i class="fab fa-hacker-news fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="Share on Reddit" data-sharer=reddit data-url=http://locallytrivial.com/posts/gravity-em-field/><i class="fab fa-reddit fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=http://locallytrivial.com/posts/gravity-em-field/ data-title="Gravity of a Photon"><i data-svg-src=https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg aria-hidden=true></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=http://locallytrivial.com/posts/gravity-em-field/ data-title="Gravity of a Photon"><i class="fab fa-weibo fa-fw" aria-hidden=true></i></a></span>
-</div>
-</div>
-</div>
-<div class=post-info-more>
-<section class=post-tags><i class="fas fa-tags fa-fw" aria-hidden=true></i>&nbsp;<a href=/tags/gravity/>Gravity</a></section>
-<section>
-<span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span>
-</section>
-</div>
-<div class=post-nav><a href=/posts/chalkboard-erasing/ class=prev rel=prev title="Erasing Efficiently"><i class="fas fa-angle-left fa-fw" aria-hidden=true></i>Erasing Efficiently</a>
-<a href=/posts/book-jeevanjee/ class=next rel=next title="Book Review: Tensors and Group Theory for Physicists (Jeevanjee)">Book Review: Tensors and Group Theory for Physicists (Jeevanjee)<i class="fas fa-angle-right fa-fw" aria-hidden=true></i></a></div>
-</div>
-<div id=comments><div id=disqus_thread class=comment></div><noscript>
+</div><div class=post-info-mod></div>
+</div><div class=post-info-share>
+<span><a href=# onclick=return!1 title="Share on Twitter" data-sharer=twitter data-url=http://locallytrivial.com/posts/gravity-em-field/ data-title="Gravity of a Photon" data-hashtags=Gravity><i class="fa-brands fa-square-x-twitter fa-fw"></i></a><a href=# onclick=return!1 title="Share on Hacker News" data-sharer=hackernews data-url=http://locallytrivial.com/posts/gravity-em-field/ data-title="Gravity of a Photon"><i class="fa-brands fa-hacker-news fa-fw"></i></a><a href=# onclick=return!1 title="Share on Reddit" data-sharer=reddit data-url=http://locallytrivial.com/posts/gravity-em-field/><i class="fa-brands fa-reddit fa-fw"></i></a></span>
+</div></div><div class=post-nav><a href=/posts/chalkboard-erasing/ class=prev rel=prev title="Erasing Efficiently"><i class="fa-solid fa-angle-left fa-fw"></i>Previous Post</a>
+<a href=/posts/book-jeevanjee/ class=next rel=next title="Book Review: Tensors and Group Theory for Physicists (Jeevanjee)">Next Post<i class="fa-solid fa-angle-right fa-fw"></i></a></div></div>
+</div><div id=comments class=single-card><div id=disqus_thread></div><noscript>
 Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.
 </noscript></div></article></div>
-</main><footer class=footer>
-<div class=footer-container><div class=footer-line itemscope itemtype=http://schema.org/CreativeWork><i class="far fa-copyright fa-fw" aria-hidden=true></i><span itemprop=copyrightYear>2021 - 2024</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=about target=_blank>Jim Kennington</a></span></div>
+</main>
+<footer class=footer><div class=footer-container><div class=footer-line itemscope itemtype=http://schema.org/CreativeWork><i class="fa-regular fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021 - 2024</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=about>Jim Kennington</a></span></div>
 </div>
-</footer></div>
+</footer>
+</div>
 <div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top">
-<i class="fas fa-arrow-up fa-fw" aria-hidden=true></i>
+<i class="fa-solid fa-chevron-up fa-fw"></i>
 </a><a href=# id=view-comments class=fixed-button title="View Comments">
-<i class="fas fa-comment fa-fw" aria-hidden=true></i>
-</a>
-</div><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css><script type=text/javascript src=https://locally-trivial.disqus.com/embed.js defer></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:50},comment:{},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!0,left:"\\begin{equation}",right:"\\end{equation}"},{display:!0,left:"\\begin{equation*}",right:"\\end{equation*}"},{display:!0,left:"\\begin{align}",right:"\\end{align}"},{display:!0,left:"\\begin{align*}",right:"\\end{align*}"},{display:!0,left:"\\begin{alignat}",right:"\\end{alignat}"},{display:!0,left:"\\begin{alignat*}",right:"\\end{alignat*}"},{display:!0,left:"\\begin{gather}",right:"\\end{gather}"},{display:!0,left:"\\begin{CD}",right:"\\end{CD}"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script type=text/javascript src=/js/theme.min.js></script><script type=text/javascript>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-M7DMHENCW1',{anonymize_ip:!0})</script><script type=text/javascript src="https://www.googletagmanager.com/gtag/js?id=G-M7DMHENCW1" async></script></body>
-</html>
+<i class="fa-solid fa-comment-alt fa-fw"></i>
+</a></div><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><link rel=stylesheet href=/lib/katex/katex.min.css><link rel=stylesheet href=/lib/katex/copy-tex.min.css><script src=https://locally-trivial.disqus.com/embed.js defer></script><script src=/lib/autocomplete/autocomplete.min.js></script><script src=/lib/lunr/lunr.min.js></script><script src=/lib/lazysizes/lazysizes.min.js></script><script src=/lib/clipboard/clipboard.min.js></script><script src=/lib/sharer/sharer.min.js></script><script src=/lib/katex/katex.min.js></script><script src=/lib/katex/auto-render.min.js></script><script src=/lib/katex/copy-tex.min.js></script><script>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:10},comment:{},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!0,left:"$$",right:"$$"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"},{display:!1,left:"$",right:"$"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script src=/js/theme.min.js></script></body></html>
