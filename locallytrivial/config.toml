@@ -7,7 +7,7 @@ title = "Jim W. Kennington"
 disqusShortname = 'locally-trivial'
 
 # Change the default theme to be use when building the site with Hugo
-theme = "LoveIt"
+theme = "FeelIt"
 
 [taxonomies]
   category = 'categories'
@@ -53,7 +53,7 @@ theme = "LoveIt"
 # LoveIt Theme Configuration
 [params]
   # LoveIt theme version
-  version = "0.2.X"
+  version = "1.0.X"
   # LoveIt NEW | 0.2.0 Search config
   [params.search]
     enable = true
@@ -102,9 +102,6 @@ theme = "LoveIt"
     [params.social.Patreon]
       weight = 1
       id = "locallytrivial"
-    [params.social.Twitter]
-      weight = 2
-      id = "LocallyTrivial"
     [params.social.Instagram]
       weight = 3
       id = "https://www.instagram.com/locallytrivial/"
@@ -124,19 +121,15 @@ theme = "LoveIt"
       weight = 0
       # RSS = true # LoveIt NEW | 0.2.0
 
-# LoveIt CHANGED | 0.2.0 Page config
+[params.math]
+  enable = true
+  copyTex = true
+
 [params.page]
-  # LoveIt CHANGED | 0.2.0 KaTeX mathematical formulas
-  [params.page.math]
-    enable = true
-    # KaTeX extension copy_tex
-    copyTex = true
   [params.page.share]
     enable = true
-    Twitter = true
     HackerNews = true
     Reddit = true
-  # LoveIt CHANGED | 0.2.0 Comment config
   [params.page.comment]
     enable = true
     # Disqus comment config
@@ -145,7 +138,6 @@ theme = "LoveIt"
       enable = true
       # Disqus shortname to use Disqus in posts
       shortname = "locally-trivial"
-  # LoveIt NEW | 0.2.0 Analytics config
   [params.analytics]
     enable = true
     # Google Analytics
