@@ -3,53 +3,53 @@
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=robots content="noodp">
-<meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
-<title>Standup, Hugo! Creating a Blog with Hugo - Jim W. Kennington</title><meta name=Description content><meta property="og:title" content="Standup, Hugo! Creating a Blog with Hugo">
+<title>Standup, Hugo! Creating a Blog with Hugo - Jim W. Kennington</title><meta name=Description content="This is my cool site"><meta property="og:title" content="Standup, Hugo! Creating a Blog with Hugo">
 <meta property="og:description" content="Preliminaries Let&rsquo;s quickly review what you&rsquo;ll need to build a Hugo blog, and what it will mean to have a Hugo blog at the end of the process.
 What You&rsquo;ll Need Before we begin, you&rsquo;ll need a few things. I&rsquo;ll list the essentials below (as well as my recommendations where relevant)
  Git, the ubiquitous VCS of the era GitHub account, for storing your blog content (and hosting for free!) Text Editor, for writing content and editing configuration files (I recommend either Sublime Text for simple uses or GoLand for those who also need to edit GO code for plugins)  What You&rsquo;ll Have By the end of this post, the hope is that you will have:">
 <meta property="og:type" content="article">
 <meta property="og:url" content="http://locallytrivial.com/posts/standup-hugo/"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2021-10-23T00:00:00+00:00">
-<meta property="article:modified_time" content="2021-10-23T00:00:00+00:00">
+<meta property="article:modified_time" content="2021-10-23T00:00:00+00:00"><meta property="og:site_name" content="My cool site">
 <meta name=twitter:card content="summary">
 <meta name=twitter:title content="Standup, Hugo! Creating a Blog with Hugo">
 <meta name=twitter:description content="Preliminaries Let&rsquo;s quickly review what you&rsquo;ll need to build a Hugo blog, and what it will mean to have a Hugo blog at the end of the process.
 What You&rsquo;ll Need Before we begin, you&rsquo;ll need a few things. I&rsquo;ll list the essentials below (as well as my recommendations where relevant)
  Git, the ubiquitous VCS of the era GitHub account, for storing your blog content (and hosting for free!) Text Editor, for writing content and editing configuration files (I recommend either Sublime Text for simple uses or GoLand for those who also need to edit GO code for plugins)  What You&rsquo;ll Have By the end of this post, the hope is that you will have:">
-<meta name=application-name content="Jim W. Kennington">
-<meta name=apple-mobile-web-app-title content="Jim W. Kennington"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
+<meta name=application-name content="My cool site">
+<meta name=apple-mobile-web-app-title content="My cool site"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=canonical href=http://locallytrivial.com/posts/standup-hugo/><link rel=prev href=http://locallytrivial.com/posts/fermi-friday-20211008/><link rel=next href=http://locallytrivial.com/posts/migration-to-hugo/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Standup, Hugo! Creating a Blog with Hugo","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http:\/\/locallytrivial.com\/posts\/standup-hugo\/"},"genre":"posts","keywords":"Hugo, Blog Stack","wordcount":1313,"url":"http:\/\/locallytrivial.com\/posts\/standup-hugo\/","datePublished":"2021-10-23T00:00:00+00:00","dateModified":"2021-10-23T00:00:00+00:00","publisher":{"@type":"Organization","name":"Jim Kennington"},"author":{"@type":"Person","name":"Jim Kennington"},"description":""}</script></head>
-<body header-desktop header-mobile><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':''==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:''==='dark')&&document.body.setAttribute('theme','dark')</script>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=http://locallytrivial.com/posts/standup-hugo/><link rel=prev href=http://locallytrivial.com/posts/fermi-friday-20211008/><link rel=next href=http://locallytrivial.com/posts/migration-to-hugo/><link rel=stylesheet href=/css/style.min.css><link rel=preload href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css as=style onload="this.onload=null,this.rel='stylesheet'">
+<noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css></noscript><link rel=preload href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css as=style onload="this.onload=null,this.rel='stylesheet'">
+<noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Standup, Hugo! Creating a Blog with Hugo","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http:\/\/locallytrivial.com\/posts\/standup-hugo\/"},"genre":"posts","keywords":"Hugo, Blog Stack","wordcount":1313,"url":"http:\/\/locallytrivial.com\/posts\/standup-hugo\/","datePublished":"2021-10-23T00:00:00+00:00","dateModified":"2021-10-23T00:00:00+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Jim Kennington"},"description":""}</script></head>
+<body data-header-desktop=fixed data-header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
 <div class=header-title>
-<a href=/ title="Jim W. Kennington">Jim W. Kennington</a>
+<a href=/ title="Jim W. Kennington">My cool site</a>
 </div>
 <div class=menu>
 <div class=menu-inner><a class=menu-item href=/about/> About </a><a class=menu-item href=/resources/> Resources </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
 <input type=text placeholder="Search titles or contents..." id=search-input-desktop>
 <a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search>
-<i class="fas fa-search fa-fw"></i>
+<i class="fas fa-search fa-fw" aria-hidden=true></i>
 </a>
 <a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear>
-<i class="fas fa-times-circle fa-fw"></i>
+<i class="fas fa-times-circle fa-fw" aria-hidden=true></i>
 </a>
 <span class="search-button search-loading" id=search-loading-desktop>
-<i class="fas fa-spinner fa-fw fa-spin"></i>
+<i class="fas fa-spinner fa-fw fa-spin" aria-hidden=true></i>
 </span>
 </span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
-<i class="fas fa-adjust fa-fw"></i>
-</a>
-</div>
+<i class="fas fa-adjust fa-fw" aria-hidden=true></i>
+</a></div>
 </div>
 </div>
 </header><header class=mobile id=header-mobile>
 <div class=header-container>
 <div class=header-wrapper>
 <div class=header-title>
-<a href=/ title="Jim W. Kennington">Jim W. Kennington</a>
+<a href=/ title="Jim W. Kennington">My cool site</a>
 </div>
 <div class=menu-toggle id=menu-toggle-mobile>
 <span></span><span></span><span></span>
@@ -59,41 +59,39 @@ What You&rsquo;ll Need Before we begin, you&rsquo;ll need a few things. I&rsquo;
 <div class="search mobile" id=search-mobile>
 <input type=text placeholder="Search titles or contents..." id=search-input-mobile>
 <a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search>
-<i class="fas fa-search fa-fw"></i>
+<i class="fas fa-search fa-fw" aria-hidden=true></i>
 </a>
 <a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear>
-<i class="fas fa-times-circle fa-fw"></i>
+<i class="fas fa-times-circle fa-fw" aria-hidden=true></i>
 </a>
 <span class="search-button search-loading" id=search-loading-mobile>
-<i class="fas fa-spinner fa-fw fa-spin"></i>
+<i class="fas fa-spinner fa-fw fa-spin" aria-hidden=true></i>
 </span>
 </div>
 <a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>
 Cancel
 </a>
 </div><a class=menu-item href=/about/ title>About</a><a class=menu-item href=/resources/ title>Resources</a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
-<i class="fas fa-adjust fa-fw"></i>
+<i class="fas fa-adjust fa-fw" aria-hidden=true></i>
 </a></div>
 </div>
-</header>
-<div class="search-dropdown desktop">
+</header><div class="search-dropdown desktop">
 <div id=search-dropdown-desktop></div>
 </div>
 <div class="search-dropdown mobile">
 <div id=search-dropdown-mobile></div>
-</div>
-<main class=main>
+</div><main class=main>
 <div class=container><div class=toc id=toc-auto>
 <h2 class=toc-title>Contents</h2>
 <div class=toc-content id=toc-content-auto></div>
-</div><article class="page single"><h1 class="single-title animated flipInX">Standup, Hugo! Creating a Blog with Hugo</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=about title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>Jim Kennington</a></span>&nbsp;<span class=post-category>included in <a href=/categories/code/><i class="far fa-folder fa-fw"></i>Code</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-10-23>2021-10-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1313 words&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;7 minutes&nbsp;</div>
-</div><div class="details toc" id=toc-static kept>
+</div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Standup, Hugo! Creating a Blog with Hugo</h1><div class=post-meta>
+<div class=post-meta-line><span class=post-author><a href=about title=Author rel=author class=author><i class="fas fa-user-circle fa-fw" aria-hidden=true></i>Jim Kennington</a></span>&nbsp;<span class=post-category>included in <a href=/categories/code/><i class="far fa-folder fa-fw" aria-hidden=true></i>Code</a></span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw" aria-hidden=true></i>&nbsp;<time datetime=2021-10-23>2021-10-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden=true></i>&nbsp;1313 words&nbsp;
+<i class="far fa-clock fa-fw" aria-hidden=true></i>&nbsp;7 minutes&nbsp;</div>
+</div><div class="details toc" id=toc-static data-kept>
 <div class="details-summary toc-title">
 <span>Contents</span>
-<span><i class="details-icon fas fa-angle-right"></i></span>
+<span><i class="details-icon fas fa-angle-right" aria-hidden=true></i></span>
 </div>
 <div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
 <ul>
@@ -134,9 +132,9 @@ Cancel
 <h3 id=what-youll-need>What You&rsquo;ll Need</h3>
 <p>Before we begin, you&rsquo;ll need a few things. I&rsquo;ll list the essentials below (as well as my recommendations where relevant)</p>
 <ul>
-<li><a href=https://git-scm.com target=_blank rel="noopener noreffer">Git</a>, the ubiquitous VCS of the era</li>
-<li><a href=https://github.com target=_blank rel="noopener noreffer">GitHub</a> account, for storing your blog content (and hosting for free!)</li>
-<li>Text Editor, for writing content and editing configuration files (I recommend either <a href=https://www.sublimetext.com target=_blank rel="noopener noreffer">Sublime Text</a> for simple uses or <a href=https://www.jetbrains.com/go/ target=_blank rel="noopener noreffer">GoLand</a> for those who also need to edit GO code for plugins)</li>
+<li><a href=https://git-scm.com target=_blank rel="noopener noreffer ">Git</a>, the ubiquitous VCS of the era</li>
+<li><a href=https://github.com target=_blank rel="noopener noreffer ">GitHub</a> account, for storing your blog content (and hosting for free!)</li>
+<li>Text Editor, for writing content and editing configuration files (I recommend either <a href=https://www.sublimetext.com target=_blank rel="noopener noreffer ">Sublime Text</a> for simple uses or <a href=https://www.jetbrains.com/go/ target=_blank rel="noopener noreffer ">GoLand</a> for those who also need to edit GO code for plugins)</li>
 </ul>
 <h3 id=what-youll-have>What You&rsquo;ll Have</h3>
 <p>By the end of this post, the hope is that you will have:</p>
@@ -147,18 +145,18 @@ Cancel
 </ul>
 <p>Let&rsquo;s (hu)go!</p>
 <h2 id=getting-started-with-hugo>Getting Started with Hugo</h2>
-<p>The good news: Hugo has excellent <a href=https://gohugo.io/getting-started/quick-start/ target=_blank rel="noopener noreffer">getting started documentation</a>. My goal
+<p>The good news: Hugo has excellent <a href=https://gohugo.io/getting-started/quick-start/ target=_blank rel="noopener noreffer ">getting started documentation</a>. My goal
 is to guide you through the process quickly, filling in any gaps.</p>
 <h3 id=installing-hugo>Installing Hugo</h3>
 <p>A convenient detail about using Hugo is that is comes as a single binary, there is no complex <em>environment</em> to maintain!
 Nonetheless, we must install Hugo. On Macos, this is done by</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>brew install hugo
-</code></pre></div><p>See the <a href=https://gohugo.io/getting-started/installing target=_blank rel="noopener noreffer">installation docs</a> for other operating systems.</p>
+</code></pre></div><p>See the <a href=https://gohugo.io/getting-started/installing target=_blank rel="noopener noreffer ">installation docs</a> for other operating systems.</p>
 <h3 id=creating-the-repository>Creating the Repository</h3>
-<p>The blog needs a place to live - <a href=https://docs.github.com/en/get-started/quickstart/create-a-repo target=_blank rel="noopener noreffer">create a GitHub Repo</a> to
+<p>The blog needs a place to live - <a href=https://docs.github.com/en/get-started/quickstart/create-a-repo target=_blank rel="noopener noreffer ">create a GitHub Repo</a> to
 store the code. <strong>Note</strong>: if you intend to host with GitHub Pages as is done here, the name of your repository must be
 <code>&lt;username>.github.io</code> for users or <code>&lt;organization>.github.io</code> for organizations. Clone your repo! We use ssh below,
-see <a href=https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent target=_blank rel="noopener noreffer">GitHub SSH Key Guide</a>
+see <a href=https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent target=_blank rel="noopener noreffer ">GitHub SSH Key Guide</a>
 for more detail if you need to setup SSH keys first.</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git clone git@github.com:&lt;username&gt;/&lt;username&gt;.github.io.git
 </code></pre></div><p>Once the repo is cloned locally, change directory to it</p>
@@ -183,8 +181,8 @@ draft: false
 Sample post content
 </code></pre></div><h3 id=theme>Theme</h3>
 <p>Before we can build the site, we&rsquo;ll need to choose a theme. This choice is important since not all themes have the same
-set of configuration options. Choose your theme from the <a href=https://themes.gohugo.io target=_blank rel="noopener noreffer">vast selection</a> and then add it as a
-<a href=https://git-scm.com/book/en/v2/Git-Tools-Submodules target=_blank rel="noopener noreffer">git submodule</a>. For this demo we&rsquo;ll use the <a href=https://github.com/luizdepra/hugo-coder target=_blank rel="noopener noreffer">Coder Theme</a>,
+set of configuration options. Choose your theme from the <a href=https://themes.gohugo.io target=_blank rel="noopener noreffer ">vast selection</a> and then add it as a
+<a href=https://git-scm.com/book/en/v2/Git-Tools-Submodules target=_blank rel="noopener noreffer ">git submodule</a>. For this demo we&rsquo;ll use the <a href=https://github.com/luizdepra/hugo-coder target=_blank rel="noopener noreffer ">Coder Theme</a>,
 on which this site&rsquo;s theme is based.</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=nb>cd</span> /path/to/my/repo/&lt;sitename&gt;
 git submodule add https://github.com/luizdepra/hugo-coder.git themes/coder
@@ -222,9 +220,9 @@ this change and reruns, you should be able to see the &ldquo;About&rdquo; menu i
 <h2 id=workflow-and-deployment>Workflow and Deployment</h2>
 <p>Now you have a functioning Hugo project, let&rsquo;s setup some bells and whistles to get this content online. We will first
 setup GitHub actions that will build and deploy the site for you, then we will configure GitHub pages. See the
-<a href=https://gohugo.io/hosting-and-deployment/hosting-on-github/ target=_blank rel="noopener noreffer">Hugo docs</a> for more details.</p>
+<a href=https://gohugo.io/hosting-and-deployment/hosting-on-github/ target=_blank rel="noopener noreffer ">Hugo docs</a> for more details.</p>
 <h3 id=github-action>GitHub Action</h3>
-<p><a href=https://docs.github.com/en/actions target=_blank rel="noopener noreffer">GitHub Actions</a> offer a wide array of automation and workflow benefits. Today, we&rsquo;ll
+<p><a href=https://docs.github.com/en/actions target=_blank rel="noopener noreffer ">GitHub Actions</a> offer a wide array of automation and workflow benefits. Today, we&rsquo;ll
 setup a workflow that checks for new commits on main and from pull requests, sets up a Hugo environment, and builds your site.
 The configuration below is also set such that only after you <em>merge</em> the pull request will the site be deployed. A full example
 is included at the end of this post.</p>
@@ -275,7 +273,7 @@ host, e.g. <a href=domains.google.com rel>domains.google.com</a>)</p>
 <p>Now you should be all-ready to make a post and deploy the site. This example gives each workflow step to make a sample
 post titled, &ldquo;Standup, Hugo!&rdquo;.</p>
 <h3 id=create-a-feature-branch>Create a Feature Branch</h3>
-<p>The first step in a Pull Request workflow is to create a feature branch. See <a href=https://guides.github.com/introduction/flow/ target=_blank rel="noopener noreffer">GitHub docs</a>
+<p>The first step in a Pull Request workflow is to create a feature branch. See <a href=https://guides.github.com/introduction/flow/ target=_blank rel="noopener noreffer ">GitHub docs</a>
 for more on git flow. Make sure you&rsquo;re on latest main branch</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git checkout main
 git pull
@@ -313,36 +311,34 @@ sure to double check that the Source branch is set to <code>gh-pages</code> in t
 <div class=post-info-line>
 <div class=post-info-mod>
 <span>Updated on 2021-10-23</span>
-</div>
-<div class=post-info-license></div>
-</div>
+</div></div>
 <div class=post-info-line>
 <div class=post-info-md></div>
 <div class=post-info-share>
-<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=http://locallytrivial.com/posts/standup-hugo/ data-title="Standup, Hugo! Creating a Blog with Hugo" data-via="map[id:LocallyTrivial weight:2]" data-hashtags="Hugo,Blog Stack"><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Hacker News" data-sharer=hackernews data-url=http://locallytrivial.com/posts/standup-hugo/ data-title="Standup, Hugo! Creating a Blog with Hugo"><i class="fab fa-hacker-news fa-fw"></i></a><a href=javascript:void(0); title="Share on Reddit" data-sharer=reddit data-url=http://locallytrivial.com/posts/standup-hugo/><i class="fab fa-reddit fa-fw"></i></a></span>
+<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=http://locallytrivial.com/posts/standup-hugo/ data-title="Standup, Hugo! Creating a Blog with Hugo" data-via="map[id:LocallyTrivial weight:2]" data-hashtags="Hugo,Blog Stack"><i class="fab fa-twitter fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=http://locallytrivial.com/posts/standup-hugo/ data-hashtag=Hugo><i class="fab fa-facebook-square fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="Share on Hacker News" data-sharer=hackernews data-url=http://locallytrivial.com/posts/standup-hugo/ data-title="Standup, Hugo! Creating a Blog with Hugo"><i class="fab fa-hacker-news fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="Share on Reddit" data-sharer=reddit data-url=http://locallytrivial.com/posts/standup-hugo/><i class="fab fa-reddit fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=http://locallytrivial.com/posts/standup-hugo/ data-title="Standup, Hugo! Creating a Blog with Hugo"><i data-svg-src=https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg aria-hidden=true></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=http://locallytrivial.com/posts/standup-hugo/ data-title="Standup, Hugo! Creating a Blog with Hugo"><i class="fab fa-weibo fa-fw" aria-hidden=true></i></a></span>
 </div>
 </div>
 </div>
 <div class=post-info-more>
-<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/hugo/>Hugo</a>,&nbsp;<a href=/tags/blog-stack/>Blog Stack</a></section>
+<section class=post-tags><i class="fas fa-tags fa-fw" aria-hidden=true></i>&nbsp;<a href=/tags/hugo/>Hugo</a>,&nbsp;<a href=/tags/blog-stack/>Blog Stack</a></section>
 <section>
 <span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span>
 </section>
 </div>
-<div class=post-nav><a href=/posts/fermi-friday-20211008/ class=prev rel=prev title="Fermi Friday: Galactic Spaghetti"><i class="fas fa-angle-left fa-fw"></i>Fermi Friday: Galactic Spaghetti</a>
-<a href=/posts/migration-to-hugo/ class=next rel=next title="Migration to Hugo">Migration to Hugo<i class="fas fa-angle-right fa-fw"></i></a></div>
+<div class=post-nav><a href=/posts/fermi-friday-20211008/ class=prev rel=prev title="Fermi Friday: Galactic Spaghetti"><i class="fas fa-angle-left fa-fw" aria-hidden=true></i>Fermi Friday: Galactic Spaghetti</a>
+<a href=/posts/migration-to-hugo/ class=next rel=next title="Migration to Hugo">Migration to Hugo<i class="fas fa-angle-right fa-fw" aria-hidden=true></i></a></div>
 </div>
 <div id=comments><div id=disqus_thread class=comment></div><noscript>
 Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.
 </noscript></div></article></div>
 </main><footer class=footer>
-<div class=footer-container><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=about target=_blank>Jim Kennington</a></span></div>
+<div class=footer-container><div class=footer-line itemscope itemtype=http://schema.org/CreativeWork><i class="far fa-copyright fa-fw" aria-hidden=true></i><span itemprop=copyrightYear>2021 - 2024</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=about target=_blank>Jim Kennington</a></span></div>
 </div>
 </footer></div>
 <div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top">
-<i class="fas fa-arrow-up fa-fw"></i>
+<i class="fas fa-arrow-up fa-fw" aria-hidden=true></i>
 </a><a href=# id=view-comments class=fixed-button title="View Comments">
-<i class="fas fa-comment fa-fw"></i>
+<i class="fas fa-comment fa-fw" aria-hidden=true></i>
 </a>
-</div><link rel=stylesheet href=/lib/katex/katex.min.css><link rel=stylesheet href=/lib/katex/copy-tex.min.css><script type=text/javascript src=https://locally-trivial.disqus.com/embed.js defer></script><script type=text/javascript src=/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=/lib/lunr/lunr.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=/lib/sharer/sharer.min.js></script><script type=text/javascript src=/lib/katex/katex.min.js></script><script type=text/javascript src=/lib/katex/auto-render.min.js></script><script type=text/javascript src=/lib/katex/copy-tex.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:10},comment:{},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script type=text/javascript src=/js/theme.min.js></script><script type=text/javascript>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-M7DMHENCW1',{anonymize_ip:!0})</script><script type=text/javascript src="https://www.googletagmanager.com/gtag/js?id=G-M7DMHENCW1" async></script></body>
+</div><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css><script type=text/javascript src=https://locally-trivial.disqus.com/embed.js defer></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:50},comment:{},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!0,left:"\\begin{equation}",right:"\\end{equation}"},{display:!0,left:"\\begin{equation*}",right:"\\end{equation*}"},{display:!0,left:"\\begin{align}",right:"\\end{align}"},{display:!0,left:"\\begin{align*}",right:"\\end{align*}"},{display:!0,left:"\\begin{alignat}",right:"\\end{alignat}"},{display:!0,left:"\\begin{alignat*}",right:"\\end{alignat*}"},{display:!0,left:"\\begin{gather}",right:"\\end{gather}"},{display:!0,left:"\\begin{CD}",right:"\\end{CD}"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script type=text/javascript src=/js/theme.min.js></script><script type=text/javascript>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-M7DMHENCW1',{anonymize_ip:!0})</script><script type=text/javascript src="https://www.googletagmanager.com/gtag/js?id=G-M7DMHENCW1" async></script></body>
 </html>
