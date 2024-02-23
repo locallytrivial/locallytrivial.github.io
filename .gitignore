@@ -133,3 +133,7 @@ dmypy.json
 
 # Macos FileSystem
 .DS_Store
+
+# HUGO public files
+public
+resources
