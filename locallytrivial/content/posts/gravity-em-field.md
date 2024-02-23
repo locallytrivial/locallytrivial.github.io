@@ -22,7 +22,7 @@ familiar, Einstein's general relativity reformulates gravitational interaction a
 Specifically, Einstein's formulation makes concrete the relationship between the curvature of spacetime and the mass-energy content
  of spacetime [^1].
 
-$$R_{\mu\nu} - \frac{1}{2}Rg_{\mu\nu} + \Lambda g_{\mu\nu} = \frac{8\pi G}{c^4}T_{\mu\nu} \quad\quad\quad(1)$$
+$$ R_{\mu\nu} - \frac{1}{2}Rg_{\mu\nu} + \Lambda g_{\mu\nu} = \frac{8\pi G}{c^4}T_{\mu\nu} \quad\quad\quad(1) $$
 
 In the above equation (Einstein equation), the left-hand side contains terms related to curvature of spacetime, like the Ricci
 tensor $R_{\mu\nu}$  and the metric $g_{\mu\nu}$. The right-hand side contains terms related to energy and matter content,
@@ -33,18 +33,17 @@ Various forms of matter contribute differently to the stress-energy tensor, and 
 equation below outlines the way in which the electromagnetic field contributes to the stress energy density of a particular
 area of spacetime.
 
-$$T^{\mu\nu} = \frac{1}{\mu_0}\left[F^{\mu\alpha}F^{\nu}{}_{\alpha} - \frac{1}{4} g^{\mu\nu}F_{\alpha\beta}F^{\alpha\beta} \right] \quad\quad\quad(2)$$
+$$T^{\mu\nu}=\frac{1}{\mu_0}[F^{\mu\alpha}F^{\nu}{}_{\alpha}-\frac{1}{4}g^{\mu\nu} F\_{\alpha\beta}F^{\alpha\beta}]\quad\quad\quad(2)$$
 
 Where $F_{\mu\nu}$ is the electromagnetic field tensor, also called the *Faraday* tensor, where $\mathbf{E} = E^i e_i$ and
 $\mathbf{B} = B^i e_i$ are the familiar electric and magnetic vector fields. Note that in the below, I adopt the $c=1$
 convention for convenience [^2].
 
-$$F^{\mu\nu} =
-\begin{bmatrix}
-	0 & -E^x & -E^y & -E^z \\
-	E^x & 0 & -B^z & B^y \\
-	E^y & B^z & 0 & -B^x \\
-	E^z & -B^y & B^x & 0 \\
+$$F^{\mu\nu} = \begin{bmatrix}
+	0 & -E^x & -E^y & -E^z \\\\
+	E^x & 0 & -B^z & B^y \\\\
+	E^y & B^z & 0 & -B^x \\\\
+	E^z & -B^y & B^x & 0 \\\\
 \end{bmatrix} \quad\quad\quad(3)$$
 
 Thus, equation (2) tells us how the electromagnetic fields we are familiar with, namely $\mathbf{E}$ and $\mathbf{B}$,

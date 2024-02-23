@@ -1,5 +1,5 @@
 ---
-title: "Fermi Friday: Galactic Spaghetti"
+title: "Fermi Problem: Galactic Spaghetti"
 date: 2021-10-08
 draft: false
 categories:

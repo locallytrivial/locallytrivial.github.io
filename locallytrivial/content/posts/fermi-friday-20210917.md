@@ -1,5 +1,5 @@
 ---
-title: "Fermi Friday: A Different Manhattan Project"
+title: "Fermi Problem: A Different Manhattan Project"
 date: 2021-09-17
 draft: false
 categories:

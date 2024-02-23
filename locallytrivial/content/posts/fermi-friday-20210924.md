@@ -1,5 +1,5 @@
 ---
-title: "Fermi Friday: Baseball Blackhole"
+title: "Fermi Problem: Baseball Blackhole"
 date: 2021-09-24
 draft: false
 categories:
