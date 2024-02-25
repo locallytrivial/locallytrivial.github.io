@@ -10,18 +10,17 @@ toc:
 
 Here I've assembled links to various resources, some supplied by me, related to physics, maths,
 and several other areas of interest. I curated these lists initially as a reading checklist for myself; however, as I
-have found myself referring friends and colleagues to these items with increasing frequency, it made sense to
-memorialize the lists in a single page.
+have found myself referring friends and colleagues to these items increasingly, it made sense to
+persist the information in a single page.
 
-<br>
-<span class="line"></span>
 
-## Physics & Math
+## Literature
+
 The below are some interesting sources of reading material, both professional and colloquial. In no particular order,
 the items below span my favorite journals, ArXiv filters, popular-science summaries, and blogs by practitioners. I
 use the below as a personal checklist, my "what to read" queue, and I recommend each source whole-heartedly. I'm always
 looking for new sources, so please send me anything great you find not listed here!
-<br>
+
 
 ### Peer-Reviewed
 - IOP [Classical and Quantum Gravity](https://iopscience.iop.org/journal/0264-9381)
@@ -35,13 +34,13 @@ looking for new sources, so please send me anything great you find not listed he
   - ArXiv [Representation Theory](https://arxiv.org/list/math.RT/recent)
     <br><br>
 
-### Informal and Pop-Sci
+### Popular
 - APS [Physics Today](https://physicstoday.scitation.org/journal/pto)
 - [Quanta Magazine](https://www.quantamagazine.org/)
 - [Physics Buzz](http://physicsbuzz.physicscentral.com/)
   <br><br>
 
-### Other Physics & Math Blogs
+### Other Blogs
 - John Baez [Azimuth](https://johncarlosbaez.wordpress.com/)
 - Sean Carroll [Preposterous Universe](https://www.preposterousuniverse.com/blog/)
 - Terry Tao [What's New](https://terrytao.wordpress.com/)
@@ -49,13 +48,22 @@ looking for new sources, so please send me anything great you find not listed he
   <br><br>
 
 
-## Literature
+## Reference Texts
 These pages contain links and explanations of some of my favorite books, chalks, pens, and various other items. The
 chosen texts and tools below are either essential to my work or essential to my happiness (a slight exxageration, but
 who doesn't like the perfect piece of chalk?).
 
+
+### Physics
+
 - [My Favorite Physics Reference Texts](/texts-physics)
+
+### Maths
+
 - [My Favorite Maths Reference Texts](/texts-math)
+
+### Tools of the Trade
+
 - [My Favorite Tools of the Trade](/tools)
   <br><br>
 
@@ -83,10 +91,8 @@ code referenced below, I either use routinely myself or have contributed to pers
 
 ### Physics in Python
 - [AstroPy](https://www.astropy.org/)
-- [PyCBC Documentation](https://pycbc.org/)
-- [GWPy](https://gwpy.github.io/)
-- [NRPy](http://astro.phys.wvu.edu/bhathome/nrpy.html)
-  <br><br>
+- [GstLAL Documentation](https://lscsoft.docs.ligo.org/gstlal/)
+- [Manifold (GWave Geometry)](https://git.ligo.org/chad-hanna/manifold)
 
 <br>
 <span class="line"></span>
