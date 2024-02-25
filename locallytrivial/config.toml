@@ -42,6 +42,22 @@ theme = "FeelIt"
     identifier = "text-math"
     url = "texts-math"
     weight = 2
+  [[menu.main]]
+    identifier = "categories"
+    pre = ""
+    post = ""
+    name = "Categories"
+    url = "/categories/"
+    title = ""
+    weight = 3
+  [[menu.main]]
+    identifier = "tags"
+    pre = ""
+    post = ""
+    name = "Tags"
+    url = "/tags/"
+    title = ""
+    weight = 2
 
 # Markup related config in Hugo
 [markup]
@@ -131,16 +147,71 @@ theme = "FeelIt"
       # default behavior when you don't set "hiddenFromHomePage" in front matter
       defaultHiddenFromHomePage = false
 
+  # About page settings
+  [params.about]
+    # whether to enable profile on about page
+    # depends on .Site.Params.home.profile.enable
+    enable = true
+    # whether to enable param layout
+    param = false
+    # title for param layout
+    paramTitle = "Personal Information"
+    # general description of your site
+    # can be write with markdown style
+    description = "[FeelIt](https://github.com/khusika/FeelIt) is a **clean**, **elegant** but **advanced** blog theme for [Hugo](https://gohugo.io/) developed by [Khusika](https://khusika.dev). It is based on the original [LoveIt Theme](https://github.com/dillonzq/LoveIt), [LeaveIt Theme](https://github.com/liuzc/LeaveIt), and [KeepIt Theme](https://github.com/Fastbyte01/KeepIt)."
+    # description of your status
+    [[params.about.status]]
+      faIcon = "fa-solid fa-atom"
+      title = "Research"
+      desc = "Quantum Gravity, Gravitational Waves"
+    [[params.about.status]]
+      faIcon = "fa-solid fa-chalkboard fa-fw"
+      title = "Math"
+      desc = "Mathematical Physics, Algebras, *Geometry"
+    [[params.about.status]]
+      title = "Code"
+      faIcon = "fa-solid fa-code"
+      desc = "Python, C++, Julia, Rust, LaTeX, Mathematica"
+    # description of your parameter
+    #[[params.about.parameter]]
+    #  language = "Python"
+    #  level = "100"
+    #[[params.about.parameter]]
+    #  language = "HTML"
+    #  level = "70"
+    #[[params.about.parameter]]
+    #  language = "Go"
+    #  level = "60"
+
   # Social config about the author
   [params.social]
-    Hackernews = "JWKennington"
-    Patreon = "locallytrivial"
-    GitHub = "JWKennington"
-    Researchgate = "James-Kennington"
-    LinkedIn = "jameskennington"
-    Email = "jameswkennington@gmail.com"
-    Reddit = "JWKennington"
     RSS = true
+    [params.social.Email]
+      weight = 9
+      id = "jameswkennington@gmail.com"
+    [params.social.Researchgate]
+      weight = 1
+      id = "James-Kennington"
+    [params.social.GitHub]
+      weight = 3
+      id = "JWKennington"
+    [params.social.GitLab]
+      weight = 4
+      url = "https://git.ligo.org/james.kennington"
+    [params.social.Hackernews]
+      weight = 5
+      id = "JWKennington"
+    [params.social.Patreon]
+      weight = 6
+      id = "locallytrivial"
+    [params.social.LinkedIn]
+      weight = 2
+      id = "jameskennington"
+    [params.social.Reddit]
+      weight = 8
+      id = "JWKennington"
+
+    
 
 [params.page]
 
@@ -204,7 +275,6 @@ theme = "FeelIt"
 [author]
   name = "Jim Kennington"
   email = "jameswkennington@psu.edu"
-  link = "about"
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
