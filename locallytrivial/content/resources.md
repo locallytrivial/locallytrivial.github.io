@@ -41,6 +41,7 @@ looking for new sources, so please send me anything great you find not listed he
   <br><br>
 
 ### Other Blogs
+- Joshua Black [Sometimes Physics Sometimes Math](https://www.somephyssomemath.com)
 - John Baez [Azimuth](https://johncarlosbaez.wordpress.com/)
 - Sean Carroll [Preposterous Universe](https://www.preposterousuniverse.com/blog/)
 - Terry Tao [What's New](https://terrytao.wordpress.com/)

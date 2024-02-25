@@ -19,8 +19,8 @@ The profound connection between physics and mathematics is a guiding light for m
 > 
 > _- Pythagoras_
 
-Presently, I am a [Mildred Dresselhaus Graduate Fellow](https://science.psu.edu/future-students/graduate-students/science-achievement-graduate-fellowship/2020-2021-recipients/mildred-dresselhaus-graduate-scholarship-in-physics)
-at Penn State University working in the [Institute for Gravitation and the Cosmos](http://www.gravity.psu.edu/). Before grad school, I worked for a while as a quantative developer and researcher at an asset management firm, specializing in medium-frequency, distributed signal analysis frameworks. For undergrad, I spent time at both the U.S. Naval Academy and the University of Texas at Austin, studying nonlinear dynamical systems and cosmology.
+Presently, I'm a [Mildred Dresselhaus Graduate Fellow](https://science.psu.edu/future-students/graduate-students/science-achievement-graduate-fellowship/2020-2021-recipients/mildred-dresselhaus-graduate-scholarship-in-physics)
+at Penn State University studying theoretical physics, and working in the [Institute for Gravitation and the Cosmos](http://www.gravity.psu.edu/). Before grad school, I worked for a while as a quantative developer and researcher at an asset management firm, specializing in medium-frequency, distributed signal analysis frameworks. For undergrad, I spent time at both the U.S. Naval Academy and the University of Texas at Austin, studying nonlinear dynamical systems and cosmology.
 
 #### Research Interests
 
@@ -28,7 +28,7 @@ My research interests broadly include classical and quantum gravity. Specificall
 
 I am also interested in naturally discrete approaches to quantum gravity, including canonical quantum gravity (loops), covariant spinfoams, causal dynamical triangulations, and noncommutative geometry, with an emphasis on computational methods.
 
-Often, I find myself venturing into pure mathematical subjects, usually motivated by physical applications. Topics largely include commutative and noncommutative algebras, differential geometry, and information geometry.
+Often, I find myself venturing into pure mathematical subjects, usually motivated by physical applications. Topics largely include commutative and noncommutative algebras, differential geometry, and information geometry. I co-founded a seminar series at Penn State, [Mathematical Aspects of Physics Seminar, "MAP Chat"](https://mapchat.science.psu.edu), as a way to share this interest with the community.
 
 {{< figure src="/images/spinfoam3.png" title="Spin foam (Image Credit AEI)" >}}
 
