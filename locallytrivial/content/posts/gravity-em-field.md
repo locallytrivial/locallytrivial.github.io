@@ -33,7 +33,7 @@ Various forms of matter contribute differently to the stress-energy tensor, and 
 equation below outlines the way in which the electromagnetic field contributes to the stress energy density of a particular
 area of spacetime.
 
-$$T^{\mu\nu}=\frac{1}{\mu_0}[F^{\mu\alpha}F^{\nu}{}_{\alpha}-\frac{1}{4}g^{\mu\nu} F\_{\alpha\beta}F^{\alpha\beta}]\quad\quad\quad(2)$$
+$$T^{\mu\nu}=\frac{1}{\mu_0}[F^{\mu\alpha}F^{\nu}{}_{\alpha}-\frac{1}{4}g^{\mu\nu} F_{\alpha\beta}F^{\alpha\beta}]\quad\quad\quad(2)$$
 
 Where $F_{\mu\nu}$ is the electromagnetic field tensor, also called the *Faraday* tensor, where $\mathbf{E} = E^i e_i$ and
 $\mathbf{B} = B^i e_i$ are the familiar electric and magnetic vector fields. Note that in the below, I adopt the $c=1$

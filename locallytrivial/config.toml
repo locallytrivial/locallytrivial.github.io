@@ -56,6 +56,11 @@ theme = "FeelIt"
     noClasses = false
   # Goldmark is from Hugo 0.60 the default library used for Markdown
   [markup.goldmark]
+    [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)'], ['$', '$']]
     [markup.goldmark.extensions]
       definitionList = true
       footnote = true
@@ -64,9 +69,9 @@ theme = "FeelIt"
       table = true
       taskList = true
       typographer = true
-    [markup.goldmark.renderer]
-      # whether to use HTML tags directly in the document
-      unsafe = true
+#    [markup.goldmark.renderer]
+#      # whether to use HTML tags directly in the document
+#      unsafe = true
   # Table Of Contents settings
   [markup.tableOfContents]
     startLevel = 2
