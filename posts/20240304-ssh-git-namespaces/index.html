@@ -1,0 +1,147 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><title>Namespacing SSH Credentials with Git - Jim W. Kennington</title><meta name=description content><meta property="og:title" content="Namespacing SSH Credentials with Git">
+<meta property="og:description" content="Why Namespace SSH Credentials with Git? Why would you ever want to namespace your SSH credentials with Git? If you have multiple accounts on the same Git hosting service, you might want to use different SSH keys for each account. This is a common scenario for developers who have both personal and work accounts on GitHub, GitLab, or Bitbucket. This post will show you how to set up SSH namespaces with Git, so you can use different SSH keys for different accounts on various hosting services."><meta property="og:type" content="article"><meta property="og:url" content="http://locallytrivial.com/posts/20240304-ssh-git-namespaces/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2024-03-04T00:00:00+00:00"><meta property="article:modified_time" content="2024-03-04T00:00:00+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Namespacing SSH Credentials with Git"><meta name=twitter:description content="Why Namespace SSH Credentials with Git? Why would you ever want to namespace your SSH credentials with Git? If you have multiple accounts on the same Git hosting service, you might want to use different SSH keys for each account. This is a common scenario for developers who have both personal and work accounts on GitHub, GitLab, or Bitbucket. This post will show you how to set up SSH namespaces with Git, so you can use different SSH keys for different accounts on various hosting services."><meta name=application-name content="Jim W. Kennington"><meta name=apple-mobile-web-app-title content="Jim W. Kennington"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=canonical href=http://locallytrivial.com/posts/20240304-ssh-git-namespaces/><link rel=prev href=http://locallytrivial.com/posts/migration-to-hugo/><link rel=stylesheet href=/css/page.min.css><link rel=stylesheet href=/css/home.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Namespacing SSH Credentials with Git","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http:\/\/locallytrivial.com\/posts\/20240304-ssh-git-namespaces\/"},"genre":"posts","keywords":"Git, SSH, Security","wordcount":1164,"url":"http:\/\/locallytrivial.com\/posts\/20240304-ssh-git-namespaces\/","datePublished":"2024-03-04T00:00:00+00:00","dateModified":"2024-03-04T00:00:00+00:00","publisher":{"@type":"Organization","name":"Jim Kennington"},"author":{"@type":"Person","name":"Jim Kennington"},"description":""}</script></head><body data-header-desktop data-header-mobile><script>(window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":""==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:""==="dark")&&document.body.setAttribute("theme","dark")</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title="Jim W. Kennington">Jim W. Kennington</a></div><div class=menu><div class=menu-inner><a class=menu-item href=/about/>About </a><a class=menu-item href=/resources/>Resources </a><a class=menu-item href=/tags/>Tags </a><a class=menu-item href=/categories/>Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<input type=text placeholder="Search titles or contents..." id=search-input-desktop>
+<a href=# class="search-button search-toggle" id=search-toggle-desktop title=Search><i class="fa-solid fa-search fa-fw"></i>
+</a><a href=# class="search-button search-clear" id=search-clear-desktop title=Clear><i class="fa-solid fa-times-circle fa-fw"></i>
+</a><span class="search-button search-loading" id=search-loading-desktop><i class="fa-solid fa-spinner fa-fw fa-spin"></i>
+</span></span><a href=# onclick=return!1 class="menu-item theme-switch" title="Switch Theme"><i class="fa-solid fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title="Jim W. Kennington">Jim W. Kennington</a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder="Search titles or contents..." id=search-input-mobile>
+<a href=# class="search-button search-toggle" id=search-toggle-mobile title=Search><i class="fa-solid fa-search fa-fw"></i>
+</a><a href=# class="search-button search-clear" id=search-clear-mobile title=Clear><i class="fa-solid fa-times-circle fa-fw"></i>
+</a><span class="search-button search-loading" id=search-loading-mobile><i class="fa-solid fa-spinner fa-fw fa-spin"></i></span></div><a href=# class=search-cancel id=search-cancel-mobile>Cancel</a></div><a class=menu-item href=/about/ title>About</a><a class=menu-item href=/resources/ title>Resources</a><a class=menu-item href=/tags/ title>Tags</a><a class=menu-item href=/categories/ title>Categories</a><div class=menu-item><a href=# onclick=return!1 class=theme-switch title="Switch Theme"><i class="fa-solid fa-adjust fa-fw"></i></a></div></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single" data-toc=disable><div class=single-card><h2 class="single-title animated flipInX">Namespacing SSH Credentials with Git</h2><div class=post-meta><div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fa-solid fa-user-circle fa-fw"></i>Jim Kennington</a></span>&nbsp;<span class=post-category>published in <a href=/categories/code/><i class="fa-regular fa-folder fa-fw"></i>Code</a></span></div><div class=post-meta-line><span><i class="fa-regular fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2024-03-04>2024-03-04</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw"></i>&nbsp;1164 words</span>&nbsp;
+<span><i class="fa-regular fa-clock fa-fw"></i>&nbsp;6 minutes</span>&nbsp;</div></div><hr><div class="details toc" id=toc-static data-kept><div class="details-summary toc-title"><span>Contents</span>
+<span><i class="details-icon fa-solid fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#why-namespace-ssh-credentials-with-git>Why Namespace SSH Credentials with Git?</a></li><li><a href=#overview>Overview</a><ul><li><a href=#ssh-namespaces>SSH Namespaces</a></li><li><a href=#general-flow-of-git-and-ssh>General Flow of Git and SSH</a></li></ul></li><li><a href=#setting-up-namespaces-4-steps>Setting Up Namespaces: 4 Steps</a><ul><li><a href=#step-0-prerequisites>Step 0: Prerequisites</a></li><li><a href=#step-1-create-ssh-keys-and-add-to-hosts>Step 1: Create SSH Keys and Add to Hosts</a></li><li><a href=#step-2-ssh-key-routing>Step 2: SSH Key Routing</a></li><li><a href=#step-3-git-namespace-configs>Step 3: Git Namespace Configs</a></li><li><a href=#step-4-git-namespace-routing>Step 4: Git Namespace Routing</a></li></ul></li><li><a href=#using-namespaces>Using Namespaces</a></li><li><a href=#references>References</a></li></ul></nav></div></div><div class=content id=content><p><img class=lazyload src=/svg/loading.min.svg data-src="/images/key-pile.png?width=10px" data-srcset="/images/key-pile.png?width=10px, /images/key-pile.png?width=10px 1.5x, /images/key-pile.png?width=10px 2x" data-sizes=auto alt="/images/key-pile.png?width=10px" title=ManyKeys></p><h2 id=why-namespace-ssh-credentials-with-git>Why Namespace SSH Credentials with Git?</h2><p>Why would you ever want to namespace your SSH credentials with Git? If you have multiple accounts on the same Git
+hosting service, you might want to use different SSH keys for each account. This is a common scenario for developers who
+have both personal and work accounts on GitHub, GitLab, or Bitbucket. This post will show you how to set up SSH
+namespaces with Git, so you can use different SSH keys for different accounts on various hosting services.</p><h2 id=overview>Overview</h2><p>To successfully namespace SSH credentials with Git required several steps. Before we detail these steps, let&rsquo;s first
+look at the high-level overview of the process. We begin by explaining the meaning of a <em>ssh namespace</em>, then outline
+the general flow of the process, including the call stack layers of both <code>git</code> and <code>ssh</code>. If you want to skip this
+overview and begin setting up your namespaces, you can jump to the next section.</p><h3 id=ssh-namespaces>SSH Namespaces</h3><p>An SSH namespace is essentially a description of which SSH keys to use for which repositories. Specifically, it is a
+combination of:</p><ul><li>A git host (e.g. <code>github.com</code>, <code>gitlab.com</code>, <code>bitbucket.org</code>)</li><li>A namespace within that host (e.g. a username or organization name)</li><li>An SSH key to use for that namespace</li><li>One or more repositories within that namespace</li><li>A local directory containing all the relevant repositories</li></ul><h3 id=general-flow-of-git-and-ssh>General Flow of Git and SSH</h3><p>The general flow of the process is outlined in the diagram below. It begins with a call to <code>git</code>, which then uses
+configuration files to determine a namespace. This namespace is then used to determine how to modify the url for the
+subsequent call to <code>ssh</code>. The <code>ssh</code> call then uses the url to determine which key to use.</p><p><img class=lazyload src=/svg/loading.min.svg data-src=/images/ssh-namespacing3.svg data-srcset="/images/ssh-namespacing3.svg, /images/ssh-namespacing3.svg 1.5x, /images/ssh-namespacing3.svg 2x" data-sizes=auto alt=/images/ssh-namespacing3.svg title="General Flow"></p><p>Where the numbered steps correspond to the steps in the following section.</p><h2 id=setting-up-namespaces-4-steps>Setting Up Namespaces: 4 Steps</h2><p>For this walkthrough, we will implement 3 namespaces, two for GitHub and one for GitLab. All source code will be stored
+locally under the <code>~/code</code> directory, under which we will create subdirectories for each namespace.</p><h3 id=step-0-prerequisites>Step 0: Prerequisites</h3><p>Before we begin, we need to establish the context for the 3 namespaces. We will use the following as examples of the
+Host/Account/Email/Repo combinations that might motivate the use of namespaces:</p><ul><li>Name: <code>personal</code><ul><li>Host: GitHub</li><li>Account: <code>personal</code></li><li>Email: <code>personal@email.com</code></li><li>Repos: <code>repo1</code> and <code>repo2</code></li></ul></li><li>Name: <code>work</code><ul><li>Host: GitHub</li><li>Account: <code>organization</code></li><li>Email: <code>work@email.com</code></li><li>Repos: <code>repo3</code> and <code>repo4</code></li></ul></li><li>Name: <code>collab</code><ul><li>Host: GitLab</li><li>Account: <code>collab</code></li><li>Email: <code>collab@email.com</code></li><li>Repos: <code>repo5</code> and <code>repo6</code></li></ul></li></ul><h3 id=step-1-create-ssh-keys-and-add-to-hosts>Step 1: Create SSH Keys and Add to Hosts</h3><p>First, we need to create SSH keys for each namespace. We will create 3 keys, one for each namespace. We will use the
+default names for the keys, <code>id_ed25519_{name}</code> and <code>id_ed25519_{name}.pub</code>, and store them in the default
+location, <code>~/.ssh</code>. For creating the keys, we can use the following commands:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>ssh-keygen -t ed25519 -C <span class=s2>&#34;{email}&#34;</span> -f ~/.ssh/id_ed25519_<span class=o>{</span>name<span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>Where <code>{email}</code> is the email associated with the namespace. For example, for the <code>personal</code> namespace, we would use:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>ssh-keygen -t ed25519 -C <span class=s2>&#34;personal@email.com&#34;</span> -f ~/.ssh/id_ed25519_personal
+</span></span></code></pre></td></tr></table></div></div><p>Make sure that these keys are added to the appropriate host. The GitHub and GitLab documentation provide instructions
+for adding SSH keys to your account <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup> <sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>.</p><h3 id=step-2-ssh-key-routing>Step 2: SSH Key Routing</h3><p>Next, we need to create an SSH config file to route the namespaces to the appropriate keys. We will create a file at
+<code>~/.ssh/config</code> with the following contents:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>Host github.com-organization
+</span></span><span class=line><span class=cl>HostName github.com
+</span></span><span class=line><span class=cl>UseKeychain yes
+</span></span><span class=line><span class=cl>AddKeysToAgent yes
+</span></span><span class=line><span class=cl>User git
+</span></span><span class=line><span class=cl>IdentityFile ~/.ssh/id_ed25519_work
+</span></span><span class=line><span class=cl>IdentitiesOnly yes
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Host github.com-personal
+</span></span><span class=line><span class=cl>HostName github.com
+</span></span><span class=line><span class=cl>UseKeychain yes
+</span></span><span class=line><span class=cl>AddKeysToAgent yes
+</span></span><span class=line><span class=cl>User git
+</span></span><span class=line><span class=cl>IdentityFile ~/.ssh/id_ed25519_personal
+</span></span><span class=line><span class=cl>IdentitiesOnly yes
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Host gitlab.com-collab
+</span></span><span class=line><span class=cl>HostName gitlab.com
+</span></span><span class=line><span class=cl>UseKeychain yes
+</span></span><span class=line><span class=cl>AddKeysToAgent yes
+</span></span><span class=line><span class=cl>User git
+</span></span><span class=line><span class=cl>IdentityFile ~/.ssh/id_ed25519_collab
+</span></span><span class=line><span class=cl>IdentitiesOnly yes
+</span></span></code></pre></td></tr></table></div></div><p>This file tells SSH to use the appropriate key for each namespace. The <code>Host</code> lines define the namespace, and the
+<code>IdentityFile</code> lines define the key to use for that namespace. The <code>IdentitiesOnly</code> line tells SSH to only use the
+specified key for that namespace. We will use git url modification to route the namespaces to the appropriate host.</p><h3 id=step-3-git-namespace-configs>Step 3: Git Namespace Configs</h3><p>Next, we need to tell <code>git</code> how to configure each namespace. This is achieved by creating a <code>.gitconfig</code> file in the
+root directory of each namespace. Specific examples are provided below for the three namespaces in this walkthrough.</p><p>The file <code>~/code/personal/.gitconfig</code> should contain the following:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>[user]
+</span></span><span class=line><span class=cl>  email = personal@email.com
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>[url &#34;git@github.com-personal&#34;]
+</span></span><span class=line><span class=cl>  insteadOf = git@github.com
+</span></span></code></pre></td></tr></table></div></div><p>The file <code>~/code/work/.gitconfig</code> should contain the following:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>[user]
+</span></span><span class=line><span class=cl>  email = work@email.com
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>[url &#34;git@github.com-organization&#34;]
+</span></span><span class=line><span class=cl>  insteadOf = git@github.com
+</span></span></code></pre></td></tr></table></div></div><p>The file <code>~/code/collab/.gitconfig</code> should contain the following:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>[user]
+</span></span><span class=line><span class=cl>  email = collab@email.com
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>[url &#34;git@gitlab.com-collab&#34;]
+</span></span><span class=line><span class=cl>  insteadOf = git@gitlab.com
+</span></span></code></pre></td></tr></table></div></div><p>These files tell <code>git</code> to modify the host name for each namespace. The <code>user</code> section specifies the email to use for
+each namespace, and the <code>url</code> section specifies the namespace and the host to use for that namespace. We need one more
+step, though, to make this work.</p><h3 id=step-4-git-namespace-routing>Step 4: Git Namespace Routing</h3><p>The final step is to tell <code>git</code> to use the <code>~/code/{name}/.gitconfig</code> files for each namespace. This is achieved by
+modifying the overall <code>~/.gitconfig</code> file to include the following:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>[includeif &#34;gitdir:~/code/personal/&#34;]
+</span></span><span class=line><span class=cl>	path = ~/code/personal/.gitconfig
+</span></span><span class=line><span class=cl>	
+</span></span><span class=line><span class=cl>[includeif &#34;gitdir:~/code/work/&#34;]
+</span></span><span class=line><span class=cl>	path = ~/code/work/.gitconfig
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>[includeif &#34;gitdir:~/code/collab/&#34;]
+</span></span><span class=line><span class=cl>	path = ~/code/collab/.gitconfig
+</span></span></code></pre></td></tr></table></div></div><p>This tells <code>git</code> to use the appropriate <code>.gitconfig</code> file for each namespace. The <code>includeif</code> lines specify the
+directory to use for each namespace, and the <code>path</code> lines specify the <code>.gitconfig</code> file to use for that namespace.</p><div class="details admonition tip open"><div class="details-summary admonition-title"><i class="icon fa-solid fa-lightbulb fa-fw"></i>Note: Trailing Forward Slash in gitdir<i class="details-icon fa-solid fa-angle-right fa-fw"></i></div><div class=details-content><div class=admonition-content>The <code>gitdir</code> path should include a trailing forward slash. This is because <code>git</code> uses the <code>gitdir</code> path to match the
+directory of the repository, and the trailing forward slash behaves like a recursive glob pattern, e.g. <code>~code/personal/**</code>.</div></div></div><h2 id=using-namespaces>Using Namespaces</h2><p>Once the namespaces are set up, you can use them as you would use any other git repository. For example, to clone a
+repository in the <code>personal</code> namespace, you would use the following command:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># Change working directory</span>
+</span></span><span class=line><span class=cl><span class=nb>cd</span> ~/code/personal
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Clone repository</span>
+</span></span><span class=line><span class=cl><span class=c1># Clone repository</span>
+</span></span><span class=line><span class=cl>git clone git@github.com:personal/repo1.git
+</span></span></code></pre></td></tr></table></div></div><div class="details admonition tip open"><div class="details-summary admonition-title"><i class="icon fa-solid fa-lightbulb fa-fw"></i>Note: Working Directory<i class="details-icon fa-solid fa-angle-right fa-fw"></i></div><div class=details-content><div class=admonition-content>The <code>git</code> routing works based on the working directory when the command is run. This means that you need to be in the
+appropriate directory for the namespace you want to use. For example, to use the <code>personal</code> namespace, you would need to
+be in the <code>~/code/personal</code> directory.</div></div></div><p>Thats it! You should now be able to use different SSH keys for different accounts on the same Git hosting service.</p><h2 id=references>References</h2><p>This post was adapted from and inspired by several sources, with a few key changes and summary <sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup> <sup id=fnref:4><a href=#fn:4 class=footnote-ref role=doc-noteref>4</a></sup> <sup id=fnref:5><a href=#fn:5 class=footnote-ref role=doc-noteref>5</a></sup>.</p><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p><a href=https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account target=_blank rel="noopener noreffer">GitHub adding SSH Keys</a>&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:2><p><a href=https://docs.gitlab.com/ee/user/ssh.html target=_blank rel="noopener noreffer">GitLab adding SSH keys</a>&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:3><p><a href=https://gist.github.com/yinzara/bbedc35798df0495a4fdd27857bca2c1 target=_blank rel="noopener noreffer">Vance, Matthew. GitHub BitBucket Multiple SSH Keys</a>&#160;<a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:4><p><a href=https://www.freecodecamp.org/news/manage-multiple-github-accounts-the-ssh-way-2dadc30ccaca/ target=_blank rel="noopener noreffer">Jacob, Bivil. How to manage multiple GitHub accounts on a single machine with SSH keys</a>.&#160;<a href=#fnref:4 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:5><p><a href=https://medium.com/@trionkidnapper/ssh-keys-with-multiple-github-accounts-c67db56f191e target=_blank rel="noopener noreffer">Russell, Craig. SSH Keys with Multiple GitHub Accounts</a>&#160;<a href=#fnref:5 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></div></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-tag><span><a href></a></span></div><div class=post-info-line><div class=post-info-mod><span>Updated on 2024-03-04</span></div><div class=post-info-mod></div></div><div class=post-info-share><span><a href=# onclick=return!1 title="Share on Twitter" data-sharer=twitter data-url=http://locallytrivial.com/posts/20240304-ssh-git-namespaces/ data-title="Namespacing SSH Credentials with Git" data-hashtags="Git, SSH, Security"><i class="fa-brands fa-square-x-twitter fa-fw"></i></a><a href=# onclick=return!1 title="Share on Hacker News" data-sharer=hackernews data-url=http://locallytrivial.com/posts/20240304-ssh-git-namespaces/ data-title="Namespacing SSH Credentials with Git"><i class="fa-brands fa-hacker-news fa-fw"></i></a><a href=# onclick=return!1 title="Share on Reddit" data-sharer=reddit data-url=http://locallytrivial.com/posts/20240304-ssh-git-namespaces/><i class="fa-brands fa-reddit fa-fw"></i></a></span></div></div><div class=post-nav><a href=/posts/migration-to-hugo/ class=prev rel=prev title="Migration to Hugo"><i class="fa-solid fa-angle-left fa-fw"></i>Previous Post</a></div></div></div><div id=comments class=single-card><div id=disqus_thread></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.</noscript></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line itemscope itemtype=http://schema.org/CreativeWork><i class="fa-regular fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021 - 2024</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/>Jim Kennington</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top"><i class="fa-solid fa-chevron-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title="View Comments"><i class="fa-solid fa-comment-alt fa-fw"></i></a></div><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><link rel=stylesheet href=/lib/katex/katex.min.css><link rel=stylesheet href=/lib/katex/copy-tex.min.css><script src=https://locally-trivial.disqus.com/embed.js defer></script><script src=/lib/autocomplete/autocomplete.min.js></script><script src=/lib/lunr/lunr.min.js></script><script src=/lib/lazysizes/lazysizes.min.js></script><script src=/lib/clipboard/clipboard.min.js></script><script src=/lib/sharer/sharer.min.js></script><script src=/lib/katex/katex.min.js></script><script src=/lib/katex/auto-render.min.js></script><script src=/lib/katex/copy-tex.min.js></script><script>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:25},comment:{},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!0,left:"$$",right:"$$"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"},{display:!1,left:"$",right:"$"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script src=/js/theme.min.js></script></body></html>
