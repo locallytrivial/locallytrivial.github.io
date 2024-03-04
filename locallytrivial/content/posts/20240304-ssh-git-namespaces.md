@@ -5,7 +5,9 @@ draft: false
 categories:
   - Code
 tags:
-  - Git, SSH, Security
+  - Git
+  - SSH
+  - Security
 ---
 
 ![ManyKeys](/images/key-pile.png?width=10px)
