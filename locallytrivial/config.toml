@@ -253,9 +253,9 @@ theme = "FeelIt"
     enable = true
     # Google Analytics
     [params.analytics.google]
-      id = "G-M7DMHENCW1"
+      id = "G-PBMXNQK5V1"
       # whether to anonymize IP
-      anonymizeIP = true
+      anonymizeIP = false
 
   # Footer config
   [params.footer]
