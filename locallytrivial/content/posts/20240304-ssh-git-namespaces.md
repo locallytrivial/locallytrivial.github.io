@@ -10,7 +10,7 @@ tags:
   - Security
 ---
 
-![ManyKeys](/images/key-pile.png?width=10px)
+![ManyKeys](/images/key-pile-small.png)
 
 ## Why Namespace SSH Credentials with Git?
 
