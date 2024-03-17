@@ -173,7 +173,7 @@ theme = "FeelIt"
     [[params.about.status]]
       title = "Code"
       faIcon = "fa-solid fa-code"
-      desc = "Python, C++, Julia, Rust, LaTeX, Mathematica"
+      desc = "Python, C++, Julia, Rust, LaTeX, ..."
     # description of your parameter
     #[[params.about.parameter]]
     #  language = "Python"
