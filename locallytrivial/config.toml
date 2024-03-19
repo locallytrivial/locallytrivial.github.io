@@ -6,7 +6,7 @@ languageCode = "en"
 title = "Jim W. Kennington"
 disqusShortname = 'locally-trivial'
 
-googleAnalytics = "G-PBMXNQK5V1"
+#googleAnalytics = "G-PBMXNQK5V1"
 
 # Change the default theme to be use when building the site with Hugo
 theme = "FeelIt"
@@ -173,7 +173,7 @@ theme = "FeelIt"
     [[params.about.status]]
       title = "Code"
       faIcon = "fa-solid fa-code"
-      desc = "Python, C++, Julia, Rust, LaTeX, Mathematica"
+      desc = "Python, C++, Julia, Rust, LaTeX, ..."
     # description of your parameter
     #[[params.about.parameter]]
     #  language = "Python"
@@ -203,9 +203,9 @@ theme = "FeelIt"
     [params.social.Hackernews]
       weight = 5
       id = "JWKennington"
-    [params.social.Patreon]
+    [params.social.KoFi]
       weight = 6
-      id = "locallytrivial"
+      id = "jwkennington"
     [params.social.LinkedIn]
       weight = 2
       id = "jameskennington"
