@@ -1,7 +1,7 @@
 ---
 title: "Simple Group Isomorphism Example: D6 and S3"
 date: 2024-03-04
-draft: false
+draft: true
 categories:
   - Math
 tags:
