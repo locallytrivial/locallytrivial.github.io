@@ -6,7 +6,7 @@ languageCode = "en"
 title = "Jim W. Kennington"
 disqusShortname = 'locally-trivial'
 
-#googleAnalytics = "G-PBMXNQK5V1"
+googleAnalytics = "G-PBMXNQK5V1"
 
 # Change the default theme to be use when building the site with Hugo
 theme = "FeelIt"
