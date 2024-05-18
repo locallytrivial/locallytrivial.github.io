@@ -1,5 +1,5 @@
 ---
-title: "Classifying Physicists"
+title: "Describing Ourselves as Physicists"
 date: 2024-05-18
 draft: false
 categories:
