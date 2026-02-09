@@ -1,0 +1,21 @@
+[project]
+name = "locallytrivial"
+version = "0.1.0"
+description = "Mathematical Physics & Geometric Signal Processing Research"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=1.26",
+    "scipy>=1.11",
+    "matplotlib>=3.8",
+    "lalsuite",          # Your critical gravitational wave library
+    "pandas",
+    "dash",              # For your interactive apps
+]
+
+[dependency-groups]
+dev = [
+    "jupyter",           # Required for Quarto to execute .ipynb files
+    "quarto-cli",        # Locks the Quarto binary version to this project
+    "ipykernel",         # The kernel execution engine
+]
