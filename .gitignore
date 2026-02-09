@@ -137,3 +137,10 @@ dmypy.json
 # HUGO public files
 public
 resources
+
+/.quarto/
+/_site/
+/.venv/
+/__pycache__/
+
+

@@ -1,9 +1,3 @@
 [submodule "locallytrivial/locallytrivial/themes/LoveIt"]
 	path = locallytrivial/locallytrivial/themes/LoveIt
 	url = https://github.com/locallytrivial/LoveIt.git
-[submodule "locallytrivial/themes/LoveIt"]
-	path = locallytrivial/themes/LoveIt
-	url = https://github.com/locallytrivial/LoveIt.git
-[submodule "locallytrivial/themes/FeelIt"]
-	path = locallytrivial/themes/FeelIt
-	url = git@github.com:locallytrivial/FeelIt.git

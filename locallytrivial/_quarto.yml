@@ -1,0 +1,34 @@
+project:
+  type: website
+  output-dir: docs # GitHub Pages expects this
+
+website:
+  title: "Locally Trivial"
+  description: "Mathematical Physics & Geometric Signal Processing"
+  navbar:
+    right:
+      - text: "Home"
+        href: index.qmd
+      - text: "Research"
+        href: research.qmd
+      - text: "Notes"     # The Blog Feed
+        href: notes.qmd
+      - text: "Tools"     # Curated Portfolio
+        href: tools.qmd
+      - icon: github
+        href: https://github.com/yourusername
+      - icon: linkedin
+        href: https://linkedin.com/in/yourusername
+  page-footer:
+    center: "© 2026 Locally Trivial. Built with Quarto."
+
+format:
+  html:
+    theme: cosmo          # Clean, minimal, professional
+    css: styles.css
+    toc: true             # Table of Contents
+    code-copy: true
+    smooth-scroll: true
+    citation: true        # Enable academic citations
+    bibliography: references.bib
+

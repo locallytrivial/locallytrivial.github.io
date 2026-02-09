@@ -1,0 +1,46 @@
+---
+title: "Software & Interactive Tools"
+---
+
+## Gauge Theoretic Signal Processing
+
+Tools developed to analyze non-stationary noise in gravitational wave detectors.
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-6}
+### **Holonomy in Noise**
+**Backend:** `lalsuite` | **Interface:** Dash
+
+A simulation demonstrating how noise curvature induces phase shifts in signal vectors. This tool visualizes the "parallel transport" operator used in my GTSP framework.
+
+[**🚀 Launch in Binder**](#) *(Link pending)*
+:::
+
+::: {.g-col-12 .g-col-md-6}
+### **PyLAL-Utils**
+**Language:** Python
+
+A library of helper functions for wrapping LALSuite's matched filtering routines in modern Python workflows.
+
+[**📦 View on GitHub**](#) *(Link pending)*
+:::
+
+:::
+
+## Pedagogical Simulations
+
+Interactive visualizations for teaching General Relativity concepts.
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-6}
+### **Wormhole Raytracer**
+**Backend:** `scipy` | **Interface:** Dash
+
+Visualizes null geodesics in Morris-Thorne spacetimes to identify observable lensing signatures of traversable wormholes.
+
+[**🚀 Launch in Binder**](#) *(Link pending)*
+:::
+
+:::

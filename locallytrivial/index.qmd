@@ -1,0 +1,27 @@
+---
+title: "Locally Trivial"
+image: profile.jpg
+about:
+  template: trestles
+  links:
+    - icon: github
+      text: Github
+      href: https://github.com/yourusername
+    - icon: google
+      text: Scholar
+      href: https://scholar.google.com/citations?user=YOURID
+---
+
+## Mathematical Physics & Geometric Signal Processing
+
+I am a researcher bridging the gap between **General Relativity** and **Statistical Signal Processing**.
+
+My work addresses a critical bottleneck in the next generation of gravitational wave astronomy: standard filtering techniques (like Matched Filtering) rely on Euclidean noise geometries. However, real astrophysical data is often non-stationary and non-Gaussian, creating "curvature" in the signal space that degrades detection.
+
+To solve this, I develop **Gauge Theoretic Signal Processing (GTSP)**. By treating signal noise as a connection on a fiber bundle, I construct "parallel transport" operators that allow for robust detection even when the underlying noise statistics drift.
+
+### Core Research Areas
+
+* **GTSP:** Invariant signal representations for high-noise environments.
+* **Tests of General Relativity:** Observational signatures of topological solitons (wormholes) and exotic compact objects.
+* **Geometric Learning:** Embedding physics-based symmetries into deep learning architectures.
