@@ -1,0 +1,93 @@
+/* styles.css - The "Nuclear" Alignment Fix */
+
+/* 1. Container (Row of Buttons) */
+.about-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+/* 2. The Button (The Circle) */
+.about-link {
+  display: flex;             /* Use Flexbox */
+  align-items: center;       /* Center Vertically */
+  justify-content: center;   /* Center Horizontally */
+  
+  width: 40px;               /* Fixed Width */
+  height: 40px;              /* Fixed Height */
+  border-radius: 50%;        /* Circle */
+  padding: 0;                /* ZERO Padding (Crucial) */
+
+  background-color: transparent;
+  border: 1px solid #d1d5db;
+  color: #555;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+}
+
+/* 3. The Icon Reset (The "Anti-Wiggle" Section) */
+.about-link i, 
+.about-link .bi, 
+.about-link .ai {
+  font-size: 1.4rem;
+  
+  /* --- THE FIX START --- */
+  display: flex;             /* Treat icon as a flex block */
+  align-items: center;       /* Ensure internal centering */
+  justify-content: center;
+  
+  line-height: 1 !important;      /* Kill text height */
+  vertical-align: 0 !important;   /* Kill Bootstrap's -0.125em shift */
+  margin: 0 !important;           /* Kill default margins */
+  padding: 0 !important;
+  
+  width: 100%;               /* Fill the button width... */
+  height: 100%;              /* ...and height, so flex centers content */
+  /* --- THE FIX END --- */
+}
+
+/* 4. Hover Effects */
+.about-link:hover {
+  border-color: #007bff;
+  color: #007bff;
+  background-color: rgba(0, 123, 255, 0.05);
+  transform: scale(1.05);
+}
+
+/* =======================================================
+   RESPONSIVE LOGIC
+   ======================================================= */
+
+/* Desktop: Hide text */
+@media (min-width: 768px) {
+  .about-link-text { display: none; }
+}
+
+/* Mobile: Revert to Pill Shape */
+@media (max-width: 767.98px) {
+  .about-link {
+    width: auto;             /* Unfix width */
+    height: auto;            /* Unfix height */
+    padding: 6px 14px;       /* Add padding back */
+    border-radius: 20px;     /* Pill shape */
+  }
+
+  /* Reset icon to behave like text again */
+  .about-link i, 
+  .about-link .bi, 
+  .about-link .ai {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    font-size: 1.1rem;
+    margin-right: 6px !important; /* Space between icon and text */
+  }
+
+  .about-link-text {
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+}
