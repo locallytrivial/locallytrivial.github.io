@@ -1,7 +1,7 @@
 ---
 title: "New Paper: Geometric Template Placement with Binary Trees"
 date: "2022-09-22"
-categories: [Research, Code, Geometry]
+categories: [Research, Code, Geometry, Paper]
 tags: [LIGO, Algorithms, Differential Geometry]
 image: ../img/bank_coverage.png
 description: "A new paper presenting a novel algorithm for geometric template placement using binary trees."
