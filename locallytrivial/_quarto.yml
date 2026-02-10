@@ -3,8 +3,11 @@ project:
   output-dir: docs # GitHub Pages expects this
 
 website:
-  title: "Locally Trivial"
+  title: "Jim W. Kennington"
   description: "Mathematical Physics & Geometric Signal Processing"
+  site-url: "https://locallytrivial.com"
+
+  # Navigation
   navbar:
     right:
       - text: "Home"
@@ -15,20 +18,35 @@ website:
         href: notes.qmd
       - text: "Tools"     # Curated Portfolio
         href: tools.qmd
-      - icon: github
-        href: https://github.com/yourusername
-      - icon: linkedin
-        href: https://linkedin.com/in/yourusername
+
+  # Footer
   page-footer:
-    center: "© 2026 Locally Trivial. Built with Quarto."
+    left: "© 2026 Jim W. Kennington"
+    right:
+      - icon: envelope
+        href: mailto:jwkennington@psu.edu
+
+  # Analytics & Comments (Carried over from Hugo)
+  google-analytics: "G-PBMXNQK5V1"
+  comments:
+    giscus:
+      repo: locallytrivial/locallytrivial.github.io
+      repo-id: R_kgDOGOrGlA
+      category: General
+      category-id: DIC_kwDOGOrGlM4C2HHe
+      mapping: pathname
+      reactions-enabled: true
+      loading: lazy
 
 format:
   html:
     theme: cosmo          # Clean, minimal, professional
-    css: styles.css
+    css:
+      - https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css
+      - styles.css
     toc: true             # Table of Contents
     code-copy: true
     smooth-scroll: true
-    citation: true        # Enable academic citations
+    citation: false       # Enable academic citations
     bibliography: references.bib
-
+    csl: aps.csl
