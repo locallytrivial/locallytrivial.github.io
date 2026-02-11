@@ -1,6 +1,6 @@
 ---
 title: "Keeping Up with ArXiv using Sxolar"
-date: "2024-12-25"
+date: "2025-01-20"
 categories: [Physics, Code]
 tags: [Python, ArXiv]
 image: ../img/sxolar-wide.png

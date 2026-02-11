@@ -1,9 +1,70 @@
 ---
 title: "Research"
 comments: false
+bibliography: kennington.bib
+csl: aps-sort-recent.csl
+nocite: |
+  @*
 ---
 
-## Publications
+My research program applies the rigorous tools of differential geometry to the engineering challenges of gravitational wave astronomy. By treating data analysis problems—such as noise characterization and template placement—as geometric problems on statistical manifolds, we can derive optimal algorithms that are robust, scalable, and mathematically guaranteed to respect physical constraints like causality.
 
-*Pending content migration...*
+## Key Research Areas
 
+### Geometric Methods in Signal Processing
+
+The core of my work is **Gauge Theoretic Signal Processing (GTSP)**, a framework I am developing to unify adaptive filtering with fiber bundle geometry.
+
+* _Adaptive Causal Filtering:_ Standard whitening filters fail when detector noise is non-stationary. By using minimum phase filters, we ensure causality and save latency. We further correct for phase impact in recovery of signals, using geometric methods.
+* _Template Bank Geometry:_ I also apply information geometry to the problem of "covering" the parameter space of signals. By using the Fisher Information Metric to define the "distance" between waveforms, we can optimize the placement of template banks using high-dimensional sphere-packing algorithms.
+    * *Key Work:* [A Binary Tree Approach to Template Placement](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.108.042003) (Phys. Rev. D 108).
+
+### Multimessenger Astronomy & Early Warning
+
+Gravitational waves are often just the first signal in a cosmic event. To catch the electromagnetic counterpart (light), we need to detect the merger *before* it happens.
+
+* _Negative Latency Detection:_ I work on "Early Warning" pipelines designed to detect binary neutron star inspirals seconds before the collision. This requires pushing signal processing latency to the absolute theoretical minimum (causal limit).
+* _The AGN Channel:_ A major open question is whether binary black holes merge in the vacuum of space or within the accretion disks of Active Galactic Nuclei (AGN). I am investigating methods to use AGN catalogs as "spatial priors" for gravitational wave searches, potentially boosting the significance of sub-threshold events that coincide with known active galaxies.
+
+### Exotic Source Searches
+
+Standard searches assume black holes and neutron stars are the only players in town. I look for what standard pipelines miss.
+
+* _Sub-Solar Mass (SSM) Objects:_ Searching for compact objects lighter than the Chandrasekhar limit ($< 1.4 M_{\odot}$). Since astrophysical mechanisms cannot produce black holes this small, a detection here would be a smoking gun for _Primordial Black Holes_ or non-baryonic dark matter.
+    * *Key Work:* [Template bank for sub-solar mass compact binary mergers](https://arxiv.org/abs/2412.10951).
+* _Exotic Compact Objects (ECOs):_ I am interested in the spectral signatures of physics beyond the Standard Model, including searches for topological solitons (wormholes) and warp drive spacetimes that could mimic black hole signals but lack an event horizon.
+
+### Tests of General Relativity & Quantum Gravity
+
+My background in _Loop Quantum Gravity_ (working with the Bojowald Group) informs my approach to testing Einstein's theory.
+
+* _Black Hole Spectroscopy:_ Testing the "No-Hair Theorem" by analyzing the ringdown modes of merging black holes.
+* _Geometric Constraints:_ Using the precise phase evolution of gravitational waves to place tight bounds on deviations from General Relativity, effectively using LIGO as a laboratory for quantum gravity phenomenology.
+
+---
+
+## Selected Publications
+
+### Gravitational Wave Astronomy
+* **C. Hanna**, **J. Kennington**, et al. _A Binary Tree Approach to Template Placement for Searches for Gravitational Waves from Compact Binary Mergers._ *Physical Review D* 108, 042003 (2023).
+* **C. Hanna**, **J. Kennington**, et al. _Template bank for sub-solar mass compact binary mergers in the fourth observing run of Advanced LIGO, Advanced Virgo, and KAGRA._ [cite_start]*arXiv:2412.10951*. 
+
+### Mathematical Physics & Pedagogy
+* **N. Jeevanjee**, **J. Kennington**. _Solutions Manual for *An Introduction to Tensors and Group Theory for Physicists*._ (2019).
+
+## Selected Talks
+
+* **Mathematical Aspects of Physics (MAP) Seminar** (Cofounder & Organizer)
+    * _Fiber Bundles, Sections, and the Soldering Form_ (Nov 2024) 
+    * _Lie Groups and Lie Algebras as Left-Invariant Vector Fields_ (Oct 2024)
+    * _Gravitational Wave Detection as a Covering Problem_ (Sep 2022)
+* **Primordial Universe and Gravity Seminar**
+    * _Elements of Information Geometry_ (Aug 2023)
+* **SIAM Annual Conference (Texas-Louisiana Section)**
+    * _Tensorial methods in optimization_ (Nov 2019)
+
+
+## Full Publication List
+
+::: {#refs}
+:::
