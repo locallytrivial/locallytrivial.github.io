@@ -1,47 +1,72 @@
 ---
-title: "Software & Interactive Tools"
-comments: false
+title: "Tools & Software"
+description: "Open source software for rigorous signal processing and geometric analysis."
+format:
+  html:
+    toc: true
+    toc-depth: 2
 ---
 
-## Gauge Theoretic Signal Processing
+My research relies on building robust, mathematically rigorous tools. Below is a selection of open-source software I have developed or contributed to, ranging from high-performance signal processing infrastructure to formal proof assistants for mathematical physics.
 
-Tools developed to analyze non-stationary noise in gravitational wave detectors.
+## Real-Time Infrastructure
 
-::: {.grid}
+### The `sgn` Ecosystem
+*Core Developer*
 
-::: {.g-col-12 .g-col-md-6}
-### **Holonomy in Noise**
-**Backend:** `lalsuite` | **Interface:** Dash
+I contribute to the [**sgn framework**](https://docs.ligo.org/greg/sgn/), a next-generation ecosystem designed for the low-latency requirements of gravitational wave astronomy. My contributions focus on fundamental execution logic as well as detection-specific signal processing details.
 
-A simulation demonstrating how noise curvature induces phase shifts in signal vectors. This tool visualizes the "parallel transport" operator used in my GTSP framework.
+* **[`sgn`](https://docs.ligo.org/greg/sgn/)**: Core library for real-time data processing, providing a modular architecture for building low-latency pipelines.
+* **[`sgn-ts`](https://docs.ligo.org/greg/sgn-ts/)**: A set of time-series extensions to the core `sgn` library, enabling efficient handling of streaming data and real-time data processing tasks.
+* **[`sgn-ligo`](https://docs.ligo.org/greg/sgn-ligo/)**: A collection of LIGO-specific extensions to the `sgn` framework, including optimized implementations of matched filtering and other signal processing techniques tailored for gravitational wave detection.
+* **[`sgnl`](https://docs.ligo.org/greg/sgnl/)**: Detection pipeline and related utilities built on top of the `sgn` ecosystem, designed to facilitate the development and deployment of real-time detection algorithms. Inheriting conceptually from the [GstLAL](https://lscsoft.docs.ligo.org/gstlal/) pipeline.
 
-[**🚀 Launch in Binder**](#) *(Link pending)*
-:::
+### `array-api-signal`
+*Sole Developer* -- [[Source](https://git.ligo.org/james.kennington/array-api-signal)]
 
-::: {.g-col-12 .g-col-md-6}
-### **PyLAL-Utils**
-**Language:** Python
+A lightweight set of signal processing extensions built on the [**Array API**](https://data-apis.org/array-api/latest/) standard. By leveraging the backend detection of `array-api-compat`, this library provides a unified interface for signal processing primitives (like window functions and filtering) that runs seamlessly on NumPy, PyTorch, or JAX. This library exists to extend the Array API to cover the specific needs of signal processing in gravitational wave astronomy, some of which are not yet covered by the core standard.
 
-A library of helper functions for wrapping LALSuite's matched filtering routines in modern Python workflows.
+---
 
-[**📦 View on GitHub**](#) *(Link pending)*
-:::
+## Geometry & Mathematical Physics
 
-:::
+### `manifold`
+*Core Developer* -- [[Source](https://git.ligo.org/chad.hanna/manifold)]
 
-## Pedagogical Simulations
+A differential geometry library for constructing geometric template banks. By utilizing **information geometry** (specifically Fisher information metrics), `manifold` optimally places templates in high-dimensional parameter spaces. This ensures maximum physical coverage with minimal computational cost by treating the search space as a curved statistical manifold.
 
-Interactive visualizations for teaching General Relativity concepts.
 
-::: {.grid}
+### `LoopGroup` (Lean 4)
+*Sole Developer* -- [[Source](https://github.com/JWKennington/LoopGroup)]
 
-::: {.g-col-12 .g-col-md-6}
-### **Wormhole Raytracer**
-**Backend:** `scipy` | **Interface:** Dash
+A formalization of **Loop Groups** (infinite-dimensional Lie groups) in the **Lean 4** theorem prover. Currently under development, this project provides rigorous, computer-verified proofs for the algebraic structures underpinning gauge theory and integrable systems.
 
-Visualizes null geodesics in Morris-Thorne spacetimes to identify observable lensing signatures of traversable wormholes.
+### `formality`
+*Sole Developer* -- [[Source](https://github.com/JWKennington/formality)]
 
-[**🚀 Launch in Binder**](#) *(Link pending)*
-:::
+A symbolic mathematics extension for `sympy` focused on **combinatorics** and **finite group theory**. Designed as a playground for algebraic experimentation, it provides specialized tools for manipulating Young Tableaux, generating Young Symmetrizer groups, and algorithmically searching for group isomorphisms to verify conjectures.
 
-:::
+---
+
+## Specialized Utilities
+
+### `zlw` (Zero-Latency Whitening)
+*Sole Developer* -- [[Source](https://git.ligo.org/james.kennington/zlw)]
+
+A specialized utility library for **causal data whitening**. Crucial for "Early Warning" detection systems, `zlw` characterizes noise power spectral densities in real-time without introducing non-causal artifacts (future data leakage), ensuring that analysis pipelines strictly respect the arrow of time.
+
+### `sxolar`
+*Sole Developer* -- [[Source](https://github.com/JWKennington/sxolar)]
+
+A lightweight, automated interface for the arXiv API. Designed to streamline literature reviews, it automates the tracking and filtering of new preprints in specific sub-fields of mathematical physics and geometry.
+
+---
+
+## Pedagogical Resources
+
+### Interactive Signal Processing
+*Sole Developer* 
+
+A suite of web-based interactive applications designed to visualize the core concepts of matched filtering and gravitational wave detection. These tools allow students and researchers to manipulate signal-to-noise ratios, visualize PSDs, and see real-time template matching in the browser.
+
+- **DSP Filter Design Playground**: [See Related Note](posts/20241101-app-dsp-filter.qmd). An interactive tool for designing and visualizing digital filters, demonstrating the effects of different filter parameters on signal processing tasks, including poles and zeros, frequency response, stability, and causal vs non-causal filtering. Built with Dash and Plotly for an intuitive user experience. [Source](https://github.com/JWKennington/app-dsp-filter-design)

@@ -123,6 +123,6 @@ One interesting challenge was handling "Improper" transfer functions. In the ana
 You can run the app locally or use the hosted version:
 
 ```bash
-pip install git+[https://github.com/JWKennington/app-dsp-filter-design](https://github.com/JWKennington/app-dsp-filter-design)
-dsp-explorer
+pip install dsp-filter-design
+dsp-fd
 ```
