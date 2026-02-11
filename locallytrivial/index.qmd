@@ -1,0 +1,93 @@
+---
+title: "Jim W. Kennington"
+image: img/profile.png
+comments: false
+citation: false
+toc: false
+
+listing:
+  id: landing-posts
+  contents: posts
+  sort: "date desc"
+  type: grid
+  max-items: 3
+  image-height: 150px
+  fields: [image, date, title, description]
+  categories: false
+
+about:
+  template: jolla
+  image-width: 18em
+  image-shape: round
+---
+
+
+
+I am a theoretical physicist applying **geometry** to **gravitational wave astronomy**, developing
+frameworks for compact binary coalescence (CBC) detection pipelines that operate in
+the non-stationary noise of the cosmos. I also contribute to searches for multi-messenger and early-warning
+events, exotic compact objects, and tests of general relativity / quantum gravity with gravitational waves.
+I am a member of the LIGO Scientific Collaboration and the LISA Consortium.
+
+## What's New
+
+:::{#landing-posts}
+:::
+
+<div style="text-align: right">
+  [View all notes &rarr;](notes.qmd)
+</div>
+
+
+<div class="about-links" style="margin-top: -10px; margin-bottom: 25px;">
+  
+  <a href="mailto:jwkennington@psu.edu" class="about-link" rel="" target="">
+    <i class="bi bi-envelope"></i>
+    <span class="about-link-text d-md-none">Email</span>
+  </a>
+
+  <a href="cv.pdf" class="about-link" rel="" target="">
+    {{< ai cv >}}
+    <span class="about-link-text d-md-none">CV</span>
+  </a>
+
+  <a href="https://github.com/JWKennington" class="about-link" rel="" target="">
+    <i class="bi bi-github"></i>
+    <span class="about-link-text d-md-none">Github</span>
+  </a>
+
+  <a href="https://git.ligo.org/james.kennington" class="about-link" rel="" target="">
+    <i class="bi bi-gitlab"></i>
+    <span class="about-link-text d-md-none">LIGO</span>
+  </a>
+
+  <a href="https://inspirehep.net/authors/YOUR_ID" class="about-link" rel="" target="">
+    {{< ai inspire >}}
+    <span class="about-link-text d-md-none">Inspire</span>
+  </a>
+
+  <a href="https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0002-6899-3833" class="about-link" rel="" target="">
+    {{< ai ads >}}
+    <span class="about-link-text d-md-none">ADS</span>
+  </a>
+
+  <a href="https://arxiv.org/search/?searchtype=author&query=Kennington%2C+J" class="about-link" rel="" target="">{{< ai arxiv >}}<span class="about-link-text d-md-none">arXiv</span>
+  </a>
+
+  <a href="https://orcid.org/0000-0002-6899-3833" class="about-link" rel="" target="">
+    {{< ai orcid >}}
+    <span class="about-link-text d-md-none">ORCID</span>
+  </a>
+
+  <a href="https://www.researchgate.net/profile/James-Kennington" class="about-link" rel="" target="">
+    {{< ai researchgate >}}
+    <span class="about-link-text d-md-none">ResearchGate</span>
+  </a>
+
+  <a href="https://www.linkedin.com/in/jameskennington/" class="about-link" rel="" target="">
+    <i class="bi bi-linkedin"></i>
+    <span class="about-link-text d-md-none">LinkedIn</span>
+  </a>
+
+</div>
+

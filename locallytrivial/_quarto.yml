@@ -1,0 +1,54 @@
+project:
+  type: website
+  output-dir: docs # GitHub Pages expects this
+
+website:
+  title: "Jim W. Kennington"
+  description: "Mathematical Physics & Geometric Signal Processing"
+  site-url: "https://locallytrivial.com"
+
+  # Navigation
+  navbar:
+    right:
+      - text: "Home"
+        href: index.qmd
+      - text: "About"
+        href: about.qmd
+      - text: "Research"
+        href: research.qmd
+      - text: "Notes"     # The Blog Feed
+        href: notes.qmd
+      - text: "Tools"     # Curated Portfolio
+        href: tools.qmd
+
+  # Footer
+  page-footer:
+    left: "© 2026 Jim W. Kennington"
+    right:
+      - icon: envelope
+        href: mailto:jwkennington@psu.edu
+
+  # Analytics & Comments (Carried over from Hugo)
+  google-analytics: "G-PBMXNQK5V1"
+  comments:
+    giscus:
+      repo: locallytrivial/locallytrivial.github.io
+      repo-id: R_kgDOGOrGlA
+      category: General
+      category-id: DIC_kwDOGOrGlM4C2HHe
+      mapping: pathname
+      reactions-enabled: true
+      loading: lazy
+
+format:
+  html:
+    theme: cosmo          # Clean, minimal, professional
+    css:
+      - https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css
+      - styles.css
+    toc: true             # Table of Contents
+    code-copy: true
+    smooth-scroll: true
+    citation: false       # Enable academic citations
+    bibliography: references.bib
+    csl: aps.csl
