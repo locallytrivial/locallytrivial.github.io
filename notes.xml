@@ -6,14 +6,14 @@
       version="2.0">
 <channel>
 <title>Jim W. Kennington</title>
-<link>https://locallytrivial.com/notes.html</link>
-<atom:link href="https://locallytrivial.com/notes.xml" rel="self" type="application/rss+xml"/>
+<link>https://jwkennington.com/notes.html</link>
+<atom:link href="https://jwkennington.com/notes.xml" rel="self" type="application/rss+xml"/>
 <description>Mathematical Physics &amp; Geometric Signal Processing</description>
 <generator>quarto-1.8.27</generator>
 <lastBuildDate>Mon, 20 Jan 2025 00:00:00 GMT</lastBuildDate>
 <item>
   <title>Keeping Up with ArXiv using Sxolar</title>
-  <link>https://locallytrivial.com/posts/20250120-sxolar.html</link>
+  <link>https://jwkennington.com/posts/20250120-sxolar.html</link>
   <description><![CDATA[ 
 
 
@@ -706,13 +706,13 @@ font-style: inherit;">|</span></span>
  ]]></description>
   <category>Physics</category>
   <category>Code</category>
-  <guid>https://locallytrivial.com/posts/20250120-sxolar.html</guid>
+  <guid>https://jwkennington.com/posts/20250120-sxolar.html</guid>
   <pubDate>Mon, 20 Jan 2025 00:00:00 GMT</pubDate>
-  <media:content url="https://locallytrivial.com/img/sxolar-wide.png" medium="image" type="image/png" height="81" width="144"/>
+  <media:content url="https://jwkennington.com/img/sxolar-wide.png" medium="image" type="image/png" height="81" width="144"/>
 </item>
 <item>
   <title>New Paper: Hunting for Primordial Black Holes, The O4 Sub-Solar Mass Bank</title>
-  <link>https://locallytrivial.com/posts/20241216-paper-ssmbank.html</link>
+  <link>https://jwkennington.com/posts/20241216-paper-ssmbank.html</link>
   <description><![CDATA[ 
 
 
@@ -739,7 +739,7 @@ font-style: inherit;">|</span></span>
 <div id="fig-neighborhood" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-neighborhood-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://locallytrivial.com/img/metric_neighborhood.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%">
+<img src="https://jwkennington.com/img/metric_neighborhood.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-neighborhood-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Schematic of the neighborhood metric estimation. If the metric at <img src="https://latex.codecogs.com/png.latex?p"> is unstable, we sample the local neighborhood (bounded by a mismatch ellipse) to find a stable proxy <img src="https://latex.codecogs.com/png.latex?q_m">.
@@ -750,7 +750,7 @@ Figure&nbsp;1: Schematic of the neighborhood metric estimation. If the metric at
 <div id="fig-padding" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-padding-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://locallytrivial.com/img/boundary_padding.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
+<img src="https://jwkennington.com/img/boundary_padding.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-padding-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2: Impact of boundary padding. Left: Original bank shows efficiency loss (lower fitting factor) at low masses. Right: The padded bank recovers nearly all signals with &gt;97% match.
@@ -765,7 +765,7 @@ Figure&nbsp;2: Impact of boundary padding. Left: Original bank shows efficiency 
 <div id="fig-ssm-bank" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ssm-bank-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://locallytrivial.com/img/ssm_bank.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%">
+<img src="https://jwkennington.com/img/ssm_bank.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ssm-bank-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;3: The final O4 SSM Template Bank covering the component mass space. Note the extreme density required at low masses (<img src="https://latex.codecogs.com/png.latex?m%20%3C%200.5%20M_%5Codot">).
@@ -789,13 +789,13 @@ Figure&nbsp;3: The final O4 SSM Template Bank covering the component mass space.
   <category>LIGO</category>
   <category>Dark Matter</category>
   <category>Paper</category>
-  <guid>https://locallytrivial.com/posts/20241216-paper-ssmbank.html</guid>
+  <guid>https://jwkennington.com/posts/20241216-paper-ssmbank.html</guid>
   <pubDate>Mon, 16 Dec 2024 00:00:00 GMT</pubDate>
-  <media:content url="https://locallytrivial.com/img/ssm_bank.png" medium="image" type="image/png" height="88" width="144"/>
+  <media:content url="https://jwkennington.com/img/ssm_bank.png" medium="image" type="image/png" height="88" width="144"/>
 </item>
 <item>
   <title>Interactive App: Digital Signal Processing Explorer</title>
-  <link>https://locallytrivial.com/posts/20241101-app-dsp-filter.html</link>
+  <link>https://jwkennington.com/posts/20241101-app-dsp-filter.html</link>
   <description><![CDATA[ 
 
 
@@ -811,7 +811,7 @@ Figure&nbsp;3: The final O4 SSM Template Bank covering the component mass space.
 <div id="fig-dsp" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-dsp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://locallytrivial.com/img/dsp_screenshot.png" class="img-fluid figure-img" style="width:100.0%">
+<img src="https://jwkennington.com/img/dsp_screenshot.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dsp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: The DSP Explorer Interface. Users can drag poles (red) and zeros (blue) to instantly see the effect on the frequency response and impulse response.
@@ -970,13 +970,13 @@ font-style: inherit;">dsp-fd</span></span></code></pre></div></div>
   <category>Physics</category>
   <category>Signal Processing</category>
   <category>Education</category>
-  <guid>https://locallytrivial.com/posts/20241101-app-dsp-filter.html</guid>
+  <guid>https://jwkennington.com/posts/20241101-app-dsp-filter.html</guid>
   <pubDate>Fri, 01 Nov 2024 00:00:00 GMT</pubDate>
-  <media:content url="https://locallytrivial.com/img/dsp_screenshot.png" medium="image" type="image/png" height="71" width="144"/>
+  <media:content url="https://jwkennington.com/img/dsp_screenshot.png" medium="image" type="image/png" height="71" width="144"/>
 </item>
 <item>
   <title>Describing Ourselves as Physicists</title>
-  <link>https://locallytrivial.com/posts/20240518-classifying.html</link>
+  <link>https://jwkennington.com/posts/20240518-classifying.html</link>
   <description><![CDATA[ 
 
 
@@ -1006,7 +1006,7 @@ font-style: inherit;">dsp-fd</span></span></code></pre></div></div>
 <div id="fig-types" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-types-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://locallytrivial.com/img/types_of_physicists.png" class="img-fluid figure-img">
+<img src="https://jwkennington.com/img/types_of_physicists.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-types-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Types of Physicists
@@ -1021,7 +1021,7 @@ Figure&nbsp;1: Types of Physicists
 <div id="fig-theorists" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-theorists-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://locallytrivial.com/img/types_of_theorists.png" class="img-fluid figure-img">
+<img src="https://jwkennington.com/img/types_of_theorists.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-theorists-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2: Types of Theorists
@@ -1042,7 +1042,7 @@ Figure&nbsp;2: Types of Theorists
 <div id="fig-rigor" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-rigor-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://locallytrivial.com/img/stages_of_rigor.png" class="img-fluid figure-img">
+<img src="https://jwkennington.com/img/stages_of_rigor.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rigor-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;3: Stages of Rigor
@@ -1078,13 +1078,13 @@ Figure&nbsp;3: Stages of Rigor
 
  ]]></description>
   <category>Physics</category>
-  <guid>https://locallytrivial.com/posts/20240518-classifying.html</guid>
+  <guid>https://jwkennington.com/posts/20240518-classifying.html</guid>
   <pubDate>Sat, 18 May 2024 00:00:00 GMT</pubDate>
-  <media:content url="https://locallytrivial.com/img/types_of_physicists.png" medium="image" type="image/png" height="108" width="144"/>
+  <media:content url="https://jwkennington.com/img/types_of_physicists.png" medium="image" type="image/png" height="108" width="144"/>
 </item>
 <item>
   <title>Namespacing SSH Credentials with Git</title>
-  <link>https://locallytrivial.com/posts/20240304-ssh-namespacing.html</link>
+  <link>https://jwkennington.com/posts/20240304-ssh-namespacing.html</link>
   <description><![CDATA[ 
 
 
@@ -1114,7 +1114,7 @@ Figure&nbsp;3: Stages of Rigor
 <div id="fig-general-flow" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-general-flow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://locallytrivial.com/img/ssh-namespacing3.svg" class="img-fluid figure-img">
+<img src="https://jwkennington.com/img/ssh-namespacing3.svg" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-general-flow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: General Flow Diagram of Git and SSH call stack.
@@ -1448,13 +1448,13 @@ font-style: inherit;">git</span> clone git@github.com:personal/repo1.git</span><
 
  ]]></description>
   <category>Code</category>
-  <guid>https://locallytrivial.com/posts/20240304-ssh-namespacing.html</guid>
+  <guid>https://jwkennington.com/posts/20240304-ssh-namespacing.html</guid>
   <pubDate>Mon, 04 Mar 2024 00:00:00 GMT</pubDate>
-  <media:content url="https://locallytrivial.com/img/key-pile-small.png" medium="image" type="image/png" height="95" width="144"/>
+  <media:content url="https://jwkennington.com/img/key-pile-small.png" medium="image" type="image/png" height="95" width="144"/>
 </item>
 <item>
   <title>New Paper: Geometric Template Placement with Binary Trees</title>
-  <link>https://locallytrivial.com/posts/20220922-paper-manifold.html</link>
+  <link>https://jwkennington.com/posts/20220922-paper-manifold.html</link>
   <description><![CDATA[ 
 
 
@@ -1484,7 +1484,7 @@ font-style: inherit;">git</span> clone git@github.com:personal/repo1.git</span><
 <div id="fig-bifurcation" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-bifurcation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://locallytrivial.com/img/bifurcation.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
+<img src="https://jwkennington.com/img/bifurcation.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bifurcation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Binary tree decomposition of the parameter space. The numbers represent the recursion depth, illustrating how the algorithm adapts to the local curvature of the signal manifold.
@@ -1500,7 +1500,7 @@ Figure&nbsp;1: Binary tree decomposition of the parameter space. The numbers rep
 <div id="fig-bank" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-bank-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://locallytrivial.com/img/bank_coverage.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
+<img src="https://jwkennington.com/img/bank_coverage.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bank-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2: The resulting template bank covering the component mass space. Note the varying density of templates, inversely proportional to the chirp mass.
@@ -1526,13 +1526,13 @@ Figure&nbsp;2: The resulting template bank covering the component mass space. No
   <category>Code</category>
   <category>Geometry</category>
   <category>Paper</category>
-  <guid>https://locallytrivial.com/posts/20220922-paper-manifold.html</guid>
+  <guid>https://jwkennington.com/posts/20220922-paper-manifold.html</guid>
   <pubDate>Thu, 22 Sep 2022 00:00:00 GMT</pubDate>
-  <media:content url="https://locallytrivial.com/img/bank_coverage.png" medium="image" type="image/png" height="124" width="144"/>
+  <media:content url="https://jwkennington.com/img/bank_coverage.png" medium="image" type="image/png" height="124" width="144"/>
 </item>
 <item>
   <title>Recent Finds #1</title>
-  <link>https://locallytrivial.com/posts/20210919-recent-finds.html</link>
+  <link>https://jwkennington.com/posts/20210919-recent-finds.html</link>
   <description><![CDATA[ 
 
 
@@ -1594,7 +1594,7 @@ Figure&nbsp;2: The resulting template bank covering the component mass space. No
 <div id="fig-pso" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-pso-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://locallytrivial.com/img/ParticleSwarmArrowsAnimation.gif" class="img-fluid figure-img">
+<img src="https://jwkennington.com/img/ParticleSwarmArrowsAnimation.gif" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pso-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Particle Swarm Optimization Example (Ephramac, CC BY-SA via Wikimedia Commons)
@@ -1629,13 +1629,13 @@ Figure&nbsp;1: Particle Swarm Optimization Example (Ephramac, CC BY-SA via Wikim
  ]]></description>
   <category>Physics</category>
   <category>Math</category>
-  <guid>https://locallytrivial.com/posts/20210919-recent-finds.html</guid>
+  <guid>https://jwkennington.com/posts/20210919-recent-finds.html</guid>
   <pubDate>Sun, 19 Sep 2021 00:00:00 GMT</pubDate>
-  <media:content url="https://locallytrivial.com/img/ParticleSwarmArrowsAnimation.gif" medium="image" type="image/gif"/>
+  <media:content url="https://jwkennington.com/img/ParticleSwarmArrowsAnimation.gif" medium="image" type="image/gif"/>
 </item>
 <item>
   <title>Algebra Ladder</title>
-  <link>https://locallytrivial.com/posts/20200315-algebra-ladder.html</link>
+  <link>https://jwkennington.com/posts/20200315-algebra-ladder.html</link>
   <description><![CDATA[ 
 
 
@@ -1647,7 +1647,7 @@ Figure&nbsp;1: Particle Swarm Optimization Example (Ephramac, CC BY-SA via Wikim
 <div id="fig-ladder" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ladder-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://locallytrivial.com/img/algebra-ladder.png" class="img-fluid figure-img">
+<img src="https://jwkennington.com/img/algebra-ladder.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ladder-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Relationship of various algebraic structures.
@@ -1676,13 +1676,13 @@ Figure&nbsp;1: Relationship of various algebraic structures.
   <category>Math</category>
   <category>Algebra</category>
   <category>Group Theory</category>
-  <guid>https://locallytrivial.com/posts/20200315-algebra-ladder.html</guid>
+  <guid>https://jwkennington.com/posts/20200315-algebra-ladder.html</guid>
   <pubDate>Sun, 15 Mar 2020 00:00:00 GMT</pubDate>
-  <media:content url="https://locallytrivial.com/img/algebra-ladder.png" medium="image" type="image/png" height="124" width="144"/>
+  <media:content url="https://jwkennington.com/img/algebra-ladder.png" medium="image" type="image/png" height="124" width="144"/>
 </item>
 <item>
   <title>Book Review: Tensors and Group Theory for Physicists (Jeevanjee)</title>
-  <link>https://locallytrivial.com/posts/20190628-book-review-jeevanjee.html</link>
+  <link>https://jwkennington.com/posts/20190628-book-review-jeevanjee.html</link>
   <description><![CDATA[ 
 
 
@@ -1721,9 +1721,9 @@ Figure&nbsp;1: Relationship of various algebraic structures.
   <category>Books</category>
   <category>Physics</category>
   <category>Math</category>
-  <guid>https://locallytrivial.com/posts/20190628-book-review-jeevanjee.html</guid>
+  <guid>https://jwkennington.com/posts/20190628-book-review-jeevanjee.html</guid>
   <pubDate>Fri, 28 Jun 2019 00:00:00 GMT</pubDate>
-  <media:content url="https://locallytrivial.com/img/jeevanjee-book.png" medium="image" type="image/png" height="81" width="144"/>
+  <media:content url="https://jwkennington.com/img/jeevanjee-book.png" medium="image" type="image/png" height="81" width="144"/>
 </item>
 </channel>
 </rss>

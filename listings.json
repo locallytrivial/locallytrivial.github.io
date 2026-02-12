@@ -1,6 +1,6 @@
 [
   {
-    "listing": "/index.html",
+    "listing": "/notes.html",
     "items": [
       "/posts/20250120-sxolar.html",
       "/posts/20241216-paper-ssmbank.html",
@@ -14,7 +14,7 @@
     ]
   },
   {
-    "listing": "/notes.html",
+    "listing": "/index.html",
     "items": [
       "/posts/20250120-sxolar.html",
       "/posts/20241216-paper-ssmbank.html",
