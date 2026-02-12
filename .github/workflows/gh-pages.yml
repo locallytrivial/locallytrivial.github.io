@@ -24,7 +24,8 @@ jobs:
           enable-cache: true
 
       # 2. Build Environment
-      # 'uv sync' installs Python (if needed) and all dependencies from pyproject.toml into .venv
+      # This assumes pyproject.toml is in the ROOT. 
+      # If it's inside locallytrivial/, add: "working-directory: locallytrivial" to this step.
       - name: Install dependencies
         run: uv sync
 
@@ -33,16 +34,19 @@ jobs:
         uses: quarto-dev/quarto-actions/setup@v2
 
       # 4. Render
-      # We set QUARTO_PYTHON to point specifically to the uv environment
       - name: Render Quarto Project
         uses: quarto-dev/quarto-actions/render@v2
+        with:
+          path: locallytrivial  # <--- POINT THIS TO YOUR FOLDER
         env:
-          QUARTO_PYTHON: .venv/bin/python
+          # Use absolute path to ensure it works regardless of working directory
+          QUARTO_PYTHON: ${{ github.workspace }}/.venv/bin/python
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         if: github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
+          # The _site folder will be inside the project folder
+          publish_dir: ./locallytrivial/_site
           cname: jwkennington.com
