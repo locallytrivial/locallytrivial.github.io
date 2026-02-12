@@ -48,5 +48,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           # The _site folder will be inside the project folder
-          publish_dir: ./locallytrivial/_site
+          publish_dir: ./locallytrivial/docs
           cname: jwkennington.com
