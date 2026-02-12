@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2024-11-01">
+<meta name="description" content="An interactive web app to explore digital signal processing concepts through pole-zero manipulation.">
+
+<title>Interactive App: Digital Signal Processing Explorer – Jim W. Kennington</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-355c415dd6b9922ddaf04a2341011fe1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-PBMXNQK5V1"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-PBMXNQK5V1', { 'anonymize_ip': true});
+</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Jim W. Kennington</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../research.html"> 
+<span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../notes.html"> 
+<span class="menu-text">Notes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../tools.html"> 
+<span class="menu-text">Tools</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#motivation-from-equations-to-intuition" id="toc-motivation-from-equations-to-intuition" class="nav-link active" data-scroll-target="#motivation-from-equations-to-intuition">Motivation: From Equations to Intuition</a></li>
+  <li><a href="#key-features" id="toc-key-features" class="nav-link" data-scroll-target="#key-features">Key Features</a>
+  <ul class="collapse">
+  <li><a href="#unified-analog-digital-design" id="toc-unified-analog-digital-design" class="nav-link" data-scroll-target="#unified-analog-digital-design">1. Unified Analog &amp; Digital Design</a></li>
+  <li><a href="#interactive-geometry" id="toc-interactive-geometry" class="nav-link" data-scroll-target="#interactive-geometry">2. Interactive Geometry</a></li>
+  <li><a href="#stability-visualization" id="toc-stability-visualization" class="nav-link" data-scroll-target="#stability-visualization">3. Stability Visualization</a></li>
+  </ul></li>
+  <li><a href="#interactive-learning-labs" id="toc-interactive-learning-labs" class="nav-link" data-scroll-target="#interactive-learning-labs">Interactive Learning Labs</a>
+  <ul class="collapse">
+  <li><a href="#experiment-1-the-time-stability-connection" id="toc-experiment-1-the-time-stability-connection" class="nav-link" data-scroll-target="#experiment-1-the-time-stability-connection">Experiment 1: The Time-Stability Connection</a></li>
+  <li><a href="#experiment-2-zeros-as-notches" id="toc-experiment-2-zeros-as-notches" class="nav-link" data-scroll-target="#experiment-2-zeros-as-notches">Experiment 2: Zeros as “Notches”</a></li>
+  <li><a href="#experiment-3-the-speed-vs.-ringing-trade-off" id="toc-experiment-3-the-speed-vs.-ringing-trade-off" class="nav-link" data-scroll-target="#experiment-3-the-speed-vs.-ringing-trade-off">Experiment 3: The “Speed vs.&nbsp;Ringing” Trade-off</a></li>
+  <li><a href="#experiment-4-building-a-stable-anti-causal-filter" id="toc-experiment-4-building-a-stable-anti-causal-filter" class="nav-link" data-scroll-target="#experiment-4-building-a-stable-anti-causal-filter">Experiment 4: Building a Stable Anti-Causal Filter</a></li>
+  <li><a href="#experiment-5-perfect-symmetry-zero-phase" id="toc-experiment-5-perfect-symmetry-zero-phase" class="nav-link" data-scroll-target="#experiment-5-perfect-symmetry-zero-phase">Experiment 5: Perfect Symmetry (Zero-Phase)</a></li>
+  </ul></li>
+  <li><a href="#the-tech-stack" id="toc-the-tech-stack" class="nav-link" data-scroll-target="#the-tech-stack">The Tech Stack</a>
+  <ul class="collapse">
+  <li><a href="#handling-edge-cases" id="toc-handling-edge-cases" class="nav-link" data-scroll-target="#handling-edge-cases">Handling Edge Cases</a></li>
+  </ul></li>
+  <li><a href="#try-it-yourself" id="toc-try-it-yourself" class="nav-link" data-scroll-target="#try-it-yourself">Try It Yourself</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Interactive App: Digital Signal Processing Explorer</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Code</div>
+    <div class="quarto-category">Physics</div>
+    <div class="quarto-category">Signal Processing</div>
+    <div class="quarto-category">Education</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    An interactive web app to explore digital signal processing concepts through pole-zero manipulation.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">November 1, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div style="text-align: center; margin-bottom: 2em;">
+<p><a class="btn btn-primary" href="https://dsp-explorer.onrender.com" role="button" target="_blank" style="margin-right: 10px;"> <i class="bi bi-play-circle"></i> Launch Live App </a> <a class="btn btn-outline-primary" href="https://github.com/JWKennington/app-dsp-filter-design" role="button" target="_blank"> <i class="bi bi-github"></i> View Source </a></p>
+</div>
+<section id="motivation-from-equations-to-intuition" class="level2">
+<h2 class="anchored" data-anchor-id="motivation-from-equations-to-intuition">Motivation: From Equations to Intuition</h2>
+<p>Signal processing is often taught through static diagrams and theorems. We learn that “poles on the left half-plane are stable” or “zeros on the unit circle kill frequencies,” but these concepts remain abstract algebraic rules for many students.</p>
+<p>To bridge this gap, I built the <strong>DSP Filter Design Explorer</strong>—an open-source, interactive pedagogical tool built with Python and Dash. It allows students and engineers to “play” with filter topology and see the immediate consequences in both the frequency and time domains.</p>
+<div id="fig-dsp" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-dsp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../img/dsp_screenshot.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dsp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: The DSP Explorer Interface. Users can drag poles (red) and zeros (blue) to instantly see the effect on the frequency response and impulse response.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="key-features" class="level2">
+<h2 class="anchored" data-anchor-id="key-features">Key Features</h2>
+<section id="unified-analog-digital-design" class="level3">
+<h3 class="anchored" data-anchor-id="unified-analog-digital-design">1. Unified Analog &amp; Digital Design</h3>
+<p>The app unifies the two worlds of DSP by treating them as selectable domains with their own stability logic: * <strong>Analog (<span class="math inline">\(s\)</span>-plane):</strong> Stability is defined by the <strong>Left Half Plane</strong>. The imaginary axis (<span class="math inline">\(j\omega\)</span>) represents frequency. * <strong>Digital (<span class="math inline">\(z\)</span>-plane):</strong> Stability is defined by the <strong>Unit Circle</strong>. The angle around the circle represents frequency (from DC to Nyquist).</p>
+</section>
+<section id="interactive-geometry" class="level3">
+<h3 class="anchored" data-anchor-id="interactive-geometry">2. Interactive Geometry</h3>
+<p>Standard textbook filters (Butterworth, Chebyshev) act as starting points, but you aren’t limited to them. You can grab any pole or zero and drag it to a new location. This allows for “What if?” exploration: <em>What happens if I break the symmetry of this Butterworth filter? What if I move this pole dangerously close to the stability boundary?</em></p>
+</section>
+<section id="stability-visualization" class="level3">
+<h3 class="anchored" data-anchor-id="stability-visualization">3. Stability Visualization</h3>
+<p>A “Highlight Region” toggle visually demarcates the Causal (Stable) and Anti-Causal regions. * In <strong>Analog</strong> mode, you see the classic Left/Right plane split. * In <strong>Digital</strong> mode, you see the interior/exterior of the Unit Disk.</p>
+</section>
+</section>
+<section id="interactive-learning-labs" class="level2">
+<h2 class="anchored" data-anchor-id="interactive-learning-labs">Interactive Learning Labs</h2>
+<p>The best way to build intuition for signal processing is to experiment. Here are five exercises you can run in the app to explore stability, causality, and symmetry.</p>
+<section id="experiment-1-the-time-stability-connection" class="level3">
+<h3 class="anchored" data-anchor-id="experiment-1-the-time-stability-connection">Experiment 1: The Time-Stability Connection</h3>
+<p><strong>Setup:</strong> Select <strong>Analog</strong> mode. Ensure the <strong>Causal</strong> region is highlighted (Green on the left). <strong>Action:</strong> Take a single pole from the stable Left Half Plane (Green) and drag it across the vertical axis into the Right Half Plane (Red). <strong>Observation:</strong> * <strong>In Green Zone:</strong> The impulse response decays forward in time (<span class="math inline">\(t &gt; 0\)</span>). * <strong>On the Line:</strong> The signal oscillates forever (Marginally Stable). * <strong>In Red Zone:</strong> The signal does <strong>not</strong> explode. Instead, it flips! It now decays <em>backward</em> in time (<span class="math inline">\(t &lt; 0\)</span>).</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Why does this happen?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>This app prioritizes <strong>Stability</strong> over <strong>Causality</strong>. Mathematically, a pole in the Right Half Plane (<span class="math inline">\(Re(s) &gt; 0\)</span>) corresponds to an exponential <span class="math inline">\(e^{st}\)</span> that grows infinitely as <span class="math inline">\(t \to \infty\)</span>. To keep the energy bounded (stable), the math engine treats this pole as “Anti-Causal”—meaning the signal must decay from the future (<span class="math inline">\(t=0\)</span>) back into the past (<span class="math inline">\(t \to -\infty\)</span>).</p>
+</div>
+</div>
+</div>
+</section>
+<section id="experiment-2-zeros-as-notches" class="level3">
+<h3 class="anchored" data-anchor-id="experiment-2-zeros-as-notches">Experiment 2: Zeros as “Notches”</h3>
+<p>Zeros effectively “kill” frequencies. <strong>Setup:</strong> Click “Reset”, switch to <strong>Analog</strong>, and click <strong>Add Zero</strong>. <strong>Action:</strong> Drag the blue zero directly onto the imaginary axis (the central vertical line) at a specific height (e.g., <span class="math inline">\(y=2\)</span>). <strong>Observation:</strong> Look at the <strong>Bode Plot</strong> (Magnitude). You will see a sharp dip (a notch) descending to <span class="math inline">\(-\infty\)</span> dB at that exact frequency.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Why does this happen?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The transfer function is a ratio: <span class="math inline">\(H(s) = \frac{\text{Zeros}}{\text{Poles}}\)</span>. If you place a zero exactly at a specific frequency <span class="math inline">\(s = j\omega\)</span>, the numerator becomes zero, and the gain drops to nothing. This is exactly how engineers design filters to remove 60Hz power line hum!</p>
+</div>
+</div>
+</div>
+</section>
+<section id="experiment-3-the-speed-vs.-ringing-trade-off" class="level3">
+<h3 class="anchored" data-anchor-id="experiment-3-the-speed-vs.-ringing-trade-off">Experiment 3: The “Speed vs.&nbsp;Ringing” Trade-off</h3>
+<p><strong>Setup:</strong> Select <strong>Lowpass</strong> and <strong>Order 4</strong>. <strong>Action:</strong> Toggle between the <strong>Butterworth</strong> and <strong>Chebyshev I</strong> families. <strong>Observation:</strong> * <strong>Butterworth:</strong> Poles form a wide semi-circle. The impulse response decays quickly but smoothly. * <strong>Chebyshev:</strong> Poles are squashed into an ellipse closer to the imaginary axis. The impulse response “rings” (oscillates) for much longer.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Why does this happen?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>As poles move closer to the stability boundary (the imaginary axis), their “damping ratio” decreases. * <strong>Butterworth</strong> maximizes distance from the axis for a given cutoff, resulting in minimal ringing. * <strong>Chebyshev</strong> pushes poles closer to the danger zone to get a steeper frequency cutoff, but pays the price with longer time-domain ringing.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="experiment-4-building-a-stable-anti-causal-filter" class="level3">
+<h3 class="anchored" data-anchor-id="experiment-4-building-a-stable-anti-causal-filter">Experiment 4: Building a Stable Anti-Causal Filter</h3>
+<p>Textbooks often say “Anti-Causal filters are impossible.” That is only true for real-time hardware. In data post-processing, they are very real. <strong>Setup:</strong> Select <strong>Analog</strong> mode. <strong>Action:</strong> Drag <strong>ALL</strong> poles into the Right Half Plane. <strong>Observation:</strong> You will see a stable, bounded impulse response that exists entirely in negative time (<span class="math inline">\(t &lt; 0\)</span>).</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Why is this useful?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>This demonstrates that “Unstable” poles are only unstable if you force them to process data from the past. If you reverse your data stream (processing from end to start), these “Unstable” poles become stable! This is the core principle behind “Forward-Backward Filtering” (<code>filtfilt</code>), used to smooth data without shifting it in time.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="experiment-5-perfect-symmetry-zero-phase" class="level3">
+<h3 class="anchored" data-anchor-id="experiment-5-perfect-symmetry-zero-phase">Experiment 5: Perfect Symmetry (Zero-Phase)</h3>
+<p><strong>Setup:</strong> Click “Reset”. <strong>Action:</strong> Create a symmetric “mirror” image. For every pole you place on the left (e.g., at <span class="math inline">\(-1 + 1j\)</span>), place a matching pole on the right (<span class="math inline">\(+1 + 1j\)</span>). Do the same for the conjugate pairs (bottom half). <strong>Observation:</strong> The <strong>Impulse Response</strong> becomes a perfectly symmetric pulse centered at <span class="math inline">\(t=0\)</span>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Why does this happen?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>You have balanced the Phase Delay. * The Left-Hand poles delay the signal (pushing energy to <span class="math inline">\(t &gt; 0\)</span>). * The Right-Hand poles “advance” the signal (pulling energy to <span class="math inline">\(t &lt; 0\)</span>). When balanced perfectly, the phase shifts cancel out, leaving a “Zero-Phase” filter. This preserves the shape of pulses in your data better than any standard causal filter can.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="the-tech-stack" class="level2">
+<h2 class="anchored" data-anchor-id="the-tech-stack">The Tech Stack</h2>
+<p>The application is a pure Python stack, demonstrating that you don’t need complex JavaScript frameworks to build high-performance engineering tools.</p>
+<ul>
+<li><strong><a href="https://dash.plotly.com/">Dash</a>:</strong> Handles the frontend UI and client-side state management (<code>dcc.Store</code>), ensuring the app scales to many concurrent users without shared-state conflicts.</li>
+<li><strong><a href="https://plotly.com/python/">Plotly</a>:</strong> Provides the interactive graphing. The drag-and-drop functionality is powered by Plotly’s shape-editing API.</li>
+<li><strong><a href="https://scipy.org/">SciPy</a>:</strong> The calculation engine. It handles the complex polynomial algebra (<code>zpk2tf</code>), frequency response (<code>freqs</code>/<code>freqz</code>), and filtering (<code>lfilter</code>/<code>impulse</code>).</li>
+<li><strong><a href="https://render.com/">Render</a>:</strong> Hosting provider for the Dockerized application.</li>
+</ul>
+<section id="handling-edge-cases" class="level3">
+<h3 class="anchored" data-anchor-id="handling-edge-cases">Handling Edge Cases</h3>
+<p>One interesting challenge was handling “Improper” transfer functions. In the analog domain, if a user adds more zeros than poles, the system acts as a differentiator with infinite bandwidth. The app detects this topological violation and displays a warning instead of crashing the solver.</p>
+</section>
+</section>
+<section id="try-it-yourself" class="level2">
+<h2 class="anchored" data-anchor-id="try-it-yourself">Try It Yourself</h2>
+<p>You can run the app locally or use the hosted version:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install dsp-filter-design</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">dsp-fd</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/locallytrivial\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<input type="hidden" id="giscus-base-theme" value="light">
+<input type="hidden" id="giscus-alt-theme" value="dark">
+<script>
+  function loadGiscus() {
+    // Function to get the theme based on body class
+    const getTheme = () => {
+      let baseTheme = document.getElementById('giscus-base-theme').value;
+      let altTheme = document.getElementById('giscus-alt-theme').value;
+      return document.body.classList.contains('quarto-dark') ? altTheme : baseTheme;
+    };
+    const script = document.createElement("script");
+    script.src = "https://giscus.app/client.js";
+    script.async = true;
+    script.dataset.repo = "locallytrivial/locallytrivial.github.io";
+    script.dataset.repoId = "R_kgDOGOrGlA";
+    script.dataset.category = "General";
+    script.dataset.categoryId = "DIC_kwDOGOrGlM4C2HHe";
+    script.dataset.mapping = "pathname";
+    script.dataset.reactionsEnabled = "1";
+    script.dataset.emitMetadata = "0";
+    script.dataset.inputPosition = "top";
+    script.dataset.theme = getTheme();
+    script.dataset.lang = "en";
+    script.crossOrigin = "anonymous";
+    // Append the script to the desired div instead of at the end of the body
+    document.getElementById("quarto-content").appendChild(script);
+  }
+  loadGiscus();
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Jim W. Kennington</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="mailto:jwkennington@psu.edu">
+      <i class="bi bi-envelope" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

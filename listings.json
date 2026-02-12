@@ -1,0 +1,30 @@
+[
+  {
+    "listing": "/index.html",
+    "items": [
+      "/posts/20250120-sxolar.html",
+      "/posts/20241216-paper-ssmbank.html",
+      "/posts/20241101-app-dsp-filter.html",
+      "/posts/20240518-classifying.html",
+      "/posts/20240304-ssh-namespacing.html",
+      "/posts/20220922-paper-manifold.html",
+      "/posts/20210919-recent-finds.html",
+      "/posts/20200315-algebra-ladder.html",
+      "/posts/20190628-book-review-jeevanjee.html"
+    ]
+  },
+  {
+    "listing": "/notes.html",
+    "items": [
+      "/posts/20250120-sxolar.html",
+      "/posts/20241216-paper-ssmbank.html",
+      "/posts/20241101-app-dsp-filter.html",
+      "/posts/20240518-classifying.html",
+      "/posts/20240304-ssh-namespacing.html",
+      "/posts/20220922-paper-manifold.html",
+      "/posts/20210919-recent-finds.html",
+      "/posts/20200315-algebra-ladder.html",
+      "/posts/20190628-book-review-jeevanjee.html"
+    ]
+  }
+]
