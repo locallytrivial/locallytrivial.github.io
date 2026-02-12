@@ -1,10 +1,10 @@
 ---
 title: "Interactive App: Digital Signal Processing Explorer"
+description: "Introducing the DSP Filter Design Explorer, an interactive web application built with Python and Dash that allows users to explore the effects of pole and zero placement on filter stability, frequency response, and impulse response in both analog and digital domains. This tool provides a hands-on learning experience for students and engineers to develop intuition about signal processing concepts."
 date: "2024-11-01"
 categories: [Code, Physics, Signal Processing, Education]
 tags: [Python, Dash, Scipy, Interactive, Visualization]
 image: ../img/dsp_screenshot.png
-description: "An interactive web app to explore digital signal processing concepts through pole-zero manipulation."
 ---
 
 <div style="text-align: center; margin-bottom: 2em;">

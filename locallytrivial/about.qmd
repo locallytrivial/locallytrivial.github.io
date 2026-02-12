@@ -1,5 +1,6 @@
 ---
 title: "About"
+description: "Learn about Jim W. Kennington, a theoretical physicist specializing in geometry and gravitational wave astronomy."
 comments: false
 ---
 

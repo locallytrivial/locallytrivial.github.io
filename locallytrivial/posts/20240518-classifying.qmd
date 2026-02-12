@@ -1,5 +1,6 @@
 ---
 title: "Describing Ourselves as Physicists"
+description: "Exploring the nuances of identity in physics, this post delves into the various categories of physicists based on their approach to physics, thought processes, and career development stages. It highlights the distinctions between experimentalists, phenomenologists, and theorists, as well as different types of theorists and stages of mathematical rigor in a physicist's career."
 date: "2024-05-18"
 categories: [Physics]
 tags: [Theory v. Experiment, Phenomenology, Career Development]

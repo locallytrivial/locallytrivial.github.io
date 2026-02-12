@@ -1,5 +1,6 @@
 ---
 title: "Recent Finds #1"
+description: "In this inaugural issue of the 'Recent Finds' series, we explore the algebraic and geometric equivalence of tangent vectors as presented in Chris Isham's 'Modern Differential Geometry for Physicists', and delve into the concept of Particle Swarm Optimization (PSO) and its applications in various scientific fields, including gravitational wave analysis."
 date: "2021-09-19"
 categories: [Physics, Math]
 tags: [Recent Finds]

@@ -1,10 +1,10 @@
 ---
 title: "New Paper: Hunting for Primordial Black Holes, The O4 Sub-Solar Mass Bank"
+description: "A new paper presenting a novel template bank for searching for sub-solar mass compact binary mergers in LIGO's fourth observing run (O4). This bank is designed to detect potential primordial black holes, which could provide evidence for dark matter. The paper introduces a new neighborhood metric estimation technique to handle the extreme curvature of the signal manifold in this low-mass regime."
 date: "2024-12-16"
 categories: [Research, LIGO, Dark Matter, Paper]
 tags: [Primordial Black Holes, Differential Geometry, O4]
 image: ../img/ssm_bank.png
-description: "A new paper presenting a novel template bank for sub-solar mass black hole searches in LIGO's O4 run."
 ---
 
 <div style="text-align: center; margin-bottom: 2em;">

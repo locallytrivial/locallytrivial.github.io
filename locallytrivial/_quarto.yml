@@ -2,10 +2,17 @@ project:
   type: website
   output-dir: docs # GitHub Pages expects this
 
+# Ensure the correct language code is set (crucial for accessibility/SEO)
+lang: en
+
 website:
   title: "Jim W. Kennington"
   description: "Mathematical Physics & Geometric Signal Processing"
-  site-url: "https://locallytrivial.com"
+  site-url: "https://jwkennington.com"
+
+  # specific SEO settings
+  open-graph: true      # Enables preview cards for Facebook/LinkedIn/Discord
+  twitter-card: true    # Enables preview cards for X (Twitter)
 
   # Navigation
   navbar:

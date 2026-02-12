@@ -1,5 +1,6 @@
 ---
 title: "Namespacing SSH Credentials with Git"
+description: "A guide to setting up SSH namespaces with Git, allowing you to use different SSH keys for different accounts on the same Git hosting service. This is particularly useful for developers who have both personal and work accounts on platforms like GitHub, GitLab, or Bitbucket."
 date: "2024-03-04"
 categories: [Code]
 tags: [Git, SSH, Security]

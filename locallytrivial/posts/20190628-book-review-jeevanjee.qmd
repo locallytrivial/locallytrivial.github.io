@@ -1,5 +1,6 @@
 ---
 title: "Book Review: Tensors and Group Theory for Physicists (Jeevanjee)"
+description: "A review of Nadir Jeevanjee's 'An Introduction to Tensors and Group Theory for Physicists', highlighting its rigorous yet intuitive approach to tensors and group theory, making it a valuable resource for both physicists and computer scientists."
 date: "2019-06-28"
 categories: [Books, Physics, Math]
 tags: [Algebra, Group Theory]

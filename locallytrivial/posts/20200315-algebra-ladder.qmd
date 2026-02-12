@@ -1,5 +1,6 @@
 ---
 title: "Algebra Ladder"
+description: "A visual map of algebraic structures, showing the relationships between sets, magmas, groups, rings, fields, and more. This diagram helps clarify the hierarchy and connections between different algebraic objects commonly used in mathematical physics."
 date: "2020-03-15"
 categories: [Math, Algebra, Group Theory]
 image: ../img/algebra-ladder.png

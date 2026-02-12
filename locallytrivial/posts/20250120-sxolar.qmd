@@ -1,5 +1,6 @@
 ---
 title: "Keeping Up with ArXiv using Sxolar"
+description: "Introducing `sxolar`, a Python library that allows you to search ArXiv and get daily email alerts for new papers in your field of interest. This post walks through the process of setting up periodic email alerts with `sxolar`, including configuring queries, setting up Google Mail access, and scheduling with GitHub Actions."
 date: "2025-01-20"
 categories: [Physics, Code]
 tags: [Python, ArXiv]

@@ -1,10 +1,10 @@
 ---
 title: "New Paper: Geometric Template Placement with Binary Trees"
+description: "Introducing a new paper on geometric template placement for gravitational wave detection, utilizing a binary tree approach to efficiently cover the parameter space of compact binary mergers. This method offers significant computational advantages and improved structure over traditional stochastic placement techniques."
 date: "2022-09-22"
 categories: [Research, Code, Geometry, Paper]
 tags: [LIGO, Algorithms, Differential Geometry]
 image: ../img/bank_coverage.png
-description: "A new paper presenting a novel algorithm for geometric template placement using binary trees."
 ---
 
 <div style="text-align: center; margin-bottom: 2em;">

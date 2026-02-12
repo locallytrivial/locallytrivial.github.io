@@ -1,5 +1,6 @@
 ---
 title: "Research"
+description: "Explore the research of Jim W. Kennington, a theoretical physicist applying geometry to gravitational wave astronomy, including his work on compact binary coalescence detection pipelines and tests of general relativity. Research areas include geometric methods in gravitational wave analysis, multimessenger astronomy, exotic source searches, and testing GR."
 comments: false
 bibliography: kennington.bib
 csl: aps-sort-recent.csl
