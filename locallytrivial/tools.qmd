@@ -1,6 +1,6 @@
 ---
 title: "Tools & Software"
-description: "Open source software for rigorous signal processing and geometric analysis."
+# description: "Open source software for rigorous signal processing and geometric analysis."
 format:
   html:
     toc: true

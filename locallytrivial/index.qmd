@@ -1,6 +1,6 @@
 ---
 title: "Jim W. Kennington"
-description: "Personal website of Jim W. Kennington, a theoretical physicist specializing in gravitational wave astronomy and geometric signal processing."
+# description: "Personal website of Jim W. Kennington, a theoretical physicist specializing in gravitational wave astronomy and geometric signal processing."
 image: img/profile.png
 comments: false
 citation: false
