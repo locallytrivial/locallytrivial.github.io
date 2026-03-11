@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2022-09-22">
-<meta name="description" content="Introducing a new paper on geometric template placement for gravitational wave detection, utilizing a binary tree approach to efficiently cover the parameter space of compact binary mergers. This method offers significant computational advantages and improved structure over traditional stochastic placement techniques.">
+<meta name="dcterms.date" content="2026-03-11">
+<meta name="description" content="Our new paper introduces the Dual Cutler-Vallisneri Corrections, a novel perturbative framework to eliminate sky-localization and timing biases caused by power spectral density (PSD) drift in real-time gravitational-wave pipelines.">
 
-<title>New Paper: Geometric Template Placement with Binary Trees – Jim W. Kennington</title>
+<title>New Paper: Mitigating PSD Drift in Zero-Latency GW Searches – Jim W. Kennington</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -133,17 +133,17 @@ window.Quarto = {
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="New Paper: Geometric Template Placement with Binary Trees – Jim W. Kennington">
-<meta property="og:description" content="Introducing a new paper on geometric template placement for gravitational wave detection, utilizing a binary tree approach to efficiently cover the parameter space of compact binary mergers. This method offers significant computational advantages and improved structure over traditional stochastic placement techniques.">
-<meta property="og:image" content="https://jwkennington.com/img/bank_coverage.png">
+<meta property="og:title" content="New Paper: Mitigating PSD Drift in Zero-Latency GW Searches – Jim W. Kennington">
+<meta property="og:description" content="Our new paper introduces the Dual Cutler-Vallisneri Corrections, a novel perturbative framework to eliminate sky-localization and timing biases caused by power spectral density (PSD) drift in real-time gravitational-wave pipelines.">
+<meta property="og:image" content="https://jwkennington.com/img/gtsp-c0/sky_impact_analysis.png">
 <meta property="og:site_name" content="Jim W. Kennington">
-<meta property="og:image:height" content="630">
-<meta property="og:image:width" content="730">
-<meta name="twitter:title" content="New Paper: Geometric Template Placement with Binary Trees – Jim W. Kennington">
-<meta name="twitter:description" content="Introducing a new paper on geometric template placement for gravitational wave detection, utilizing a binary tree approach to efficiently cover the parameter space of compact binary mergers. This method offers significant computational advantages and improved structure over traditional stochastic placement techniques.">
-<meta name="twitter:image" content="https://jwkennington.com/img/bank_coverage.png">
-<meta name="twitter:image-height" content="630">
-<meta name="twitter:image-width" content="730">
+<meta property="og:image:height" content="500">
+<meta property="og:image:width" content="1400">
+<meta name="twitter:title" content="New Paper: Mitigating PSD Drift in Zero-Latency GW Searches – Jim W. Kennington">
+<meta name="twitter:description" content="Our new paper introduces the Dual Cutler-Vallisneri Corrections, a novel perturbative framework to eliminate sky-localization and timing biases caused by power spectral density (PSD) drift in real-time gravitational-wave pipelines.">
+<meta name="twitter:image" content="https://jwkennington.com/img/gtsp-c0/sky_impact_analysis.png">
+<meta name="twitter:image-height" content="500">
+<meta name="twitter:image-width" content="1400">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -200,9 +200,9 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#matched-filtering-on-curved-manifolds" id="toc-matched-filtering-on-curved-manifolds" class="nav-link active" data-scroll-target="#matched-filtering-on-curved-manifolds">Matched Filtering on Curved Manifolds</a></li>
-  <li><a href="#recursive-decomposition" id="toc-recursive-decomposition" class="nav-link" data-scroll-target="#recursive-decomposition">Recursive Decomposition</a></li>
-  <li><a href="#geometric-structure-and-efficiency" id="toc-geometric-structure-and-efficiency" class="nav-link" data-scroll-target="#geometric-structure-and-efficiency">Geometric Structure and Efficiency</a></li>
+  <li><a href="#the-problem-noise-drift-in-real-time-searches" id="toc-the-problem-noise-drift-in-real-time-searches" class="nav-link active" data-scroll-target="#the-problem-noise-drift-in-real-time-searches">The Problem: Noise Drift in Real-Time Searches</a></li>
+  <li><a href="#the-solution-dual-cutler-vallisneri-corrections" id="toc-the-solution-dual-cutler-vallisneri-corrections" class="nav-link" data-scroll-target="#the-solution-dual-cutler-vallisneri-corrections">The Solution: Dual Cutler-Vallisneri Corrections</a></li>
+  <li><a href="#validation-and-impact" id="toc-validation-and-impact" class="nav-link" data-scroll-target="#validation-and-impact">Validation and Impact</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
@@ -212,18 +212,18 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">New Paper: Geometric Template Placement with Binary Trees</h1>
+<h1 class="title">New Paper: Mitigating PSD Drift in Zero-Latency GW Searches</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Research</div>
-    <div class="quarto-category">Code</div>
-    <div class="quarto-category">Geometry</div>
+    <div class="quarto-category">LIGO</div>
+    <div class="quarto-category">Multi-Messenger Astronomy</div>
     <div class="quarto-category">Paper</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    Introducing a new paper on geometric template placement for gravitational wave detection, utilizing a binary tree approach to efficiently cover the parameter space of compact binary mergers. This method offers significant computational advantages and improved structure over traditional stochastic placement techniques.
+    Our new paper introduces the Dual Cutler-Vallisneri Corrections, a novel perturbative framework to eliminate sky-localization and timing biases caused by power spectral density (PSD) drift in real-time gravitational-wave pipelines.
   </div>
 </div>
 
@@ -234,7 +234,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 22, 2022</p>
+      <p class="date">March 11, 2026</p>
     </div>
   </div>
   
@@ -247,62 +247,66 @@ window.Quarto = {
 
 
 <div style="text-align: center; margin-bottom: 2em;">
-<p><a class="btn btn-primary" href="https://arxiv.org/abs/2209.11298" role="button" target="_blank" style="margin-right: 10px;"> <i class="bi bi-file-earmark-pdf"></i> Read Paper (ArXiv) </a> <a class="btn btn-outline-primary" href="https://pypi.org/project/gwsci-manifold/" role="button" target="_blank"> <i class="bi bi-code-slash"></i> View Code (PyPi) </a></p>
+<p><a class="btn btn-primary" href="https://arxiv.org/abs/2603.09132" role="button" target="_blank" style="margin-right: 10px;"> <i class="bi bi-file-earmark-pdf"></i> Read Paper (ArXiv) </a> <a class="btn btn-outline-primary" href="https://git.ligo.org/james.kennington/zlw" role="button" target="_blank"> <i class="bi bi-code-slash"></i> View Code </a></p>
 </div>
-<section id="matched-filtering-on-curved-manifolds" class="level2">
-<h2 class="anchored" data-anchor-id="matched-filtering-on-curved-manifolds">Matched Filtering on Curved Manifolds</h2>
-<p>In gravitational wave astronomy, the optimal strategy for detecting signals buried in Gaussian noise is matched filtering. This requires a discrete set of waveform filters, or a <strong>Template Bank</strong>, <span class="math inline">\(\{h(\vec{\theta}_i)\}\)</span>, that covers the continuous parameter space of compact binary mergers. The effectiveness of a bank is measured by the <em>mismatch</em>—the fractional loss in signal-to-noise ratio (SNR) due to the discreteness of the grid.</p>
-<p>Constructing these banks is a problem of differential geometry. The parameter space <span class="math inline">\(\mathcal{M}\)</span> (masses, spins) is a Riemannian manifold endowed with a metric <span class="math inline">\(g_{ij}\)</span> defined by the inner product of the waveform derivatives. The distance between two points on this manifold represents the loss in SNR:</p>
+<section id="the-problem-noise-drift-in-real-time-searches" class="level2">
+<h2 class="anchored" data-anchor-id="the-problem-noise-drift-in-real-time-searches">The Problem: Noise Drift in Real-Time Searches</h2>
+<p>To enable multi-messenger astronomy, gravitational-wave pipelines must generate zero-latency alerts to catch the early optical counterparts of mergers. This requires matched-filtering strain data against theoretical templates using a “lagged” estimate of the detector’s Power Spectral Density (PSD).</p>
+<p>However, detector noise fluctuates continuously. This spectral drift creates a mismatch that warps the matched-filter metric, severely biasing timing estimates and degrading sky-localization.</p>
+</section>
+<section id="the-solution-dual-cutler-vallisneri-corrections" class="level2">
+<h2 class="anchored" data-anchor-id="the-solution-dual-cutler-vallisneri-corrections">The Solution: Dual Cutler-Vallisneri Corrections</h2>
+<p>Building on low-latency methods by Tsukada et al. <span class="citation" data-cites="tsukada_application_2018">&nbsp;[<a href="#ref-tsukada_application_2018" role="doc-biblioref">1</a>]</span>, we generalized the classic Cutler-Vallisneri formalism to compute metric shifts caused specifically by PSD drift.</p>
+<p>The result is a set of analytic, causal, and computationally cheap corrections for the timing and phase biases. These first-order corrections for timing (<span class="math inline">\(\delta t^{(1)}\)</span>) and phase (<span class="math inline">\(\delta \phi^{(1)}\)</span>) are power-weighted spectral averages of the whitening phase mismatch:</p>
 <p><span class="math display">\[
-1 - \mathcal{M} \approx g_{ij} \Delta \theta^i \Delta \theta^j
+\delta t^{(1)} = \frac{\int (2\pi f) \Phi_a(f) w(f) df}{\int (2\pi f)^2 w(f) df}, \quad \delta \phi^{(1)} = \frac{\int \Phi_a(f) w(f) df}{\int w(f) df}
 \]</span></p>
-<p>Because the metric depends on the coordinates (the manifold is curved), the local density of templates required to maintain a fixed minimal match is proportional to <span class="math inline">\(\sqrt{|g|}\)</span>. In the low-mass regime, the curvature is high, requiring dense placement; at high masses, the manifold flattens out. Historically, the field has relied on <strong>stochastic placement</strong>—randomly sampling points and rejecting those too close to existing templates. While robust, this is computationally expensive (<span class="math inline">\(O(N^2)\)</span> without heuristics) and produces an unstructured, amorphous set of points.</p>
-</section>
-<section id="recursive-decomposition" class="level2">
-<h2 class="anchored" data-anchor-id="recursive-decomposition">Recursive Decomposition</h2>
-<p>In our paper, <em>A binary tree approach to template placement</em>, we propose a deterministic, geometric alternative: <strong>Treebank</strong>. <span class="citation" data-cites="hanna_binary_2022">&nbsp;[<a href="#ref-hanna_binary_2022" role="doc-biblioref">1</a>]</span></p>
-<p>We approach the problem as a recursive binary space partitioning task. We initialize the search space as a single hyper-rectangle and recursively subdivide it based on the local Riemannian geometry. For a given hyper-rectangle, we calculate the metric <span class="math inline">\(g_{ij}\)</span> at the centroid and estimate the number of templates <span class="math inline">\(\mathcal{N}\)</span> required to cover its proper volume.</p>
-<p>The algorithm proceeds as follows:</p>
-<ol type="1">
-<li><strong>Metric Evaluation:</strong> Calculate the proper length of each edge of the hypercube using the local metric.</li>
-<li><strong>Bifurcation:</strong> If <span class="math inline">\(\mathcal{N} &gt; 1\)</span>, split the hypercube in half along the dimension with the largest proper length.</li>
-<li><strong>Recursion:</strong> Repeat the process for the resulting child nodes.</li>
-<li><strong>Placement:</strong> When <span class="math inline">\(\mathcal{N} \approx 1\)</span>, the recursion terminates, and a template is placed at the geometric center.</li>
-</ol>
-<div id="fig-bifurcation" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<p>Here, <span class="math inline">\(\Phi_a(f)\)</span> is the whitening phase perturbation induced by the drift, and <span class="math inline">\(w(f)\)</span> is the whitened signal power.</p>
+<div id="fig-biases" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-bifurcation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../img/bifurcation.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
+<div aria-describedby="fig-biases-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../img/gtsp-c0/bias_distributions.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bifurcation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Binary tree decomposition of the parameter space. The numbers represent the recursion depth, illustrating how the algorithm adapts to the local curvature of the signal manifold.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-biases-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Distributions of the timing and phase biases induced by a 1-week PSD lag across ~160 GWTC-4.0 event-detector pairs. Timing biases exhibit a heavy tail exceeding 200 µs, while phase biases are generally confined to 0.2 rad.
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="geometric-structure-and-efficiency" class="level2">
-<h2 class="anchored" data-anchor-id="geometric-structure-and-efficiency">Geometric Structure and Efficiency</h2>
-<p>This approach effectively translates a physics problem—covering a signal manifold—into a classic computer science structure, the <span class="math inline">\(k\)</span>-d tree.</p>
-<p>The computational gains are significant; we generated a bank suitable for Advanced LIGO (covering component masses <span class="math inline">\(1 M_\odot &lt; m_{1,2} &lt; 100 M_\odot\)</span>) in approximately <strong>24 CPU-hours</strong>, a task that can take days with stochastic methods.</p>
-<p>However, the primary advantage is structural. Stochastic banks are unstructured point clouds. The <strong>Treebank</strong> algorithm partitions the parameter space into non-overlapping hyper-rectangles, where each template “owns” a specific, well-defined volume of the physical parameter space. This structure simplifies downstream Bayesian inference and population modeling, as numerical integration over the parameter space becomes a summation over defined Euclidean volumes weighted by the local metric.</p>
-<div id="fig-bank" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<section id="validation-and-impact" class="level2">
+<h2 class="anchored" data-anchor-id="validation-and-impact">Validation and Impact</h2>
+<p>We validated this framework using real GWTC-4.0 strain data. As seen above, uncorrected 1-week PSD drift can induce severe systematics. Beyond coordinate shifts, this drift also directly suppresses the recovered signal amplitude.</p>
+<div id="fig-snr-drift" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-bank-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../img/bank_coverage.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
+<div aria-describedby="fig-snr-drift-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../img/gtsp-c0/snr_drift.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bank-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: The resulting template bank covering the component mass space. Note the varying density of templates, inversely proportional to the chirp mass.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-snr-drift-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Distribution of the fractional SNR loss caused by uncorrected PSD drift. The median sensitivity loss of 3-5% translates to a ~15% reduction in overall detection volume.
 </figcaption>
 </figure>
 </div>
-<p>We produced a bank of <span class="math inline">\(\sim 2 \times 10^6\)</span> templates. While the geometric constraints force a slightly higher number of templates than stochastic limits to achieve the same <em>minimal</em> match, the <em>average</em> match is higher, potentially improving the overall detection efficiency of the search pipeline.</p>
-<p>You can view the code for this project here: <a href="https://pypi.org/project/gwsci-manifold/">gwsci-manifold</a></p>
+<p>Applying our mathematical framework successfully restores these parameters. Crucially, this eliminates the artificial broadening of early-warning sky maps, ensuring rapid alerts remain highly accurate for telescopes hunting for electromagnetic counterparts.</p>
+<div id="fig-sky-impact" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sky-impact-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../img/gtsp-c0/sky_impact_analysis.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sky-impact-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Systematic shifts in sky-localization (Right Ascension and Declination) induced by uncorrected PSD drift. While the median shift is modest, severe outliers can experience pointing errors between 5° and 10°.
+</figcaption>
+</figure>
+</div>
+<p>For the complete derivation, see the full paper <span class="citation" data-cites="kennington_dual_2026">&nbsp;[<a href="#ref-kennington_dual_2026" role="doc-biblioref">2</a>]</span>.</p>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
 <div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list">
-<div id="ref-hanna_binary_2022" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[1] </div><div class="csl-right-inline">C. Hanna et al., <a href="https://doi.org/10.48550/arXiv.2209.11298">A binary tree approach to template placement for searches for gravitational waves from compact binary mergers</a>, <span>arXiv</span>:2209.11298 (2022).</div>
+<div id="ref-tsukada_application_2018" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">L. Tsukada, K. Cannon, C. Hanna, D. Keppel, D. Meacher, and C. Messick, <a href="https://doi.org/10.1103/PhysRevD.97.103009">Application of a zero-latency whitening filter to compact binary coalescence gravitational-wave searches</a>, Phys. Rev. D <strong>97</strong>, 103009 (2018).</div>
+</div>
+<div id="ref-kennington_dual_2026" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">J. Kennington, <a href="https://doi.org/10.48550/arXiv.2603.09132">Dual cutler-vallisneri corrections: Mitigating <span>PSD</span> drift in zero-latency gravitational-wave searches</a>, <span>arXiv</span>:2603.09132 (2026).</div>
 </div>
 </div>
 

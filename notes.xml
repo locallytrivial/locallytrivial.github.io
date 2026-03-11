@@ -10,7 +10,89 @@
 <atom:link href="https://jwkennington.com/notes.xml" rel="self" type="application/rss+xml"/>
 <description>Mathematical Physics &amp; Geometric Signal Processing</description>
 <generator>quarto-1.8.27</generator>
-<lastBuildDate>Mon, 20 Jan 2025 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Wed, 11 Mar 2026 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>New Paper: Mitigating PSD Drift in Zero-Latency GW Searches</title>
+  <link>https://jwkennington.com/posts/20260311-paper-gtsp-c0.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<div style="text-align: center; margin-bottom: 2em;">
+<p><a class="btn btn-primary" href="https://arxiv.org/abs/2603.09132" target="_blank" style="margin-right: 10px;"> <i class="bi bi-file-earmark-pdf"></i> Read Paper (ArXiv) </a> <a class="btn btn-outline-primary" href="https://git.ligo.org/james.kennington/zlw" target="_blank"> <i class="bi bi-code-slash"></i> View Code </a></p>
+</div>
+<section id="the-problem-noise-drift-in-real-time-searches" class="level2">
+<h2 class="anchored" data-anchor-id="the-problem-noise-drift-in-real-time-searches">The Problem: Noise Drift in Real-Time Searches</h2>
+<p>To enable multi-messenger astronomy, gravitational-wave pipelines must generate zero-latency alerts to catch the early optical counterparts of mergers. This requires matched-filtering strain data against theoretical templates using a “lagged” estimate of the detector’s Power Spectral Density (PSD).</p>
+<p>However, detector noise fluctuates continuously. This spectral drift creates a mismatch that warps the matched-filter metric, severely biasing timing estimates and degrading sky-localization.</p>
+</section>
+<section id="the-solution-dual-cutler-vallisneri-corrections" class="level2">
+<h2 class="anchored" data-anchor-id="the-solution-dual-cutler-vallisneri-corrections">The Solution: Dual Cutler-Vallisneri Corrections</h2>
+<p>Building on low-latency methods by Tsukada et al. <span class="citation" data-cites="tsukada_application_2018">&nbsp;[1]</span>, we generalized the classic Cutler-Vallisneri formalism to compute metric shifts caused specifically by PSD drift.</p>
+<p>The result is a set of analytic, causal, and computationally cheap corrections for the timing and phase biases. These first-order corrections for timing (<img src="https://latex.codecogs.com/png.latex?%5Cdelta%20t%5E%7B(1)%7D">) and phase (<img src="https://latex.codecogs.com/png.latex?%5Cdelta%20%5Cphi%5E%7B(1)%7D">) are power-weighted spectral averages of the whitening phase mismatch:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cdelta%20t%5E%7B(1)%7D%20=%20%5Cfrac%7B%5Cint%20(2%5Cpi%20f)%20%5CPhi_a(f)%20w(f)%20df%7D%7B%5Cint%20(2%5Cpi%20f)%5E2%20w(f)%20df%7D,%20%5Cquad%20%5Cdelta%20%5Cphi%5E%7B(1)%7D%20=%20%5Cfrac%7B%5Cint%20%5CPhi_a(f)%20w(f)%20df%7D%7B%5Cint%20w(f)%20df%7D%0A"></p>
+<p>Here, <img src="https://latex.codecogs.com/png.latex?%5CPhi_a(f)"> is the whitening phase perturbation induced by the drift, and <img src="https://latex.codecogs.com/png.latex?w(f)"> is the whitened signal power.</p>
+<div id="fig-biases" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-biases-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://jwkennington.com/img/gtsp-c0/bias_distributions.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-biases-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Distributions of the timing and phase biases induced by a 1-week PSD lag across ~160 GWTC-4.0 event-detector pairs. Timing biases exhibit a heavy tail exceeding 200 µs, while phase biases are generally confined to 0.2 rad.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="validation-and-impact" class="level2">
+<h2 class="anchored" data-anchor-id="validation-and-impact">Validation and Impact</h2>
+<p>We validated this framework using real GWTC-4.0 strain data. As seen above, uncorrected 1-week PSD drift can induce severe systematics. Beyond coordinate shifts, this drift also directly suppresses the recovered signal amplitude.</p>
+<div id="fig-snr-drift" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-snr-drift-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://jwkennington.com/img/gtsp-c0/snr_drift.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-snr-drift-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Distribution of the fractional SNR loss caused by uncorrected PSD drift. The median sensitivity loss of 3-5% translates to a ~15% reduction in overall detection volume.
+</figcaption>
+</figure>
+</div>
+<p>Applying our mathematical framework successfully restores these parameters. Crucially, this eliminates the artificial broadening of early-warning sky maps, ensuring rapid alerts remain highly accurate for telescopes hunting for electromagnetic counterparts.</p>
+<div id="fig-sky-impact" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sky-impact-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://jwkennington.com/img/gtsp-c0/sky_impact_analysis.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sky-impact-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Systematic shifts in sky-localization (Right Ascension and Declination) induced by uncorrected PSD drift. While the median shift is modest, severe outliers can experience pointing errors between 5° and 10°.
+</figcaption>
+</figure>
+</div>
+<p>For the complete derivation, see the full paper <span class="citation" data-cites="kennington_dual_2026">&nbsp;[2]</span>.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0">
+<div id="ref-tsukada_application_2018" class="csl-entry">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">L. Tsukada, K. Cannon, C. Hanna, D. Keppel, D. Meacher, and C. Messick, <a href="https://doi.org/10.1103/PhysRevD.97.103009">Application of a zero-latency whitening filter to compact binary coalescence gravitational-wave searches</a>, Phys. Rev. D <strong>97</strong>, 103009 (2018).</div>
+</div>
+<div id="ref-kennington_dual_2026" class="csl-entry">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">J. Kennington, <a href="https://doi.org/10.48550/arXiv.2603.09132">Dual cutler-vallisneri corrections: Mitigating <span>PSD</span> drift in zero-latency gravitational-wave searches</a>, <span>arXiv</span>:2603.09132 (2026).</div>
+</div>
+</div>
+
+
+</section>
+
+ ]]></description>
+  <category>Research</category>
+  <category>LIGO</category>
+  <category>Multi-Messenger Astronomy</category>
+  <category>Paper</category>
+  <guid>https://jwkennington.com/posts/20260311-paper-gtsp-c0.html</guid>
+  <pubDate>Wed, 11 Mar 2026 00:00:00 GMT</pubDate>
+  <media:content url="https://jwkennington.com/img/gtsp-c0/sky_impact_analysis.png" medium="image" type="image/png" height="51" width="144"/>
+</item>
 <item>
   <title>Keeping Up with ArXiv using Sxolar</title>
   <link>https://jwkennington.com/posts/20250120-sxolar.html</link>
@@ -693,10 +775,10 @@ font-style: inherit;">|</span></span>
 <h2 class="anchored" data-anchor-id="references">References</h2>
 <div id="refs" class="references csl-bib-body" data-entry-spacing="0">
 <div id="ref-sxolar" class="csl-entry">
-<div class="csl-left-margin">[1] </div><div class="csl-right-inline">J. W. Kennington, Sxolar: <span>Scholars</span> tools for <span>ArXiv</span>, (2024).</div>
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">J. W. Kennington, <a href="https://www.sxolar.org">Sxolar: Scholars tools for <span>ArXiv</span></a>, (2024).</div>
 </div>
 <div id="ref-sxolar_tutorial" class="csl-entry">
-<div class="csl-left-margin">[2] </div><div class="csl-right-inline">J. W. Kennington, Sxolar: <span>Setting</span> up periodic search, (2024).</div>
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">J. W. Kennington, <em>Sxolar: Setting up Periodic Search</em>, <a href="https://www.sxolar.org/tutorials/setup-periodic/">https://www.sxolar.org/tutorials/setup-periodic/</a>.</div>
 </div>
 </div>
 
@@ -760,7 +842,7 @@ Figure&nbsp;2: Impact of boundary padding. Left: Original bank shows efficiency 
 </section>
 <section id="the-result-o4-ssm-bank" class="level2">
 <h2 class="anchored" data-anchor-id="the-result-o4-ssm-bank">The Result: O4 SSM Bank</h2>
-<p>The final product is the <strong>O4 Sub-Solar Mass Template Bank</strong> detailed in our recent paper. <span class="citation" data-cites="hannaTemplateBankSub2025">&nbsp;[1]</span>. It contains <strong>3,452,006 templates</strong> covering component masses from <img src="https://latex.codecogs.com/png.latex?0.2%20M_%5Codot"> to <img src="https://latex.codecogs.com/png.latex?10%20M_%5Codot">.</p>
+<p>The final product is the <strong>O4 Sub-Solar Mass Template Bank</strong> detailed in our recent paper. <span class="citation" data-cites="hanna_template_2025">&nbsp;[1]</span>. It contains <strong>3,452,006 templates</strong> covering component masses from <img src="https://latex.codecogs.com/png.latex?0.2%20M_%5Codot"> to <img src="https://latex.codecogs.com/png.latex?10%20M_%5Codot">.</p>
 <p>This represents the first successful application of geometric manifold methods to this difficult corner of parameter space. It is currently being used in the GstLAL search pipeline to analyze O4 data. If there are Primordial Black Holes hiding in the noise, this is the net we built to catch them.</p>
 <div id="fig-ssm-bank" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
@@ -776,8 +858,8 @@ Figure&nbsp;3: The final O4 SSM Template Bank covering the component mass space.
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
 <div id="refs" class="references csl-bib-body" data-entry-spacing="0">
-<div id="ref-hannaTemplateBankSub2025" class="csl-entry">
-<div class="csl-left-margin">[1] </div><div class="csl-right-inline">C. Hanna et al., <a href="https://doi.org/10.48550/arXiv.2412.10951">Template bank for sub solar mass compact binary mergers in the fourth observing run of <span>Advanced LIGO</span>, <span>Advanced Virgo</span>, and <span>KAGRA</span></a>, arXiv:2412.10951 (2025).</div>
+<div id="ref-hanna_template_2025" class="csl-entry">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">C. Hanna et al., <a href="https://doi.org/10.1103/c97v-bmj8">Template bank for subsolar mass compact binary mergers in the fourth observing run of advanced <span>LIGO</span>, advanced virgo, and <span>KAGRA</span></a>, Phys. Rev. D <strong>112</strong>, 044013 (2025).</div>
 </div>
 </div>
 
@@ -1066,10 +1148,10 @@ Figure&nbsp;3: Stages of Rigor
 <h2 class="anchored" data-anchor-id="references">References</h2>
 <div id="refs" class="references csl-bib-body" data-entry-spacing="0">
 <div id="ref-bojowald2010" class="csl-entry">
-<div class="csl-left-margin">[1] </div><div class="csl-right-inline">M. Bojowald, <em>Once Before Time: A Whole Story of the Universe</em> (Vintage Books, New York, NY, 2010).</div>
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">M. Bojowald, <em>Once Before Time: A Whole Story of the Universe</em> (Vintage Books, New York, <span>NY</span>, 2010).</div>
 </div>
 <div id="ref-tao2009" class="csl-entry">
-<div class="csl-left-margin">[2] </div><div class="csl-right-inline">T. Tao, There’s more to mathematics than rigour and proofs, (2009).</div>
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">T. Tao, <em>There’s More to Mathematics Than Rigour and Proofs</em>, <a href="https://terrytao.wordpress.com/career-advice/theres-more-to-mathematics-than-rigour-and-proofs/">https://terrytao.wordpress.com/career-advice/theres-more-to-mathematics-than-rigour-and-proofs/</a>.</div>
 </div>
 </div>
 
@@ -1427,19 +1509,19 @@ font-style: inherit;">git</span> clone git@github.com:personal/repo1.git</span><
 <p>This post was adapted from and inspired by several sources, with a few key changes and summary. <span class="citation" data-cites="vance_gist jacob_fcc russell_medium">&nbsp;[3–5]</span></p>
 <div id="refs" class="references csl-bib-body" data-entry-spacing="0">
 <div id="ref-github_ssh" class="csl-entry">
-<div class="csl-left-margin">[1] </div><div class="csl-right-inline">Adding a new <span>SSH</span> key to your <span>GitHub</span> account, (n.d.).</div>
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline"><em>Adding a New <span>SSH</span> Key to Your <span>GitHub</span> Account</em>, <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account</a>.</div>
 </div>
 <div id="ref-gitlab_ssh" class="csl-entry">
-<div class="csl-left-margin">[2] </div><div class="csl-right-inline">Use <span>SSH</span> keys to communicate with <span>GitLab</span>, (n.d.).</div>
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline"><em>Use <span>SSH</span> Keys to Communicate with <span>GitLab</span></em>, <a href="https://docs.gitlab.com/ee/user/ssh.html">https://docs.gitlab.com/ee/user/ssh.html</a>.</div>
 </div>
 <div id="ref-vance_gist" class="csl-entry">
-<div class="csl-left-margin">[3] </div><div class="csl-right-inline">M. Vance, <span>GitHub BitBucket</span> multiple <span>SSH</span> keys, (n.d.).</div>
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">M. Vance, <em><span>GitHub</span> <span>BitBucket</span> Multiple <span>SSH</span> Keys</em>, <a href="https://gist.github.com/yinzara/bbedc35798df0495a4fdd27857bca2c1">https://gist.github.com/yinzara/bbedc35798df0495a4fdd27857bca2c1</a>.</div>
 </div>
 <div id="ref-jacob_fcc" class="csl-entry">
-<div class="csl-left-margin">[4] </div><div class="csl-right-inline">B. Jacob, How to manage multiple <span>GitHub</span> accounts on a single machine with <span>SSH</span> keys, (2021).</div>
+<div class="csl-left-margin">[4] </div><div class="csl-right-inline">B. Jacob, <em>How to Manage Multiple <span>GitHub</span> Accounts on a Single Machine with <span>SSH</span> Keys</em>, <a href="https://www.freecodecamp.org/news/manage-multiple-github-accounts-the-ssh-way-2dadc30ccaca/">https://www.freecodecamp.org/news/manage-multiple-github-accounts-the-ssh-way-2dadc30ccaca/</a>.</div>
 </div>
 <div id="ref-russell_medium" class="csl-entry">
-<div class="csl-left-margin">[5] </div><div class="csl-right-inline">C. Russell, <span>SSH</span> keys with multiple <span>GitHub</span> accounts, (2019).</div>
+<div class="csl-left-margin">[5] </div><div class="csl-right-inline">C. Russell, <em><span>SSH</span> Keys with Multiple <span>GitHub</span> Accounts</em>, <a href="https://medium.com/@trionkidnapper/ssh-keys-with-multiple-github-accounts-c67db56f191e">https://medium.com/@trionkidnapper/ssh-keys-with-multiple-github-accounts-c67db56f191e</a>.</div>
 </div>
 </div>
 
@@ -1472,7 +1554,7 @@ font-style: inherit;">git</span> clone git@github.com:personal/repo1.git</span><
 </section>
 <section id="recursive-decomposition" class="level2">
 <h2 class="anchored" data-anchor-id="recursive-decomposition">Recursive Decomposition</h2>
-<p>In our paper, <em>A binary tree approach to template placement</em>, we propose a deterministic, geometric alternative: <strong>Treebank</strong>. <span class="citation" data-cites="hannaBinaryTreeApproach2022a">&nbsp;[1]</span></p>
+<p>In our paper, <em>A binary tree approach to template placement</em>, we propose a deterministic, geometric alternative: <strong>Treebank</strong>. <span class="citation" data-cites="hanna_binary_2022">&nbsp;[1]</span></p>
 <p>We approach the problem as a recursive binary space partitioning task. We initialize the search space as a single hyper-rectangle and recursively subdivide it based on the local Riemannian geometry. For a given hyper-rectangle, we calculate the metric <img src="https://latex.codecogs.com/png.latex?g_%7Bij%7D"> at the centroid and estimate the number of templates <img src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BN%7D"> required to cover its proper volume.</p>
 <p>The algorithm proceeds as follows:</p>
 <ol type="1">
@@ -1513,8 +1595,8 @@ Figure&nbsp;2: The resulting template bank covering the component mass space. No
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
 <div id="refs" class="references csl-bib-body" data-entry-spacing="0">
-<div id="ref-hannaBinaryTreeApproach2022a" class="csl-entry">
-<div class="csl-left-margin">[1] </div><div class="csl-right-inline">C. Hanna et al., <a href="https://doi.org/10.48550/arXiv.2209.11298">A binary tree approach to template placement for searches for gravitational waves from compact binary mergers</a>, arXiv:2209.11298 (2022).</div>
+<div id="ref-hanna_binary_2022" class="csl-entry">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">C. Hanna et al., <a href="https://doi.org/10.48550/arXiv.2209.11298">A binary tree approach to template placement for searches for gravitational waves from compact binary mergers</a>, <span>arXiv</span>:2209.11298 (2022).</div>
 </div>
 </div>
 
@@ -1616,10 +1698,10 @@ Figure&nbsp;1: Particle Swarm Optimization Example (Ephramac, CC BY-SA via Wikim
 <div class="csl-left-margin">[3] </div><div class="csl-right-inline">R. Chen, W. K. Huang, and S. Yeh, <a href="https://doi.org/10.1002/isaf.1498">Particle swarm optimization approach to portfolio construction</a>, <strong>28</strong>, 53 (2021).</div>
 </div>
 <div id="ref-clerc2006" class="csl-entry">
-<div class="csl-left-margin">[4] </div><div class="csl-right-inline">M. Clerc, <em>Particle Swarm Optimization</em> (ISTE, London, 2006).</div>
+<div class="csl-left-margin">[4] </div><div class="csl-right-inline">M. Clerc, <em>Particle Swarm Optimization</em> (<span>ISTE</span>, London, 2006).</div>
 </div>
 <div id="ref-wang2010" class="csl-entry">
-<div class="csl-left-margin">[5] </div><div class="csl-right-inline">Y. Wang and S. D. Mohanty, Particle swarm optimization and gravitational wave data analysis: <span>Performance</span> on a binary inspiral testbed, Physical Review D: Particles and Fields <strong>81</strong>, 063002 (2010).</div>
+<div class="csl-left-margin">[5] </div><div class="csl-right-inline">Y. Wang and S. D. Mohanty, Particle swarm optimization and gravitational wave data analysis: Performance on a binary inspiral testbed, Phys. Rev. D <strong>81</strong>, 063002 (2010).</div>
 </div>
 </div>
 
@@ -1641,9 +1723,9 @@ Figure&nbsp;1: Particle Swarm Optimization Example (Ephramac, CC BY-SA via Wikim
 
 
 
-<p>I first encountered a diagram of algebraic structures at the end of Jeevanjee’s second chapter, “Vector Spaces”, which elegantly summarizes the high-level differences in structure between sets, vector spaces, and inner product spaces. <span class="citation" data-cites="jeevanjeeIntroductionTensorsGroup2015d">&nbsp;[1]</span></p>
+<p>I first encountered a diagram of algebraic structures at the end of Jeevanjee’s second chapter, “Vector Spaces”, which elegantly summarizes the high-level differences in structure between sets, vector spaces, and inner product spaces. <span class="citation" data-cites="jeevanjee_introduction_2015">&nbsp;[1]</span></p>
 <p>This diagram was immensely helpful to me, in that it helped show the relationships between various commonly used objects in mathematical physics. As I’ve encountered new structures, I’ve attempted to augment this map along two dimensions: a <em>structure</em> dimension that aims to measure the number of attributes an algebraic object has, and a <em>specificity</em> dimension which measures the amount of constraints placed on each attribute.</p>
-<p>For instance, a <strong>Magma</strong> has more structure than a set, because a new attribute—a binary operator—has been added. A <strong>Group</strong>, though, is roughly similar in structure to a magma, but has more properties of the binary operator specified, such as associativity, inverses, and identity, which make it more specific (and the magma more general). <span class="citation" data-cites="romanAdvancedLinearAlgebra2007">&nbsp;[2]</span></p>
+<p>For instance, a <strong>Magma</strong> has more structure than a set, because a new attribute—a binary operator—has been added. A <strong>Group</strong>, though, is roughly similar in structure to a magma, but has more properties of the binary operator specified, such as associativity, inverses, and identity, which make it more specific (and the magma more general). <span class="citation" data-cites="roman_advanced_2007">&nbsp;[2]</span></p>
 <div id="fig-ladder" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ladder-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1654,18 +1736,18 @@ Figure&nbsp;1: Relationship of various algebraic structures.
 </figcaption>
 </figure>
 </div>
-<p>The diagram above aims to show how an algebra is constructed from a set, though admittedly omits several algebraic structures along the way. I’ve attempted to include the most primary objects used or seen in mathematical physics. I should also note, this diagram is intended as a quick-reference, and isn’t a substitute for opening Hungerford! <span class="citation" data-cites="hungerfordAlgebra2008">&nbsp;[3]</span></p>
+<p>The diagram above aims to show how an algebra is constructed from a set, though admittedly omits several algebraic structures along the way. I’ve attempted to include the most primary objects used or seen in mathematical physics. I should also note, this diagram is intended as a quick-reference, and isn’t a substitute for opening Hungerford! <span class="citation" data-cites="hungerford_algebra_2008">&nbsp;[3]</span></p>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
 <div id="refs" class="references csl-bib-body" data-entry-spacing="0">
-<div id="ref-jeevanjeeIntroductionTensorsGroup2015d" class="csl-entry">
-<div class="csl-left-margin">[1] </div><div class="csl-right-inline">N. Jeevanjee, <em>An Introduction to Tensors and Group Theory for Physicists</em> (Springer Science+Business Media, New York, NY, 2015).</div>
+<div id="ref-jeevanjee_introduction_2015" class="csl-entry">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">N. Jeevanjee, <em>An Introduction to Tensors and Group Theory for Physicists</em> (Springer Science+Business Media, New York, <span>NY</span>, 2015).</div>
 </div>
-<div id="ref-romanAdvancedLinearAlgebra2007" class="csl-entry">
+<div id="ref-roman_advanced_2007" class="csl-entry">
 <div class="csl-left-margin">[2] </div><div class="csl-right-inline">S. Roman, <em>Advanced Linear Algebra</em>, 3rd ed (Springer, New York, 2007).</div>
 </div>
-<div id="ref-hungerfordAlgebra2008" class="csl-entry">
-<div class="csl-left-margin">[3] </div><div class="csl-right-inline">T. W. Hungerford, <em>Algebra</em>, Nachdr. (Springer, New York, NY, 2008).</div>
+<div id="ref-hungerford_algebra_2008" class="csl-entry">
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">T. W. Hungerford, <em>Algebra</em>, Nachdr. (Springer, New York, <span>NY</span>, 2008).</div>
 </div>
 </div>
 
@@ -1690,7 +1772,7 @@ Figure&nbsp;1: Relationship of various algebraic structures.
 
 <section id="summary" class="level2">
 <h2 class="anchored" data-anchor-id="summary">Summary</h2>
-<p>I picked up a copy of Nadir Jeevnajee’s <em>An Introduction to Tensors and Group Theory for Physicists</em> a few months ago with the intent of skimming through and spending most of my time in reference texts. To my pleasant surprise, I found this text to be self-contained — requiring little to no references. The presentation is at once mathematically rigorous and physically intuitive, alluding to well-known examples from physics throughout. I’ve found this text to be such a great introduction to tensors that I have even recommended it to computer-scientist colleagues of mine who have no interest in physics. I whole-heartedly recommend it to anyone interesting in becoming more familiar with tensors and elementary group / representation theory. <span class="citation" data-cites="jeevanjeeIntroductionTensorsGroup2015d">&nbsp;[1]</span></p>
+<p>I picked up a copy of Nadir Jeevnajee’s <em>An Introduction to Tensors and Group Theory for Physicists</em> a few months ago with the intent of skimming through and spending most of my time in reference texts. To my pleasant surprise, I found this text to be self-contained — requiring little to no references. The presentation is at once mathematically rigorous and physically intuitive, alluding to well-known examples from physics throughout. I’ve found this text to be such a great introduction to tensors that I have even recommended it to computer-scientist colleagues of mine who have no interest in physics. I whole-heartedly recommend it to anyone interesting in becoming more familiar with tensors and elementary group / representation theory. <span class="citation" data-cites="jeevanjee_introduction_2015">&nbsp;[1]</span></p>
 <section id="part-i-tensors" class="level3">
 <h3 class="anchored" data-anchor-id="part-i-tensors">Part I: Tensors</h3>
 <p>The presentation of tensors as multilinear functions achieves a remarkable degree of exposition, and arrives at all the more heuristic definitions of tensors as derived from the simple multilinear-map definitions. This gave the impression of a more solid ground basis for many subsequent tensorial notations and usages.</p>
@@ -1709,8 +1791,8 @@ Figure&nbsp;1: Relationship of various algebraic structures.
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
 <div id="refs" class="references csl-bib-body" data-entry-spacing="0">
-<div id="ref-jeevanjeeIntroductionTensorsGroup2015d" class="csl-entry">
-<div class="csl-left-margin">[1] </div><div class="csl-right-inline">N. Jeevanjee, <em>An Introduction to Tensors and Group Theory for Physicists</em> (Springer Science+Business Media, New York, NY, 2015).</div>
+<div id="ref-jeevanjee_introduction_2015" class="csl-entry">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">N. Jeevanjee, <em>An Introduction to Tensors and Group Theory for Physicists</em> (Springer Science+Business Media, New York, <span>NY</span>, 2015).</div>
 </div>
 </div>
 
