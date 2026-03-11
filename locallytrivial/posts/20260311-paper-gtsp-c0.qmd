@@ -16,39 +16,37 @@ image: ../img/gtsp-c0/sky_impact_analysis.png
   </a>
 </div>
 
-## The Goal: Catching Mergers in Real Time
+## The Problem: Noise Drift in Real-Time Searches
 
-As the LIGO-Virgo-KAGRA network pushes deeper into the universe, the goal isn't just to detect black holes and neutron stars after the fact—it's to catch them in *real time*. For multi-messenger astronomy, sending out zero-latency alerts before or exactly as a binary neutron star merges allows optical telescopes to catch the initial flash of a kilonova.
+To enable multi-messenger astronomy, gravitational-wave pipelines must generate zero-latency alerts to catch the early optical counterparts of mergers. This requires matched-filtering strain data against theoretical templates using a "lagged" estimate of the detector's Power Spectral Density (PSD).
 
-However, operating matched-filter pipelines at zero-latency introduces unique data analysis hurdles.
-
-## The Challenge: PSD Drift and Metric Errors
-
-To find signals, we filter the incoming strain data against a bank of theoretical templates. This process relies heavily on the detector's Power Spectral Density (PSD)—a measure of the background noise at different frequencies.
-
-In an ideal world, the PSD is stationary. In reality, detector noise constantly fluctuates. Low-latency pipelines often have to use a "lagged" PSD to maintain computational efficiency and zero-latency throughput. This spectral drift induces severe systematic errors in the matched-filter metric. If uncorrected, this drift biases our timing estimates and drastically shifts the predicted sky-localization of the event, potentially sending telescopes looking in the wrong direction.
+However, detector noise fluctuates continuously. This spectral drift creates a mismatch that warps the matched-filter metric, severely biasing timing estimates and degrading sky-localization.
 
 ## The Solution: Dual Cutler-Vallisneri Corrections
 
-To address this, we generalized the classic **Cutler-Vallisneri formalism**. Originally used to estimate parameter estimation errors due to waveform inaccuracies, we adapted it to handle metric errors caused by noise drift.
+Building on low-latency methods by Tsukada et al. [@tsukada_application_2018], we generalized the classic Cutler-Vallisneri formalism to compute metric shifts caused specifically by PSD drift. 
 
-We developed a perturbative framework that calculates these expected metric shifts analytically. By applying our **Dual Cutler-Vallisneri Corrections**, we can dynamically adjust the matched-filter outputs. Crucially, these corrections are:
-1. **Causal:** They don't require future data, preserving the zero-latency nature of the search.
-2. **Computationally Efficient:** They add negligible overhead to the pipeline.
+The result is a set of analytic, causal, and computationally cheap corrections for the timing and phase biases. These first-order corrections for timing ($\delta t^{(1)}$) and phase ($\delta \phi^{(1)}$) are power-weighted spectral averages of the whitening phase mismatch:
 
-![Distributions of parameter biases before and after applying the corrections. The uncorrected drift shows significant systematic offsets, while our corrected framework restores the parameters to their true values.](../img/gtsp-c0/bias_distributions.png){#fig-biases width=60% fig-align="center"}
+$$
+\delta t^{(1)} = \frac{\int (2\pi f) \Phi_a(f) w(f) df}{\int (2\pi f)^2 w(f) df}, \quad \delta \phi^{(1)} = \frac{\int \Phi_a(f) w(f) df}{\int w(f) df}
+$$
 
-## The Result: Restoring Sky-Localization
+Here, $\Phi_a(f)$ is the whitening phase perturbation induced by the drift, and $w(f)$ is the whitened signal power. 
 
-We validated this framework empirically using real gravitational-wave strain data and PSDs from the GWTC-4.0 catalog, available via GWOSC. We generated numerical injections and tracked the Signal-to-Noise Ratio (SNR) drift over time.
+![Distributions of the timing and phase biases induced by a 1-week PSD lag across ~160 GWTC-4.0 event-detector pairs. Timing biases exhibit a heavy tail exceeding 200 µs, while phase biases are generally confined to 0.2 rad.](../img/gtsp-c0/bias_distributions.png){#fig-biases width=60% fig-align="center"}
 
-![Tracking SNR and metric drift over time using experimental strain data.](../img/gtsp-c0/snr_drift.png){#fig-snr-drift width=50% fig-align="center"}
+## Validation and Impact
 
-The impact on multi-messenger astronomy is immediate. By eliminating the timing and phase biases induced by PSD drift, we fully restore the accuracy of the early-warning sky maps.
+We validated this framework using real GWTC-4.0 strain data. As seen above, uncorrected 1-week PSD drift can induce severe systematics. Beyond coordinate shifts, this drift also directly suppresses the recovered signal amplitude.
 
-![Impact on sky-localization. Our corrections dramatically shrink the error regions compared to the uncorrected zero-latency pipeline.](../img/gtsp-c0/sky_impact_analysis.png){#fig-sky-impact width=60% fig-align="center"}
+![Distribution of the fractional SNR loss caused by uncorrected PSD drift. The median sensitivity loss of 3-5% translates to a ~15% reduction in overall detection volume.](../img/gtsp-c0/snr_drift.png){#fig-snr-drift width=50% fig-align="center"}
 
-This framework ensures that as we move into the next observing runs, our zero-latency alerts remain both lightning-fast and mathematically robust. Check out the full derivation and results in the paper [@kennington_dual_2026].
+Applying our mathematical framework successfully restores these parameters. Crucially, this eliminates the artificial broadening of early-warning sky maps, ensuring rapid alerts remain highly accurate for telescopes hunting for electromagnetic counterparts.
+
+![Systematic shifts in sky-localization (Right Ascension and Declination) induced by uncorrected PSD drift. While the median shift is modest, severe outliers can experience pointing errors between 5° and 10°.](../img/gtsp-c0/sky_impact_analysis.png){#fig-sky-impact width=60% fig-align="center"}
+
+For the complete derivation, see the full paper [@kennington_dual_2026].
 
 ## References
 
