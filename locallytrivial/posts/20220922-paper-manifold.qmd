@@ -30,7 +30,7 @@ Because the metric depends on the coordinates (the manifold is curved), the loca
 
 ## Recursive Decomposition
 
-In our paper, *A binary tree approach to template placement*, we propose a deterministic, geometric alternative: **Treebank**. [@hannaBinaryTreeApproach2022a]
+In our paper, *A binary tree approach to template placement*, we propose a deterministic, geometric alternative: **Treebank**. [@hanna_binary_2022]
 
 We approach the problem as a recursive binary space partitioning task. We initialize the search space as a single hyper-rectangle and recursively subdivide it based on the local Riemannian geometry. For a given hyper-rectangle, we calculate the metric $g_{ij}$ at the centroid and estimate the number of templates $\mathcal{N}$ required to cover its proper volume.
 

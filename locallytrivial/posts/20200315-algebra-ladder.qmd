@@ -9,7 +9,7 @@ bibliography: ../references.bib
 
 I first encountered a diagram of algebraic structures at the end of Jeevanjee's second chapter,
 "Vector Spaces", which elegantly summarizes the high-level differences in structure between sets,
-vector spaces, and inner product spaces. [@jeevanjeeIntroductionTensorsGroup2015d]
+vector spaces, and inner product spaces. [@jeevanjee_introduction_2015]
 
 This diagram was immensely helpful to me, in that it helped show the relationships between various
 commonly used objects in mathematical physics. As I've encountered new structures, I've attempted
@@ -20,14 +20,14 @@ of constraints placed on each attribute.
 For instance, a **Magma** has more structure than a set, because a new attribute—a binary operator—has
 been added. A **Group**, though, is roughly similar in structure to a magma, but has more properties of
 the binary operator specified, such as associativity, inverses, and identity, which make it more
-specific (and the magma more general). [@romanAdvancedLinearAlgebra2007]
+specific (and the magma more general). [@roman_advanced_2007]
 
 ![Relationship of various algebraic structures.](../img/algebra-ladder.png){#fig-ladder}
 
 The diagram above aims to show how an algebra is constructed from a set, though admittedly omits
 several algebraic structures along the way. I've attempted to include the most primary objects used or
 seen in mathematical physics. I should also note, this diagram is intended as a quick-reference, and
-isn't a substitute for opening Hungerford! [@hungerfordAlgebra2008]
+isn't a substitute for opening Hungerford! [@hungerford_algebra_2008]
 
 
 

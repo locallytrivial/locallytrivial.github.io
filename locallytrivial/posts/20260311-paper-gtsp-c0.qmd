@@ -1,0 +1,56 @@
+---
+title: "New Paper: Mitigating PSD Drift in Zero-Latency GW Searches"
+description: "Our new paper introduces the Dual Cutler-Vallisneri Corrections, a novel perturbative framework to eliminate sky-localization and timing biases caused by power spectral density (PSD) drift in real-time gravitational-wave pipelines."
+date: "2026-03-11"
+categories: [Research, LIGO, Multi-Messenger Astronomy, Paper]
+tags: [Gravitational Waves, Data Analysis, General Relativity, Early Warning]
+image: ../img/gtsp-c0/sky_impact_analysis.png
+---
+
+<div style="text-align: center; margin-bottom: 2em;">
+  <a class="btn btn-primary" href="https://arxiv.org/abs/2603.09132" role="button" target="_blank" style="margin-right: 10px;">
+    <i class="bi bi-file-earmark-pdf"></i> Read Paper (ArXiv)
+  </a>
+  <a class="btn btn-outline-primary" href="https://git.ligo.org/james.kennington/zlw" role="button" target="_blank">
+    <i class="bi bi-code-slash"></i> View Code
+  </a>
+</div>
+
+## The Goal: Catching Mergers in Real Time
+
+As the LIGO-Virgo-KAGRA network pushes deeper into the universe, the goal isn't just to detect black holes and neutron stars after the fact—it's to catch them in *real time*. For multi-messenger astronomy, sending out zero-latency alerts before or exactly as a binary neutron star merges allows optical telescopes to catch the initial flash of a kilonova.
+
+However, operating matched-filter pipelines at zero-latency introduces unique data analysis hurdles.
+
+## The Challenge: PSD Drift and Metric Errors
+
+To find signals, we filter the incoming strain data against a bank of theoretical templates. This process relies heavily on the detector's Power Spectral Density (PSD)—a measure of the background noise at different frequencies.
+
+In an ideal world, the PSD is stationary. In reality, detector noise constantly fluctuates. Low-latency pipelines often have to use a "lagged" PSD to maintain computational efficiency and zero-latency throughput. This spectral drift induces severe systematic errors in the matched-filter metric. If uncorrected, this drift biases our timing estimates and drastically shifts the predicted sky-localization of the event, potentially sending telescopes looking in the wrong direction.
+
+## The Solution: Dual Cutler-Vallisneri Corrections
+
+To address this, we generalized the classic **Cutler-Vallisneri formalism**. Originally used to estimate parameter estimation errors due to waveform inaccuracies, we adapted it to handle metric errors caused by noise drift.
+
+We developed a perturbative framework that calculates these expected metric shifts analytically. By applying our **Dual Cutler-Vallisneri Corrections**, we can dynamically adjust the matched-filter outputs. Crucially, these corrections are:
+1. **Causal:** They don't require future data, preserving the zero-latency nature of the search.
+2. **Computationally Efficient:** They add negligible overhead to the pipeline.
+
+![Distributions of parameter biases before and after applying the corrections. The uncorrected drift shows significant systematic offsets, while our corrected framework restores the parameters to their true values.](../img/gtsp-c0/bias_distributions.png){#fig-biases width=60% fig-align="center"}
+
+## The Result: Restoring Sky-Localization
+
+We validated this framework empirically using real gravitational-wave strain data and PSDs from the GWTC-4.0 catalog, available via GWOSC. We generated numerical injections and tracked the Signal-to-Noise Ratio (SNR) drift over time.
+
+![Tracking SNR and metric drift over time using experimental strain data.](../img/gtsp-c0/snr_drift.png){#fig-snr-drift width=50% fig-align="center"}
+
+The impact on multi-messenger astronomy is immediate. By eliminating the timing and phase biases induced by PSD drift, we fully restore the accuracy of the early-warning sky maps.
+
+![Impact on sky-localization. Our corrections dramatically shrink the error regions compared to the uncorrected zero-latency pipeline.](../img/gtsp-c0/sky_impact_analysis.png){#fig-sky-impact width=60% fig-align="center"}
+
+This framework ensures that as we move into the next observing runs, our zero-latency alerts remain both lightning-fast and mathematically robust. Check out the full derivation and results in the paper [@kennington_dual_2026].
+
+## References
+
+::: {#refs}
+:::

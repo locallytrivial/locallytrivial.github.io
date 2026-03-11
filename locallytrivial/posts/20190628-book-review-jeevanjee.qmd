@@ -9,7 +9,7 @@ image: ../img/jeevanjee-book.png
 
 ## Summary
 
-I picked up a copy of Nadir Jeevnajee's *An Introduction to Tensors and Group Theory for Physicists* a few months ago with the intent of skimming through and spending most of my time in reference texts. To my pleasant surprise, I found this text to be self-contained — requiring little to no references. The presentation is at once mathematically rigorous and physically intuitive, alluding to well-known examples from physics throughout. I've found this text to be such a great introduction to tensors that I have even recommended it to computer-scientist colleagues of mine who have no interest in physics. I whole-heartedly recommend it to anyone interesting in becoming more familiar with tensors and elementary group / representation theory. [@jeevanjeeIntroductionTensorsGroup2015d]
+I picked up a copy of Nadir Jeevnajee's *An Introduction to Tensors and Group Theory for Physicists* a few months ago with the intent of skimming through and spending most of my time in reference texts. To my pleasant surprise, I found this text to be self-contained — requiring little to no references. The presentation is at once mathematically rigorous and physically intuitive, alluding to well-known examples from physics throughout. I've found this text to be such a great introduction to tensors that I have even recommended it to computer-scientist colleagues of mine who have no interest in physics. I whole-heartedly recommend it to anyone interesting in becoming more familiar with tensors and elementary group / representation theory. [@jeevanjee_introduction_2015]
 
 ### Part I: Tensors
 

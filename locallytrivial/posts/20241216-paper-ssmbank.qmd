@@ -46,7 +46,7 @@ We also implemented **Boundary Padding**, effectively generating a secondary "ma
 
 ## The Result: O4 SSM Bank
 
-The final product is the **O4 Sub-Solar Mass Template Bank** detailed in our recent paper. [@hannaTemplateBankSub2025]. It contains **3,452,006 templates** covering component masses from $0.2 M_\odot$ to $10 M_\odot$.
+The final product is the **O4 Sub-Solar Mass Template Bank** detailed in our recent paper. [@hanna_template_2025]. It contains **3,452,006 templates** covering component masses from $0.2 M_\odot$ to $10 M_\odot$.
 
 This represents the first successful application of geometric manifold methods to this difficult corner of parameter space. It is currently being used in the GstLAL search pipeline to analyze O4 data. If there are Primordial Black Holes hiding in the noise, this is the net we built to catch them.
 
