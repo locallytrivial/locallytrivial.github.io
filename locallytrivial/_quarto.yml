@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: docs # GitHub Pages expects this
+  resources:
+    - apps/**
 
 # Ensure the correct language code is set (crucial for accessibility/SEO)
 lang: en
