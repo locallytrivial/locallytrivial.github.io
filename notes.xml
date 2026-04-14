@@ -9,7 +9,7 @@
 <link>https://jwkennington.com/notes.html</link>
 <atom:link href="https://jwkennington.com/notes.xml" rel="self" type="application/rss+xml"/>
 <description>Mathematical Physics &amp; Geometric Signal Processing</description>
-<generator>quarto-1.8.27</generator>
+<generator>quarto-1.9.37</generator>
 <lastBuildDate>Wed, 11 Mar 2026 00:00:00 GMT</lastBuildDate>
 <item>
   <title>New Paper: Mitigating PSD Drift in Zero-Latency GW Searches</title>
