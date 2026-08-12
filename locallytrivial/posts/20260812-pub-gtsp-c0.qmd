@@ -1,0 +1,33 @@
+---
+title: "Now Published in PRD: Dual Cutler–Vallisneri Corrections"
+description: "My first solo-author paper, introducing the Dual Cutler–Vallisneri corrections for PSD drift in zero-latency gravitational-wave searches, has been published in Physical Review D."
+date: "2026-08-12"
+categories: [Research, LIGO, Publication]
+tags: [Gravitational Waves, Early Warning, Peer Review]
+image: ../img/gtsp-c0/sky_impact_analysis.png
+---
+
+<div style="text-align: center; margin-bottom: 2em;">
+  <!-- TODO: replace # with the final Phys. Rev. D DOI URL, e.g. https://doi.org/10.1103/xxxx-xxxx -->
+  <a class="btn btn-primary" href="#" role="button" target="_blank" style="margin-right: 10px;">
+    <i class="bi bi-journal-text"></i> Read in Phys. Rev. D
+  </a>
+  <a class="btn btn-outline-primary" href="https://arxiv.org/abs/2603.09132" role="button" target="_blank">
+    <i class="bi bi-file-earmark-pdf"></i> Preprint (ArXiv)
+  </a>
+</div>
+
+I'm delighted to share that *Dual Cutler–Vallisneri Corrections: Mitigating PSD Drift in Zero-Latency Gravitational-Wave Searches* has been **published in Physical Review D** [@kennington_dual_2026]. This is my first solo-author paper, and it marks the first entry in the Gauge Theoretic Signal Processing (GTSP) program to complete peer review.
+
+The paper develops an analytic, causal framework for correcting the timing, phase, and SNR biases that spectral drift induces in real-time early-warning pipelines, systematics that would otherwise broaden sky maps and erode detection volume for multi-messenger follow-up. For the full technical walkthrough, see the original announcement:
+
+<div style="text-align: center; margin: 1.5em 0;">
+  [Read the technical write-up &rarr;](20260311-paper-gtsp-c0.qmd)
+</div>
+
+My thanks to the reviewers and editors at PRD, and to everyone in the LIGO Scientific Collaboration who offered feedback along the way.
+
+## References
+
+::: {#refs}
+:::

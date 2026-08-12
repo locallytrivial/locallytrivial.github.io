@@ -24,11 +24,12 @@ about:
 
 
 
-I am a theoretical physicist applying **geometry** to **gravitational wave astronomy**, developing
+I am a theoretical physicist at the **United States Naval Academy**, applying **geometry** to
+**gravitational wave astronomy** and developing
 frameworks for compact binary coalescence (CBC) detection pipelines that operate in
 the non-stationary noise of the cosmos. I also contribute to searches for multi-messenger and early-warning
 events, exotic compact objects, and tests of general relativity / quantum gravity with gravitational waves.
-I am a member of the LIGO Scientific Collaboration and the LISA Consortium.
+I am a member of the LIGO Scientific Collaboration and the LISA Consortium. The methods I develop for adapting to nonstationary noise also carry over to acoustics and naval signal processing, such as sonar in a changing ocean environment.
 
 ## What's New
 
@@ -62,7 +63,7 @@ I am a member of the LIGO Scientific Collaboration and the LISA Consortium.
     <span class="about-link-text d-md-none">LIGO</span>
   </a>
 
-  <a href="https://inspirehep.net/authors/YOUR_ID" class="about-link" rel="" target="">
+  <a href="https://inspirehep.net/literature?q=orcid%200000-0002-6899-3833" class="about-link" rel="" target="">
     {{< ai inspire >}}
     <span class="about-link-text d-md-none">Inspire</span>
   </a>

@@ -1,0 +1,50 @@
+---
+title: "New Paper: Gauge Theoretic Signal Processing II, Zero-Latency Whitening for Early Warning"
+description: "The second GTSP paper takes the minimum-phase connection from theory to production. Through a 15,347-signal O3 injection campaign and deployment in the sgnl matched-filter pipeline, we show that geometrically-exact causal whitening preserves detection sensitivity and timing accuracy while cutting whitening latency by up to 91%."
+date: "2026-04-28"
+categories: [Research, LIGO, Multi-Messenger Astronomy, Paper]
+tags: [Gravitational Waves, Early Warning, Low Latency, Signal Processing]
+image: ../img/gtsp-c2/causality_root_migration.png
+---
+
+<div style="text-align: center; margin-bottom: 2em;">
+  <a class="btn btn-primary" href="https://arxiv.org/abs/2604.25116" role="button" target="_blank" style="margin-right: 10px;">
+    <i class="bi bi-file-earmark-pdf"></i> Read Paper (ArXiv)
+  </a>
+  <a class="btn btn-outline-primary" href="https://git.ligo.org/james.kennington" role="button" target="_blank">
+    <i class="bi bi-code-slash"></i> View Code
+  </a>
+</div>
+
+## Motivation
+
+Early-warning gravitational-wave alerts live and die by latency. Every second between a merger and its public alert is a second in which an optical telescope could already be slewing toward the kilonova. Yet today's low-latency pipelines whiten their data with **acausal, linear-phase** filters that need a look-ahead buffer, and that buffer alone injects several seconds of algorithmic delay.
+
+The obvious fix, causal **minimum-phase** whitening, is subtle in practice. Under non-stationary noise you cannot simply swap the filter type: the drifting PSD must be tracked without eroding matched-filter SNR, each filter update must *stay* minimum-phase, and the altered phase response must be compensated so sky localization does not suffer. In [Paper I](20260407-paper-gtsp-c1.qmd) we showed the minimum-phase connection gives a geometrically exact update rule for exactly this situation. This paper validates that framework numerically, operationally, and at production scale. [@kennington_gauge_ii_2026]
+
+![The core hazard motivating this work, shown in the z-plane. Naively blending two minimum-phase whitening filters with a linear crossfade drives the filter's roots across the unit circle (left), yielding an acausal, unstable filter. Holonomic transport along the minimum-phase connection keeps every root contained inside the unit circle throughout the update (right), preserving causality.](../img/gtsp-c2/causality_root_migration.png){#fig-causality width=75% fig-align="center"}
+
+## Certifying Flatness in Practice
+
+We first confirm the theory's two load-bearing claims directly on data: parallel transport along the minimum-phase connection **strictly preserves the minimum-phase property** and **exactly conserves matched-filter SNR**. We then numerically certify the connection's *flatness*, verifying that the optimal filter is a path-independent state function of the instantaneous noise, just as the flatness theorem predicts.
+
+![Holonomy comparison: transporting the whitening filter around closed loops in spectrum space returns it to its starting point, confirming the vanishing curvature (flatness) of the minimum-phase connection.](../img/gtsp-c2/holonomy_comparison.png){#fig-holonomy width=60% fig-align="center"}
+
+## An O3 Injection Campaign
+
+To show the causal architecture loses no science, we ran an injection campaign on O3 data with **15,347 binary black hole signals** across the LIGO–Virgo network. The zero-look-ahead whitening reproduces the sensitivity of the standard linear-phase baseline, and preserves inter-detector timing and phase accuracy, the quantities that determine sky-localization quality.
+
+![Detection sensitivity of the zero-latency (minimum-phase) architecture versus the standard linear-phase baseline across the injection set. The causal pipeline matches the baseline.](../img/gtsp-c2/sensitivity.png){#fig-sensitivity width=60% fig-align="center"}
+
+## Operational Impact
+
+The payoff is operational. Implemented inside the production **`sgnl`** matched-filter pipeline at a 4-second noise-estimation cadence, the framework **reduces whitening latency by 1.0 second (33%)** relative to the linear-phase baseline, confirmed both in controlled local tests and on live O3 replay data at production scale. Pushing to sub-second pipeline cadence, stride-reduction experiments show that **up to 91% of the baseline trigger latency can be eliminated**.
+
+![Latency time series on O3 replay data. The minimum-phase architecture removes the look-ahead buffer's contribution to end-to-end trigger latency.](../img/gtsp-c2/latency_timeseries.png){#fig-latency width=65% fig-align="center"}
+
+That is latency returned to the astronomers waiting downstream: earlier alerts, without sacrificing the detection sensitivity or pointing accuracy that make those alerts worth acting on.
+
+## References
+
+::: {#refs}
+:::

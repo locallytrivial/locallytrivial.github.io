@@ -1,0 +1,50 @@
+---
+title: "New Paper: Gauge Theoretic Signal Processing I, a Geometric Theory of Adaptive Whitening"
+description: "Introducing Gauge Theoretic Signal Processing (GTSP): a framework that recasts adaptive whitening in gravitational-wave detectors as parallel transport on a principal bundle. We derive the minimum-phase connection, define a coordinate-independent measure of noise drift, and prove a flatness theorem guaranteeing that optimal filter updates are path-independent."
+date: "2026-04-07"
+categories: [Research, LIGO, Geometry, Paper]
+tags: [Gravitational Waves, Differential Geometry, Gauge Theory, Signal Processing]
+image: ../img/gtsp-c1/bundle-diagram-1.png
+---
+
+<div style="text-align: center; margin-bottom: 2em;">
+  <a class="btn btn-primary" href="https://arxiv.org/abs/2604.06432" role="button" target="_blank" style="margin-right: 10px;">
+    <i class="bi bi-file-earmark-pdf"></i> Read Paper (ArXiv)
+  </a>
+  <a class="btn btn-outline-primary" href="https://git.ligo.org/james.kennington" role="button" target="_blank">
+    <i class="bi bi-code-slash"></i> View Code
+  </a>
+</div>
+
+## Whitening as a Geometric Problem
+
+Before a gravitational-wave pipeline can matched-filter strain data, it must **whiten** it, flattening the detector's colored noise floor so that every frequency contributes on equal footing. In a stationary detector this is a one-time spectral factorization. But real detectors are never stationary: the noise floor breathes, drifts, and occasionally lurches. Each time the estimated power spectral density (PSD) updates, the whitening filter must be recomputed, and in a zero-latency search that filter must remain strictly **causal** (minimum-phase) so that no acausal look-ahead buffer is required.
+
+This turns whitening from a static calculation into a problem of *dynamics*: how should the filter evolve as the noise state moves, without corrupting the signal or accumulating spurious phase? In this paper, the first of the Gauge Theoretic Signal Processing (GTSP) series, Joshua Black and I argue that the natural language for this question is differential geometry. [@kennington_gauge_2026]
+
+## The Minimum-Phase Connection
+
+We reformulate whitening as **parallel transport on a principal bundle**. The base space is the manifold of admissible power spectra; the whitening filter is a *section* over that manifold. Moving along a path in the space of noise states, as the PSD drifts, corresponds to transporting the filter, and the rule for that transport is a **connection**.
+
+The central construction is the *minimum-phase connection*: the unique connection whose parallel transport preserves signal causality while exactly conserving the matched-filter signal-to-noise ratio. It fixes the gauge freedom (the arbitrary all-pass phase of a whitening filter) in precisely the way that keeps the filter physically realizable in real time.
+
+![The principal-bundle picture underlying GTSP. The base is the manifold of admissible power spectra and each fiber carries the gauge freedom of a whitening filter; a section selects one filter per spectrum, and the minimum-phase connection prescribes how that section transports as the noise state drifts.](../img/gtsp-c1/bundle-diagram-1.png){#fig-bundle width=65% fig-align="center"}
+
+This machinery yields a clean, coordinate-independent definition of **geometric drift**, a scalar measuring the intrinsic instability of the noise floor, independent of how one happens to parameterize the spectrum. It separates *how fast the detector is actually changing* from mere coordinate artifacts.
+
+## The Flatness Theorem
+
+The paper's main result is the **flatness theorem**: the curvature of the minimum-phase connection *vanishes* for scalar noise fields.
+
+Zero curvature has a direct operational meaning. It establishes a **holonomic update law**: the optimal filter correction is *path-independent*, determined solely by the instantaneous noise state. There is no geometric phase, no hysteresis, and no memory of the route the detector took through spectrum space to get where it is. However the PSD wandered over the last hour, the correct whitening filter *right now* depends only on the PSD *right now*.
+
+This is exactly the property one wants in order to *certify* a real-time calibration routine: it guarantees that a causal, streaming filter update cannot silently accumulate error.
+
+## Applications
+
+The flatness theorem unifies two traditions that have historically sat apart: the static theory of Wiener–Hopf spectral factorization, and the dynamic requirements of real-time control. In doing so it provides a rigorous stability certificate for zero-latency whitening. This is the enabling ingredient for the early-warning pipelines developed in **Paper II** of this series, and a foundation for extending GTSP to the non-Abelian setting of multi-detector networks.
+
+## References
+
+::: {#refs}
+:::
