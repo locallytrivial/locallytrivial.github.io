@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -59,10 +62,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-3ab3c25880d787e734ee9f73ca06a7d1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-d94f0129d652a5a8036266edffbc062c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -102,7 +105,7 @@ gtag('config', 'G-PBMXNQK5V1', { 'anonymize_ip': true});
 <style>html{ scroll-behavior: smooth; }</style>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -206,6 +209,11 @@ window.Quarto = {
   <li><a href="#multimessenger-astronomy-early-warning" id="toc-multimessenger-astronomy-early-warning" class="nav-link" data-scroll-target="#multimessenger-astronomy-early-warning">Multimessenger Astronomy &amp; Early Warning</a></li>
   <li><a href="#exotic-source-searches" id="toc-exotic-source-searches" class="nav-link" data-scroll-target="#exotic-source-searches">Exotic Source Searches</a></li>
   <li><a href="#tests-of-general-relativity-quantum-gravity" id="toc-tests-of-general-relativity-quantum-gravity" class="nav-link" data-scroll-target="#tests-of-general-relativity-quantum-gravity">Tests of General Relativity &amp; Quantum Gravity</a></li>
+  </ul></li>
+  <li><a href="#applied-research-areas" id="toc-applied-research-areas" class="nav-link" data-scroll-target="#applied-research-areas">Applied Research Areas</a>
+  <ul class="collapse">
+  <li><a href="#naval-acoustics-sonar" id="toc-naval-acoustics-sonar" class="nav-link" data-scroll-target="#naval-acoustics-sonar">Naval Acoustics &amp; Sonar</a></li>
+  <li><a href="#distributed-beamforming-for-sensor-networks" id="toc-distributed-beamforming-for-sensor-networks" class="nav-link" data-scroll-target="#distributed-beamforming-for-sensor-networks">Distributed Beamforming for Sensor Networks</a></li>
   </ul></li>
   <li><a href="#selected-publications" id="toc-selected-publications" class="nav-link" data-scroll-target="#selected-publications">Selected Publications</a></li>
   <li><a href="#selected-talks" id="toc-selected-talks" class="nav-link" data-scroll-target="#selected-talks">Selected Talks</a></li>
@@ -311,16 +319,68 @@ window.Quarto = {
 </div>
 </div>
 </div>
+</section>
+</section>
+<section id="applied-research-areas" class="level2">
+<h2 class="anchored" data-anchor-id="applied-research-areas">Applied Research Areas</h2>
+<p>The geometric signal-processing methods I develop for gravitational-wave science extend naturally to defense sensing, where the central challenge is again to recover weak signals from noise that is colored, nonstationary, and distributed across an array of sensors.</p>
+<section id="naval-acoustics-sonar" class="level3">
+<h3 class="anchored" data-anchor-id="naval-acoustics-sonar">Naval Acoustics &amp; Sonar</h3>
+<div class="valign-center quarto-layout-panel" data-layout="[46, 54]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 46.0%;justify-content: center;">
+<p><img src="img/naval_acoustics_waterfall.gif" class="img-fluid" style="border: 1px solid #dee2e6; border-radius: 4px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 54.0%;justify-content: flex-start;">
+<p>Passive sonar confronts the same obstacle as an early-warning gravitational-wave search: a faint narrowband source beneath a loud, drifting ambient floor.</p>
+<ul>
+<li><em>Adaptive Whitening:</em> My causal, minimum-phase whitening framework applies directly to hydrophone data, flattening the nonstationary ocean floor in real time so a contact’s tonal lines emerge with minimal latency.</li>
+<li><em>Change Detection:</em> Information-geometric measures of how fast the environment is evolving separate genuine spectral shifts from simple changes in level.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="distributed-beamforming-for-sensor-networks" class="level3">
+<h3 class="anchored" data-anchor-id="distributed-beamforming-for-sensor-networks">Distributed Beamforming for Sensor Networks</h3>
+<div class="valign-center quarto-layout-panel" data-layout="[54, 46]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 54.0%;justify-content: flex-start;">
+<p>A network of hydrophones or antennas samples one wavefront at many points, so the array geometry encodes a source’s bearing.</p>
+<ul>
+<li><em>Non-Abelian Geometry:</em> Scaling whitening from one sensor to a network turns its symmetry from commutative to non-commutative, giving the noise geometry genuine curvature that couples the channels.</li>
+<li><em>Cross-Channel Beamforming:</em> Adaptive beamformers on the full array manifold steer onto a contact and null interference, using cross-channel structure that pairwise processing misses.</li>
+</ul>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 46.0%;justify-content: center;">
+<p><img src="img/beamforming_sensor_array.gif" class="img-fluid" style="border: 1px solid #dee2e6; border-radius: 4px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"></p>
+</div>
+</div>
+</div>
 <hr>
 </section>
 </section>
 <section id="selected-publications" class="level2">
 <h2 class="anchored" data-anchor-id="selected-publications">Selected Publications</h2>
+<section id="gauge-theoretic-signal-processing" class="level4">
+<h4 class="anchored" data-anchor-id="gauge-theoretic-signal-processing">Gauge Theoretic Signal Processing</h4>
+<ul>
+<li><strong>J. Kennington</strong>. <em>Dual Cutler–Vallisneri Corrections: Mitigating PSD Drift in Zero-Latency Gravitational-Wave Searches.</em> <a href="https://journals.aps.org/prd/abstract/10.1103/rtfq-j8t1"><em>Physical Review D</em> (2026)</a>. <a href="https://arxiv.org/abs/2603.09132">arXiv:2603.09132</a>.</li>
+<li><strong>J. Kennington</strong>, <strong>J. Black</strong>. <em>Gauge Theoretic Signal Processing I: The Commutative Formalism for Single-Detector Adaptive Whitening.</em> <a href="https://arxiv.org/abs/2604.06432">arXiv:2604.06432</a>.</li>
+<li><strong>J. Kennington</strong>, <strong>J. Black</strong>, et al.&nbsp;<em>Gauge Theoretic Signal Processing II: Zero-Latency Whitening for Early Warning Pipelines.</em> <a href="https://arxiv.org/abs/2604.25116">arXiv:2604.25116</a>.</li>
+</ul>
+</section>
+<section id="detector-characterization" class="level4">
+<h4 class="anchored" data-anchor-id="detector-characterization">Detector Characterization</h4>
+<ul>
+<li><strong>J. Kennington</strong>, <strong>Z. Yarbrough</strong>. <em>Fisher Information Velocity: A New Geometric Channel for Precision Glitch Identification in Gravitational-Wave Detectors.</em> <em>Physical Review D</em> (2026, in press). <a href="https://arxiv.org/abs/2605.21531">arXiv:2605.21531</a>.</li>
+</ul>
+</section>
 <section id="gravitational-wave-astronomy" class="level4">
 <h4 class="anchored" data-anchor-id="gravitational-wave-astronomy">Gravitational Wave Astronomy</h4>
 <ul>
 <li><strong>C. Hanna</strong>, <strong>J. Kennington</strong>, et al.&nbsp;<em>A Binary Tree Approach to Template Placement for Searches for Gravitational Waves from Compact Binary Mergers.</em> <em>Physical Review D</em> 108, 042003 (2023).</li>
-<li><strong>C. Hanna</strong>, <strong>J. Kennington</strong>, et al.&nbsp;<em>Template bank for sub-solar mass compact binary mergers in the fourth observing run of Advanced LIGO, Advanced Virgo, and KAGRA.</em> [cite_start]<em>arXiv:2412.10951</em>.</li>
+<li><strong>C. Hanna</strong>, <strong>J. Kennington</strong>, et al.&nbsp;<em>Template bank for sub-solar mass compact binary mergers in the fourth observing run of Advanced LIGO, Advanced Virgo, and KAGRA.</em> <a href="https://arxiv.org/abs/2412.10951">arXiv:2412.10951</a>.</li>
 </ul>
 </section>
 <section id="mathematical-physics-pedagogy" class="level4">
@@ -821,7 +881,7 @@ window.Quarto = {
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
-    <a class="nav-link" href="mailto:jwkennington@psu.edu">
+    <a class="nav-link" href="mailto:kenningt@usna.edu">
       <i class="bi bi-envelope" role="img">
 </i> 
     </a>

@@ -9,8 +9,399 @@
 <link>https://jwkennington.com/notes.html</link>
 <atom:link href="https://jwkennington.com/notes.xml" rel="self" type="application/rss+xml"/>
 <description>Mathematical Physics &amp; Geometric Signal Processing</description>
-<generator>quarto-1.9.37</generator>
-<lastBuildDate>Wed, 11 Mar 2026 00:00:00 GMT</lastBuildDate>
+<generator>quarto-1.10.18</generator>
+<lastBuildDate>Wed, 12 Aug 2026 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Now Published in PRD: Dual Cutler–Vallisneri Corrections</title>
+  <link>https://jwkennington.com/posts/20260812-pub-gtsp-c0.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<div style="text-align: center; margin-bottom: 2em;">
+<p><a class="btn btn-primary" href="https://journals.aps.org/prd/abstract/10.1103/rtfq-j8t1" target="_blank" style="margin-right: 10px;"> <i class="bi bi-journal-text"></i> Read in Phys. Rev.&nbsp;D </a> <a class="btn btn-outline-primary" href="https://arxiv.org/abs/2603.09132" target="_blank"> <i class="bi bi-file-earmark-pdf"></i> Preprint (ArXiv) </a></p>
+</div>
+<p>I’m delighted to share that <em>Dual Cutler–Vallisneri Corrections: Mitigating PSD Drift in Zero-Latency Gravitational-Wave Searches</em> has been <strong>published in Physical Review D</strong> <span class="citation" data-cites="kennington_dual_2026">&nbsp;[1]</span>. This is my first solo-author paper, and it marks the first entry in the Gauge Theoretic Signal Processing (GTSP) program to complete peer review.</p>
+<p>The paper develops an analytic, causal framework for correcting the timing, phase, and SNR biases that spectral drift induces in real-time early-warning pipelines, systematics that would otherwise broaden sky maps and erode detection volume for multi-messenger follow-up. For the full technical walkthrough, see the original announcement:</p>
+<div style="text-align: center; margin: 1.5em 0;">
+<p><a href="../posts/20260311-paper-gtsp-c0.html">Read the technical write-up →</a></p>
+</div>
+<p>My thanks to the reviewers and editors at PRD, and to everyone in the LIGO Scientific Collaboration who offered feedback along the way.</p>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0">
+<div id="ref-kennington_dual_2026" class="csl-entry">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">J. Kennington, <a href="https://doi.org/10.48550/arXiv.2603.09132">Dual cutler-vallisneri corrections: Mitigating <span>PSD</span> drift in zero-latency gravitational-wave searches</a>, <span>arXiv</span>:2603.09132 (2026).</div>
+</div>
+</div>
+
+
+</section>
+
+ ]]></description>
+  <category>Research</category>
+  <category>LIGO</category>
+  <category>Publication</category>
+  <guid>https://jwkennington.com/posts/20260812-pub-gtsp-c0.html</guid>
+  <pubDate>Wed, 12 Aug 2026 00:00:00 GMT</pubDate>
+  <media:content url="https://jwkennington.com/img/gtsp-c0/sky_impact_analysis.png" medium="image" type="image/png" height="51" width="144"/>
+</item>
+<item>
+  <title>Interactive App: GW Explorer</title>
+  <link>https://jwkennington.com/posts/20260805-app-gw-explorer.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<div style="text-align: center; margin-bottom: 2em;">
+<p><a class="btn btn-primary" href="https://docs.ligo.org/james.kennington/gw-explorer/" target="_blank" style="margin-right: 10px;"> <i class="bi bi-play-circle"></i> Launch Live App </a> <a class="btn btn-outline-primary" href="https://git.ligo.org/james.kennington/gw-explorer" target="_blank"> <i class="bi bi-git"></i> View Source </a></p>
+</div>
+<section id="from-camp-handouts-to-a-browser-exhibit" class="level2">
+<h2 class="anchored" data-anchor-id="from-camp-handouts-to-a-browser-exhibit">From Camp Handouts to a Browser Exhibit</h2>
+<p>For the 2024 PSU Science-U Gravitational Waves Camp I wrote a set of Python apps to teach students how a compact binary coalescence (CBC) search works, alongside a standalone Dash tool for <a href="../posts/20241101-app-dsp-filter.html">digital filter design</a>. They did the job, but each needed a Python server, and the physics leaned on LALSuite and SciPy running behind the scenes.</p>
+<p><strong>GW Explorer</strong> is the browser-native successor: a single-page app that consolidates those tools into one guided exhibit and moves all of the physics into the browser itself.</p>
+<div id="fig-portal" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-portal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://jwkennington.com/img/gw-explorer-portal.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-portal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: The GW Explorer portal, a guided entry point to the exhibit.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="whats-inside" class="level2">
+<h2 class="anchored" data-anchor-id="whats-inside">What’s Inside</h2>
+<ul>
+<li><em>CBC Waveform Explorer:</em> Dial in component masses and spins and watch the time-domain strain, the frequency-domain amplitude, and the spectrogram update live, using real IMRPhenomD and precessing IMRPhenomPv2 waveforms.</li>
+<li><em>DSP Filter Explorer:</em> Drag poles and zeros and see the Bode and impulse responses respond in real time, the successor to my earlier Dash filter app.</li>
+<li><em>Search games:</em> Four ways to play a parameter-estimation search (visual, audio, spectrogram, and matched-filter SNR), tuning masses and spins until your template matches a hidden event.</li>
+</ul>
+<div id="fig-waveform" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-waveform-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://jwkennington.com/img/gw-explorer-waveform.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-waveform-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: The CBC Waveform Explorer: masses and spins on the left, with the time domain, frequency domain, and spectrogram updating live.
+</figcaption>
+</figure>
+</div>
+<div id="fig-game" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-game-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://jwkennington.com/img/gw-explorer-game.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-game-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: The spectrogram search game: match your template’s chirp track to the one hidden in the detector data, then lock your guess.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="putting-lalsuite-in-the-browser" class="level2">
+<h2 class="anchored" data-anchor-id="putting-lalsuite-in-the-browser">Putting LALSuite in the Browser</h2>
+<p>The interesting engineering was removing the server. The original apps generate waveforms with LALSuite’s <code>lalsimulation</code>. Because IMRPhenomD is an analytic, closed-form frequency-domain model rather than a numerical simulation, I could port its actual equations and calibrated coefficients (and the IMRPhenomPv2 precession layer) directly to TypeScript, the same way the old app ported SciPy’s filter routines.</p>
+<p>The result is a genuine waveform approximant running entirely client-side. It is validated against reference waveforms dumped from LALSuite: the PhenomD strain matches to better than one part in <img src="https://latex.codecogs.com/png.latex?10%5E5">, and the precessing PhenomPv2 polarizations agree to comparable precision across single- and double-spin systems. There is no server, no LALSuite, and no SciPy in the deployed app.</p>
+</section>
+<section id="tech-stack" class="level2">
+<h2 class="anchored" data-anchor-id="tech-stack">Tech Stack</h2>
+<p>GW Explorer is built with Vite and TypeScript, React 19 and Tailwind CSS, a hash router for clean GitLab Pages hosting, Zustand for state, and Plotly.js for the graphics. The build is fully static, and the whole exhibit, physics included, runs from a single set of files with nothing behind it.</p>
+
+
+</section>
+
+ ]]></description>
+  <category>Code</category>
+  <category>Physics</category>
+  <category>Education</category>
+  <category>Outreach</category>
+  <guid>https://jwkennington.com/posts/20260805-app-gw-explorer.html</guid>
+  <pubDate>Wed, 05 Aug 2026 00:00:00 GMT</pubDate>
+  <media:content url="https://jwkennington.com/img/gw-explorer-portal.png" medium="image" type="image/png" height="92" width="144"/>
+</item>
+<item>
+  <title>Interactive App: People of LIGO</title>
+  <link>https://jwkennington.com/posts/20260629-app-people-of-ligo.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<div style="text-align: center; margin-bottom: 2em;">
+<p><a class="btn btn-primary" href="https://docs.ligo.org/james.kennington/people-of-ligo-map/" target="_blank" style="margin-right: 10px;"> <i class="bi bi-play-circle"></i> Launch Live App </a> <a class="btn btn-outline-primary" href="https://git.ligo.org/james.kennington/people-of-ligo-map" target="_blank"> <i class="bi bi-git"></i> View Source </a></p>
+</div>
+<section id="the-collaboration-made-visible" class="level2">
+<h2 class="anchored" data-anchor-id="the-collaboration-made-visible">The Collaboration, Made Visible</h2>
+<p>LIGO is not a single laboratory but a collaboration of thousands of people scattered across the world: some 2,500 members at institutions in 37 countries. That scale is easy to state and hard to feel. I wanted a way to see it at a glance, so I built an interactive globe of the collaboration directly from the public <a href="https://roster.ligo.org/">LSC Directory roster</a>.</p>
+<div id="fig-pol" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pol-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://jwkennington.com/img/people-of-ligo-map.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pol-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: The flat-map view: every collaboration member placed at their institution, with the five gravitational-wave observatories marked. Point, density, and cartogram views are one click away.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="what-you-can-do" class="level2">
+<h2 class="anchored" data-anchor-id="what-you-can-do">What You Can Do</h2>
+<p>The roster comes to life through a few complementary views:</p>
+<ul>
+<li><em>Points, density, cartogram:</em> Show every member (or institution) as a dot on a rotatable globe, a hexbin heat map of where people concentrate, or a Dorling cartogram of institution circles sized by headcount.</li>
+<li><em>Aggregate and filter:</em> Toggle between person and institution counts, switch between globe and flat projections, and filter by country or Principal Investigator.</li>
+<li><em>Fly around:</em> Search a name and press Enter to fly to that member, click any cluster or detector to zoom in, and browse an insights panel of the top institutions and countries. The current view is shareable through the URL, and any view exports to PNG.</li>
+</ul>
+</section>
+<section id="science-layers" class="level2">
+<h2 class="anchored" data-anchor-id="science-layers">Science Layers</h2>
+<p>Beyond the roster, a set of layers connects the people to the physics they do:</p>
+<ul>
+<li><em>Detector network:</em> Great-circle baselines between the five observatories (LIGO Hanford and Livingston, Virgo, KAGRA, and GEO600).</li>
+<li><em>Gravitational-wave wavefront:</em> A “Play GW wave” control sweeps a wavefront across the globe, and the detectors flash in their true relative arrival-time order, a small illustration of how the network localizes a source on the sky.</li>
+<li><em>Day and night:</em> A live solar terminator, with a running count of how many members are in daylight right now.</li>
+<li><em>Affiliation arcs and leadership:</em> Great-circle lines from each institution to the detector it works on, plus the collaboration’s leadership structure pinned on the map by division.</li>
+</ul>
+</section>
+<section id="under-the-hood" class="level2">
+<h2 class="anchored" data-anchor-id="under-the-hood">Under the Hood</h2>
+<p>The app is entirely client-side: vanilla ES modules and a vendored copy of D3, with no build framework, no CDN, and no runtime API calls. The interesting part is the split between the app and its data. A CI pipeline does the heavy lifting ahead of time: it politely crawls the public roster, geocodes each institution, joins and aggregates the result, and embeds the finished data into the bundle at build time. The deployed app never contacts the roster itself, so it loads instantly and depends on nothing at runtime.</p>
+
+
+</section>
+
+ ]]></description>
+  <category>Code</category>
+  <category>Outreach</category>
+  <category>Visualization</category>
+  <guid>https://jwkennington.com/posts/20260629-app-people-of-ligo.html</guid>
+  <pubDate>Mon, 29 Jun 2026 00:00:00 GMT</pubDate>
+  <media:content url="https://jwkennington.com/img/people-of-ligo-map.png" medium="image" type="image/png" height="92" width="144"/>
+</item>
+<item>
+  <title>New Paper: Fisher Information Velocity, a Geometric Channel for Glitch Identification</title>
+  <link>https://jwkennington.com/posts/20260519-paper-gtsp-d0.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<div style="text-align: center; margin-bottom: 2em;">
+<p><a class="btn btn-primary" href="https://arxiv.org/abs/2605.21531" target="_blank" style="margin-right: 10px;"> <i class="bi bi-file-earmark-pdf"></i> Read Paper (ArXiv) </a> <a class="btn btn-outline-primary" href="https://git.ligo.org/james.kennington" target="_blank"> <i class="bi bi-code-slash"></i> View Code </a></p>
+</div>
+<section id="limitations-of-energy-based-detchar" class="level2">
+<h2 class="anchored" data-anchor-id="limitations-of-energy-based-detchar">Limitations of Energy-Based DetChar</h2>
+<p>Gravitational-wave detectors are exquisitely non-stationary, and telling an instrumental glitch from an astrophysical signal is the daily work of detector characterization (DetChar). Most DetChar tools are <strong>energy-based</strong>: band-limited root-mean-square (BLRMS) monitors, for instance, watch the power in a frequency band and raise a flag when it spikes.</p>
+<p>The trouble is that energy alone is ambiguous. A uniform gain change that lifts <em>every</em> frequency looks, to a BLRMS monitor, much like a physical reconfiguration that <em>redistributes</em> power across the spectrum, even though only the latter reshapes the noise in a way that can masquerade as, or bury, a signal. Energy-based metrics conflate global amplitude scaling with genuine spectral warps. This paper, with Zach Yarbrough, introduces a channel built to tell them apart. <span class="citation" data-cites="kennington_fisher_2026">&nbsp;[1]</span></p>
+</section>
+<section id="a-geometric-model-of-the-noise-floor" class="level2">
+<h2 class="anchored" data-anchor-id="a-geometric-model-of-the-noise-floor">A Geometric Model of the Noise Floor</h2>
+<p>We model the detector’s power spectral density (PSD) as a <strong>point on a Riemannian manifold</strong>, with the Fisher information metric supplying the notion of distance between spectra. As the noise floor evolves, that point traces a trajectory, and its <strong>velocity</strong> is our diagnostic: <em>Fisher information velocity</em>.</p>
+<p>The key move is to decompose that velocity geometrically. Using exterior algebra we compute the <strong>tangent divergence</strong> (<img src="https://latex.codecogs.com/png.latex?%5Csin%5Ctheta">), the component of the motion that points <em>across</em> the manifold rather than radially outward. A pure energy surge moves the PSD radially (a rescaling) and contributes little tangent divergence; a spectral warp bends the trajectory sideways. Measuring <img src="https://latex.codecogs.com/png.latex?%5Csin%5Ctheta"> therefore decouples simple amplitude surges from differential redistributions of power across frequency bands.</p>
+<div id="fig-taxonomy" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-taxonomy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://jwkennington.com/img/gtsp-d0/bimodal_taxonomy.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:65.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-taxonomy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: The bimodal taxonomy of severe non-stationarity revealed by high-resolution phase-space mapping: structural pivots (spectral warps) versus isotropic surges (global energy changes).
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="results-on-o4a-data" class="level2">
+<h2 class="anchored" data-anchor-id="results-on-o4a-data">Results on O4a Data</h2>
+<p>We implemented the channel as the <strong><code>sgn-drift</code></strong> streaming pipeline and ran it over <img src="https://latex.codecogs.com/png.latex?%7B%5Csim%7D40"> hours of high-cadence Advanced LIGO O4a data, evaluating <img src="https://latex.codecogs.com/png.latex?N%20=%20282%7B,%7D080"> independent manifold velocity samples. Mapping the phase space at high resolution reveals a clean <strong>bimodal taxonomy</strong> of severe instrumental non-stationarity: <strong>structural pivots</strong> (spectral warps) account for <img src="https://latex.codecogs.com/png.latex?87.2%5C%25"> of events, and <strong>isotropic surges</strong> (global energy changes) the remaining <img src="https://latex.codecogs.com/png.latex?12.8%5C%25">.</p>
+<p>The geometric channel does more than restate what BLRMS already sees. Among co-detected events it achieves higher significance than standard BLRMS monitors in <strong>74% of cases</strong>, with a median sensitivity ratio of <img src="https://latex.codecogs.com/png.latex?%5CGamma%20=%201.65">. The two methods also flag largely <strong>non-overlapping</strong> populations, so folding in the geometric channel grows the union catalog of flagged instrumental events by <strong>87%</strong> relative to BLRMS monitoring alone.</p>
+<div id="fig-sensitivity" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sensitivity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://jwkennington.com/img/gtsp-d0/sensitivity_comparison.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sensitivity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Sensitivity comparison against BLRMS monitors. The Fisher-velocity channel and BLRMS detect largely disjoint populations, so combining them substantially enlarges the catalog of flagged anomalies.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="robustness-to-astrophysical-signals" class="level2">
+<h2 class="anchored" data-anchor-id="robustness-to-astrophysical-signals">Robustness to Astrophysical Signals</h2>
+<p>A DetChar channel is only useful if it does not eat real gravitational waves. We validated the channel on <strong>10 confirmed GWTC-4.0 events</strong> and <img src="https://latex.codecogs.com/png.latex?%7B%5Csim%7D5%7B,%7D000"> simulated injections and found it robustly <strong>insensitive to astrophysical signals</strong>: a compact-binary chirp does not register as a spectral pivot. That makes Fisher information velocity a sensitive, complementary, and <strong>veto-safe</strong> diagnostic, ready to sit alongside existing monitors in current and next-generation detector networks.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0">
+<div id="ref-kennington_fisher_2026" class="csl-entry">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">J. Kennington and Z. Yarbrough, <a href="https://doi.org/10.48550/arXiv.2605.21531">Fisher information velocity: A new geometric channel for precision glitch identification in gravitational-wave detectors</a>, <span>arXiv</span>:2605.21531 (2026).</div>
+</div>
+</div>
+
+
+</section>
+
+ ]]></description>
+  <category>Research</category>
+  <category>LIGO</category>
+  <category>Detector Characterization</category>
+  <category>Paper</category>
+  <guid>https://jwkennington.com/posts/20260519-paper-gtsp-d0.html</guid>
+  <pubDate>Tue, 19 May 2026 00:00:00 GMT</pubDate>
+  <media:content url="https://jwkennington.com/img/gtsp-d0/bimodal_taxonomy.png" medium="image" type="image/png" height="103" width="144"/>
+</item>
+<item>
+  <title>New Paper: Gauge Theoretic Signal Processing II, Zero-Latency Whitening for Early Warning</title>
+  <link>https://jwkennington.com/posts/20260428-paper-gtsp-c2.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<div style="text-align: center; margin-bottom: 2em;">
+<p><a class="btn btn-primary" href="https://arxiv.org/abs/2604.25116" target="_blank" style="margin-right: 10px;"> <i class="bi bi-file-earmark-pdf"></i> Read Paper (ArXiv) </a> <a class="btn btn-outline-primary" href="https://git.ligo.org/james.kennington" target="_blank"> <i class="bi bi-code-slash"></i> View Code </a></p>
+</div>
+<section id="motivation" class="level2">
+<h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
+<p>Early-warning gravitational-wave alerts live and die by latency. Every second between a merger and its public alert is a second in which an optical telescope could already be slewing toward the kilonova. Yet today’s low-latency pipelines whiten their data with <strong>acausal, linear-phase</strong> filters that need a look-ahead buffer, and that buffer alone injects several seconds of algorithmic delay.</p>
+<p>The obvious fix, causal <strong>minimum-phase</strong> whitening, is subtle in practice. Under non-stationary noise you cannot simply swap the filter type: the drifting PSD must be tracked without eroding matched-filter SNR, each filter update must <em>stay</em> minimum-phase, and the altered phase response must be compensated so sky localization does not suffer. In <a href="../posts/20260407-paper-gtsp-c1.html">Paper I</a> we showed the minimum-phase connection gives a geometrically exact update rule for exactly this situation. This paper validates that framework numerically, operationally, and at production scale. <span class="citation" data-cites="kennington_gauge_ii_2026">&nbsp;[1]</span></p>
+<div id="fig-causality" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-causality-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://jwkennington.com/img/gtsp-c2/causality_root_migration.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-causality-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: The core hazard motivating this work, shown in the z-plane. Naively blending two minimum-phase whitening filters with a linear crossfade drives the filter’s roots across the unit circle (left), yielding an acausal, unstable filter. Holonomic transport along the minimum-phase connection keeps every root contained inside the unit circle throughout the update (right), preserving causality.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="certifying-flatness-in-practice" class="level2">
+<h2 class="anchored" data-anchor-id="certifying-flatness-in-practice">Certifying Flatness in Practice</h2>
+<p>We first confirm the theory’s two load-bearing claims directly on data: parallel transport along the minimum-phase connection <strong>strictly preserves the minimum-phase property</strong> and <strong>exactly conserves matched-filter SNR</strong>. We then numerically certify the connection’s <em>flatness</em>, verifying that the optimal filter is a path-independent state function of the instantaneous noise, just as the flatness theorem predicts.</p>
+<div id="fig-holonomy" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-holonomy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://jwkennington.com/img/gtsp-c2/holonomy_comparison.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-holonomy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Holonomy comparison: transporting the whitening filter around closed loops in spectrum space returns it to its starting point, confirming the vanishing curvature (flatness) of the minimum-phase connection.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="an-o3-injection-campaign" class="level2">
+<h2 class="anchored" data-anchor-id="an-o3-injection-campaign">An O3 Injection Campaign</h2>
+<p>To show the causal architecture loses no science, we ran an injection campaign on O3 data with <strong>15,347 binary black hole signals</strong> across the LIGO–Virgo network. The zero-look-ahead whitening reproduces the sensitivity of the standard linear-phase baseline, and preserves inter-detector timing and phase accuracy, the quantities that determine sky-localization quality.</p>
+<div id="fig-sensitivity" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sensitivity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://jwkennington.com/img/gtsp-c2/sensitivity.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sensitivity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Detection sensitivity of the zero-latency (minimum-phase) architecture versus the standard linear-phase baseline across the injection set. The causal pipeline matches the baseline.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="operational-impact" class="level2">
+<h2 class="anchored" data-anchor-id="operational-impact">Operational Impact</h2>
+<p>The payoff is operational. Implemented inside the production <strong><code>sgnl</code></strong> matched-filter pipeline at a 4-second noise-estimation cadence, the framework <strong>reduces whitening latency by 1.0 second (33%)</strong> relative to the linear-phase baseline, confirmed both in controlled local tests and on live O3 replay data at production scale. Pushing to sub-second pipeline cadence, stride-reduction experiments show that <strong>up to 91% of the baseline trigger latency can be eliminated</strong>.</p>
+<div id="fig-latency" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-latency-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://jwkennington.com/img/gtsp-c2/latency_timeseries.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:65.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-latency-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Latency time series on O3 replay data. The minimum-phase architecture removes the look-ahead buffer’s contribution to end-to-end trigger latency.
+</figcaption>
+</figure>
+</div>
+<p>That is latency returned to the astronomers waiting downstream: earlier alerts, without sacrificing the detection sensitivity or pointing accuracy that make those alerts worth acting on.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0">
+<div id="ref-kennington_gauge_ii_2026" class="csl-entry">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">J. Kennington et al., <a href="https://doi.org/10.48550/arXiv.2604.25116">Gauge theoretic signal processing II: Zero-latency whitening for early warning pipelines</a>, <span>arXiv</span>:2604.25116 (2026).</div>
+</div>
+</div>
+
+
+</section>
+
+ ]]></description>
+  <category>Research</category>
+  <category>LIGO</category>
+  <category>Multi-Messenger Astronomy</category>
+  <category>Paper</category>
+  <guid>https://jwkennington.com/posts/20260428-paper-gtsp-c2.html</guid>
+  <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
+  <media:content url="https://jwkennington.com/img/gtsp-c2/causality_root_migration.png" medium="image" type="image/png" height="79" width="144"/>
+</item>
+<item>
+  <title>New Paper: Gauge Theoretic Signal Processing I, a Geometric Theory of Adaptive Whitening</title>
+  <link>https://jwkennington.com/posts/20260407-paper-gtsp-c1.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<div style="text-align: center; margin-bottom: 2em;">
+<p><a class="btn btn-primary" href="https://arxiv.org/abs/2604.06432" target="_blank" style="margin-right: 10px;"> <i class="bi bi-file-earmark-pdf"></i> Read Paper (ArXiv) </a> <a class="btn btn-outline-primary" href="https://git.ligo.org/james.kennington" target="_blank"> <i class="bi bi-code-slash"></i> View Code </a></p>
+</div>
+<section id="whitening-as-a-geometric-problem" class="level2">
+<h2 class="anchored" data-anchor-id="whitening-as-a-geometric-problem">Whitening as a Geometric Problem</h2>
+<p>Before a gravitational-wave pipeline can matched-filter strain data, it must <strong>whiten</strong> it, flattening the detector’s colored noise floor so that every frequency contributes on equal footing. In a stationary detector this is a one-time spectral factorization. But real detectors are never stationary: the noise floor breathes, drifts, and occasionally lurches. Each time the estimated power spectral density (PSD) updates, the whitening filter must be recomputed, and in a zero-latency search that filter must remain strictly <strong>causal</strong> (minimum-phase) so that no acausal look-ahead buffer is required.</p>
+<p>This turns whitening from a static calculation into a problem of <em>dynamics</em>: how should the filter evolve as the noise state moves, without corrupting the signal or accumulating spurious phase? In this paper, the first of the Gauge Theoretic Signal Processing (GTSP) series, Joshua Black and I argue that the natural language for this question is differential geometry. <span class="citation" data-cites="kennington_gauge_2026">&nbsp;[1]</span></p>
+</section>
+<section id="the-minimum-phase-connection" class="level2">
+<h2 class="anchored" data-anchor-id="the-minimum-phase-connection">The Minimum-Phase Connection</h2>
+<p>We reformulate whitening as <strong>parallel transport on a principal bundle</strong>. The base space is the manifold of admissible power spectra; the whitening filter is a <em>section</em> over that manifold. Moving along a path in the space of noise states, as the PSD drifts, corresponds to transporting the filter, and the rule for that transport is a <strong>connection</strong>.</p>
+<p>The central construction is the <em>minimum-phase connection</em>: the unique connection whose parallel transport preserves signal causality while exactly conserving the matched-filter signal-to-noise ratio. It fixes the gauge freedom (the arbitrary all-pass phase of a whitening filter) in precisely the way that keeps the filter physically realizable in real time.</p>
+<div id="fig-bundle" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-bundle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://jwkennington.com/img/gtsp-c1/bundle-diagram-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:65.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bundle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: The principal-bundle picture underlying GTSP. The base is the manifold of admissible power spectra and each fiber carries the gauge freedom of a whitening filter; a section selects one filter per spectrum, and the minimum-phase connection prescribes how that section transports as the noise state drifts.
+</figcaption>
+</figure>
+</div>
+<p>This machinery yields a clean, coordinate-independent definition of <strong>geometric drift</strong>, a scalar measuring the intrinsic instability of the noise floor, independent of how one happens to parameterize the spectrum. It separates <em>how fast the detector is actually changing</em> from mere coordinate artifacts.</p>
+</section>
+<section id="the-flatness-theorem" class="level2">
+<h2 class="anchored" data-anchor-id="the-flatness-theorem">The Flatness Theorem</h2>
+<p>The paper’s main result is the <strong>flatness theorem</strong>: the curvature of the minimum-phase connection <em>vanishes</em> for scalar noise fields.</p>
+<p>Zero curvature has a direct operational meaning. It establishes a <strong>holonomic update law</strong>: the optimal filter correction is <em>path-independent</em>, determined solely by the instantaneous noise state. There is no geometric phase, no hysteresis, and no memory of the route the detector took through spectrum space to get where it is. However the PSD wandered over the last hour, the correct whitening filter <em>right now</em> depends only on the PSD <em>right now</em>.</p>
+<p>This is exactly the property one wants in order to <em>certify</em> a real-time calibration routine: it guarantees that a causal, streaming filter update cannot silently accumulate error.</p>
+</section>
+<section id="applications" class="level2">
+<h2 class="anchored" data-anchor-id="applications">Applications</h2>
+<p>The flatness theorem unifies two traditions that have historically sat apart: the static theory of Wiener–Hopf spectral factorization, and the dynamic requirements of real-time control. In doing so it provides a rigorous stability certificate for zero-latency whitening. This is the enabling ingredient for the early-warning pipelines developed in <strong>Paper II</strong> of this series, and a foundation for extending GTSP to the non-Abelian setting of multi-detector networks.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0">
+<div id="ref-kennington_gauge_2026" class="csl-entry">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">J. Kennington and J. Black, <a href="https://doi.org/10.48550/arXiv.2604.06432">Gauge theoretic signal processing i: The commutative formalism for single-detector adaptive whitening</a>, <span>arXiv</span>:2604.06432 (2026).</div>
+</div>
+</div>
+
+
+</section>
+
+ ]]></description>
+  <category>Research</category>
+  <category>LIGO</category>
+  <category>Geometry</category>
+  <category>Paper</category>
+  <guid>https://jwkennington.com/posts/20260407-paper-gtsp-c1.html</guid>
+  <pubDate>Tue, 07 Apr 2026 00:00:00 GMT</pubDate>
+  <media:content url="https://jwkennington.com/img/gtsp-c1/bundle-diagram-1.png" medium="image" type="image/png" height="70" width="144"/>
+</item>
 <item>
   <title>New Paper: Mitigating PSD Drift in Zero-Latency GW Searches</title>
   <link>https://jwkennington.com/posts/20260311-paper-gtsp-c0.html</link>
