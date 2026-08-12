@@ -35,7 +35,7 @@ website:
     left: "© 2026 Jim W. Kennington"
     right:
       - icon: envelope
-        href: mailto:jwkennington@psu.edu
+        href: mailto:kenningt@usna.edu
 
   # Analytics & Comments (Carried over from Hugo)
   google-analytics: "G-PBMXNQK5V1"

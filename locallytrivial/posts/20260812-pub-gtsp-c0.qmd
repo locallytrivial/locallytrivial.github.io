@@ -8,8 +8,7 @@ image: ../img/gtsp-c0/sky_impact_analysis.png
 ---
 
 <div style="text-align: center; margin-bottom: 2em;">
-  <!-- TODO: replace # with the final Phys. Rev. D DOI URL, e.g. https://doi.org/10.1103/xxxx-xxxx -->
-  <a class="btn btn-primary" href="#" role="button" target="_blank" style="margin-right: 10px;">
+  <a class="btn btn-primary" href="https://journals.aps.org/prd/abstract/10.1103/rtfq-j8t1" role="button" target="_blank" style="margin-right: 10px;">
     <i class="bi bi-journal-text"></i> Read in Phys. Rev. D
   </a>
   <a class="btn btn-outline-primary" href="https://arxiv.org/abs/2603.09132" role="button" target="_blank">

@@ -67,13 +67,51 @@ My background in _Loop Quantum Gravity_ (working with the Bojowald Group) inform
 </div>
 :::
 
+## Applied Research Areas
+
+The geometric signal-processing methods I develop for gravitational-wave science extend naturally to defense sensing, where the central challenge is again to recover weak signals from noise that is colored, nonstationary, and distributed across an array of sensors.
+
+### Naval Acoustics & Sonar
+
+::: {layout="[46, 54]" .valign-center}
+![](img/naval_acoustics_waterfall.gif){width=100% style="border: 1px solid #dee2e6; border-radius: 4px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"}
+
+<div>
+Passive sonar confronts the same obstacle as an early-warning gravitational-wave search: a faint narrowband source beneath a loud, drifting ambient floor.
+
+* _Adaptive Whitening:_ My causal, minimum-phase whitening framework applies directly to hydrophone data, flattening the nonstationary ocean floor in real time so a contact's tonal lines emerge with minimal latency.
+* _Change Detection:_ Information-geometric measures of how fast the environment is evolving separate genuine spectral shifts from simple changes in level.
+</div>
+:::
+
+### Distributed Beamforming for Sensor Networks
+
+::: {layout="[54, 46]" .valign-center}
+<div>
+A network of hydrophones or antennas samples one wavefront at many points, so the array geometry encodes a source's bearing.
+
+* _Non-Abelian Geometry:_ Scaling whitening from one sensor to a network turns its symmetry from commutative to non-commutative, giving the noise geometry genuine curvature that couples the channels.
+* _Cross-Channel Beamforming:_ Adaptive beamformers on the full array manifold steer onto a contact and null interference, using cross-channel structure that pairwise processing misses.
+</div>
+
+![](img/beamforming_sensor_array.gif){width=100% style="border: 1px solid #dee2e6; border-radius: 4px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"}
+:::
+
 ---
 
 ## Selected Publications
 
+#### Gauge Theoretic Signal Processing
+* **J. Kennington**. _Dual Cutler–Vallisneri Corrections: Mitigating PSD Drift in Zero-Latency Gravitational-Wave Searches._ [*Physical Review D* (2026)](https://journals.aps.org/prd/abstract/10.1103/rtfq-j8t1). [arXiv:2603.09132](https://arxiv.org/abs/2603.09132).
+* **J. Kennington**, **J. Black**. _Gauge Theoretic Signal Processing I: The Commutative Formalism for Single-Detector Adaptive Whitening._ [arXiv:2604.06432](https://arxiv.org/abs/2604.06432).
+* **J. Kennington**, **J. Black**, et al. _Gauge Theoretic Signal Processing II: Zero-Latency Whitening for Early Warning Pipelines._ [arXiv:2604.25116](https://arxiv.org/abs/2604.25116).
+
+#### Detector Characterization
+* **J. Kennington**, **Z. Yarbrough**. _Fisher Information Velocity: A New Geometric Channel for Precision Glitch Identification in Gravitational-Wave Detectors._ *Physical Review D* (2026, in press). [arXiv:2605.21531](https://arxiv.org/abs/2605.21531).
+
 #### Gravitational Wave Astronomy
 * **C. Hanna**, **J. Kennington**, et al. _A Binary Tree Approach to Template Placement for Searches for Gravitational Waves from Compact Binary Mergers._ *Physical Review D* 108, 042003 (2023).
-* **C. Hanna**, **J. Kennington**, et al. _Template bank for sub-solar mass compact binary mergers in the fourth observing run of Advanced LIGO, Advanced Virgo, and KAGRA._ [cite_start]*arXiv:2412.10951*. 
+* **C. Hanna**, **J. Kennington**, et al. _Template bank for sub-solar mass compact binary mergers in the fourth observing run of Advanced LIGO, Advanced Virgo, and KAGRA._ [arXiv:2412.10951](https://arxiv.org/abs/2412.10951).
 
 #### Mathematical Physics & Pedagogy
 * **N. Jeevanjee**, **J. Kennington**. _Solutions Manual for *An Introduction to Tensors and Group Theory for Physicists*._ (2019).

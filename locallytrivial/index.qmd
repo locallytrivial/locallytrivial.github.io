@@ -43,7 +43,7 @@ I am a member of the LIGO Scientific Collaboration and the LISA Consortium. The 
 
 <div class="about-links" style="margin-top: -10px; margin-bottom: 25px;">
   
-  <a href="mailto:jwkennington@psu.edu" class="about-link" rel="" target="">
+  <a href="mailto:kenningt@usna.edu" class="about-link" rel="" target="">
     <i class="bi bi-envelope"></i>
     <span class="about-link-text d-md-none">Email</span>
   </a>

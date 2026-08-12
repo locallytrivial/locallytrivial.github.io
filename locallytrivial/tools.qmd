@@ -62,12 +62,21 @@ A lightweight, automated interface for the arXiv API. Designed to streamline lit
 
 ---
 
-## Pedagogical Resources
+## Pedagogical & Outreach Tools
 
-### Interactive Signal Processing
-*Sole Developer* 
+I build interactive, browser-based tools that make gravitational-wave science tangible for students and the public.
 
-A suite of web-based interactive applications designed to visualize the core concepts of matched filtering and gravitational wave detection. These tools allow students and researchers to manipulate signal-to-noise ratios, visualize PSDs, and see real-time template matching in the browser.
+### GW Explorer
+*Sole Developer* -- [[Launch](https://docs.ligo.org/james.kennington/gw-explorer/)] [[Source](https://git.ligo.org/james.kennington/gw-explorer)]
 
-- **DSP Filter Design Playground**: [See Related Note](posts/20241101-app-dsp-filter.qmd). An interactive tool for designing and visualizing digital filters, demonstrating the effects of different filter parameters on signal processing tasks, including poles and zeros, frequency response, stability, and causal vs non-causal filtering. Built with Dash and Plotly for an intuitive user experience. [Source](https://github.com/JWKennington/app-dsp-filter-design)
-- **Optical Diffraction Explorer**: [Launch App](apps/sp212/ch33-diffraction/). Interactive visualizations of single-slit, circular aperture, Rayleigh criterion, double-slit, and N-slit diffraction patterns. Built for SP212 (Electricity & Magnetism) at the US Naval Academy. Features real-time parameter control, log-scale and brightness-boosted views, and editable inputs for homework verification. Built with React, Plotly.js, and HTML5 Canvas.
+A fully client-side gravitational-wave exhibit: a guided portal, a **CBC waveform explorer**, a **DSP filter-design explorer**, and four matched-filter **search games**. The gravitational-wave physics (IMRPhenomD and precessing IMRPhenomPv2) is ported to pure TypeScript and validated against LALSuite, so real waveforms run in the browser with no server. It consolidates and supersedes my earlier Dash-based [DSP Filter Design Explorer](posts/20241101-app-dsp-filter.qmd) and the Python apps from the PSU Science-U Gravitational Waves Camp. See the [related note](posts/20260805-app-gw-explorer.qmd).
+
+### People of LIGO
+*Sole Developer* -- [[Launch](https://docs.ligo.org/james.kennington/people-of-ligo-map/)] [[Source](https://git.ligo.org/james.kennington/people-of-ligo-map)]
+
+An interactive globe of the LIGO Scientific Collaboration, built entirely from the public LSC Directory roster. Point, density, and cartogram views map every member and institution, with science layers for the detector network, gravitational-wave arrival-time ordering, and the collaboration's leadership structure. See the [related note](posts/20260629-app-people-of-ligo.qmd).
+
+### Optical Diffraction Explorer
+*Sole Developer* -- [[Launch](apps/sp212/ch33-diffraction/)]
+
+Interactive visualizations of single-slit, circular-aperture, Rayleigh-criterion, double-slit, and N-slit diffraction, built for SP212 (Electricity & Magnetism) at the US Naval Academy. Features real-time parameter control, log-scale and brightness-boosted views, and editable inputs for homework verification. Built with React, Plotly.js, and HTML5 Canvas.
